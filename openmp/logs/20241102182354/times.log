@@ -1,0 +1,163 @@
+Session started at: 2024-11-02 18:23:54
+===============================================
+Using random_matrix.txt input file:
+------------2x2-------------
+Read time: 0.00003800 seconds
+Multiplication time (avg): 0.00000513 seconds
+Write time: 0.00001900 seconds
+real	0m0.004s
+user	0m0.003s
+sys	0m0.003s
+------------2x2-------------
+Read time: 0.00002900 seconds
+Multiplication time (avg): 0.00000387 seconds
+Write time: 0.00001600 seconds
+real	0m0.003s
+user	0m0.000s
+sys	0m0.004s
+------------4x4-------------
+Read time: 0.00005900 seconds
+Multiplication time (avg): 0.00000433 seconds
+Write time: 0.00001700 seconds
+real	0m0.002s
+user	0m0.003s
+sys	0m0.000s
+------------8x8-------------
+Read time: 0.00009100 seconds
+Multiplication time (avg): 0.00001407 seconds
+Write time: 0.00005200 seconds
+real	0m0.004s
+user	0m0.000s
+sys	0m0.007s
+------------16x16-------------
+Read time: 0.00013500 seconds
+Multiplication time (avg): 0.00005100 seconds
+Write time: 0.00007000 seconds
+real	0m0.004s
+user	0m0.010s
+sys	0m0.000s
+------------32x32-------------
+Read time: 0.00050900 seconds
+Multiplication time (avg): 0.00013493 seconds
+Write time: 0.00070900 seconds
+real	0m0.009s
+user	0m0.023s
+sys	0m0.000s
+------------64x64-------------
+Read time: 0.00101300 seconds
+Multiplication time (avg): 0.00038143 seconds
+Write time: 0.00038500 seconds
+real	0m0.015s
+user	0m0.046s
+sys	0m0.005s
+------------128x128-------------
+Read time: 0.00610000 seconds
+Multiplication time (avg): 0.00187780 seconds
+Write time: 0.00151000 seconds
+real	0m0.071s
+user	0m0.254s
+sys	0m0.000s
+------------256x256-------------
+Read time: 0.01875900 seconds
+Multiplication time (avg): 0.01331840 seconds
+Write time: 0.01575400 seconds
+real	0m0.459s
+user	0m1.613s
+sys	0m0.016s
+------------512x512-------------
+Read time: 0.04845200 seconds
+Multiplication time (avg): 0.10572967 seconds
+Write time: 0.04444000 seconds
+real	0m3.383s
+user	0m12.797s
+sys	0m0.016s
+------------1024x1024-------------
+Read time: 0.17949900 seconds
+Multiplication time (avg): 1.32640453 seconds
+Write time: 0.13081700 seconds
+real	0m41.442s
+user	2m42.938s
+sys	0m0.036s
+===============================================
+Using diag_matrix.txt input file:
+------------2x2-------------
+Read time: 0.00001200 seconds
+Multiplication time (avg): 0.00000550 seconds
+Write time: 0.00001000 seconds
+real	0m0.002s
+user	0m0.002s
+sys	0m0.001s
+------------2x2-------------
+Read time: 0.00002400 seconds
+Multiplication time (avg): 0.00000623 seconds
+Write time: 0.00002300 seconds
+real	0m0.003s
+user	0m0.000s
+sys	0m0.004s
+------------4x4-------------
+Read time: 0.00001500 seconds
+Multiplication time (avg): 0.00000323 seconds
+Write time: 0.00001200 seconds
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+------------8x8-------------
+Read time: 0.00005900 seconds
+Multiplication time (avg): 0.00003710 seconds
+Write time: 0.00008300 seconds
+real	0m0.005s
+user	0m0.009s
+sys	0m0.000s
+------------16x16-------------
+Read time: 0.00013100 seconds
+Multiplication time (avg): 0.00003277 seconds
+Write time: 0.00008000 seconds
+real	0m0.004s
+user	0m0.008s
+sys	0m0.000s
+------------32x32-------------
+Read time: 0.00028600 seconds
+Multiplication time (avg): 0.00034880 seconds
+Write time: 0.00012800 seconds
+real	0m0.013s
+user	0m0.035s
+sys	0m0.000s
+------------64x64-------------
+Read time: 0.00060100 seconds
+Multiplication time (avg): 0.00051077 seconds
+Write time: 0.00039300 seconds
+real	0m0.018s
+user	0m0.064s
+sys	0m0.000s
+------------128x128-------------
+Read time: 0.00880800 seconds
+Multiplication time (avg): 0.00225243 seconds
+Write time: 0.00379200 seconds
+real	0m0.088s
+user	0m0.275s
+sys	0m0.008s
+------------256x256-------------
+Read time: 0.01675500 seconds
+Multiplication time (avg): 0.01319630 seconds
+Write time: 0.00609000 seconds
+real	0m0.447s
+user	0m1.609s
+sys	0m0.012s
+------------512x512-------------
+Read time: 0.04901400 seconds
+Multiplication time (avg): 0.17047133 seconds
+Write time: 0.02670500 seconds
+real	0m5.366s
+user	0m20.285s
+sys	0m0.020s
+------------1024x1024-------------
+Read time: 0.15952800 seconds
+Multiplication time (avg): 1.37681990 seconds
+Write time: 0.10229600 seconds
+real	0m42.955s
+user	2m47.235s
+sys	0m0.052s
+Session Completed Successfully at: 2024-11-02 18:25:30
+Session Time: 1m 36s
+###############################################
+
