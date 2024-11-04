@@ -1,0 +1,149 @@
+Session started at: 2024-11-04 16:42:22
+===============================================
+Using ../data/random_matrix.txt input file:
+------------2x2-------------
+Read time: 0.00152600 seconds
+Multiplication time (avg): 0.00250500 seconds
+Write time: 0.00020400 seconds
+real	0m0.093s
+user	0m1.264s
+sys	0m0.021s
+------------4x4-------------
+Read time: 0.00003200 seconds
+Multiplication time (avg): 0.00096977 seconds
+Write time: 0.00041200 seconds
+real	0m0.051s
+user	0m0.704s
+sys	0m0.017s
+------------8x8-------------
+Read time: 0.00002700 seconds
+Multiplication time (avg): 0.01157200 seconds
+Write time: 0.00021200 seconds
+real	0m0.362s
+user	0m5.336s
+sys	0m0.004s
+------------16x16-------------
+Read time: 0.00004500 seconds
+Multiplication time (avg): 0.00770453 seconds
+Write time: 0.00031800 seconds
+real	0m0.250s
+user	0m3.427s
+sys	0m0.006s
+------------32x32-------------
+Read time: 0.00012200 seconds
+Multiplication time (avg): 0.01157037 seconds
+Write time: 0.03411800 seconds
+real	0m0.396s
+user	0m5.057s
+sys	0m0.007s
+------------64x64-------------
+Read time: 0.00662500 seconds
+Multiplication time (avg): 0.01151347 seconds
+Write time: 0.00063200 seconds
+real	0m0.373s
+user	0m5.025s
+sys	0m0.007s
+------------128x128-------------
+Read time: 0.00169600 seconds
+Multiplication time (avg): 0.01213307 seconds
+Write time: 0.00134700 seconds
+real	0m0.405s
+user	0m4.543s
+sys	0m0.004s
+------------256x256-------------
+Read time: 0.00674800 seconds
+Multiplication time (avg): 0.00344747 seconds
+Write time: 0.00388300 seconds
+real	0m0.138s
+user	0m1.896s
+sys	0m0.001s
+------------512x512-------------
+Read time: 0.02656800 seconds
+Multiplication time (avg): 0.02145167 seconds
+Write time: 0.01498300 seconds
+real	0m0.742s
+user	0m10.676s
+sys	0m0.024s
+------------1024x1024-------------
+Read time: 0.10543800 seconds
+Multiplication time (avg): 0.27587460 seconds
+Write time: 0.05870600 seconds
+real	0m8.821s
+user	1m57.503s
+sys	0m0.067s
+===============================================
+Using ../data/diag_matrix.txt input file:
+------------2x2-------------
+Read time: 0.00151700 seconds
+Multiplication time (avg): 0.00000403 seconds
+Write time: 0.00041100 seconds
+real	0m0.017s
+user	0m0.183s
+sys	0m0.002s
+------------4x4-------------
+Read time: 0.00003100 seconds
+Multiplication time (avg): 0.00048567 seconds
+Write time: 0.00043800 seconds
+real	0m0.030s
+user	0m0.407s
+sys	0m0.001s
+------------8x8-------------
+Read time: 0.00002700 seconds
+Multiplication time (avg): 0.00129757 seconds
+Write time: 0.00044800 seconds
+real	0m0.054s
+user	0m0.733s
+sys	0m0.001s
+------------16x16-------------
+Read time: 0.00004900 seconds
+Multiplication time (avg): 0.00677800 seconds
+Write time: 0.00046700 seconds
+real	0m0.218s
+user	0m3.176s
+sys	0m0.001s
+------------32x32-------------
+Read time: 0.00012400 seconds
+Multiplication time (avg): 0.01158417 seconds
+Write time: 0.00057300 seconds
+real	0m0.363s
+user	0m5.353s
+sys	0m0.013s
+------------64x64-------------
+Read time: 0.00524100 seconds
+Multiplication time (avg): 0.01184623 seconds
+Write time: 0.00609000 seconds
+real	0m0.393s
+user	0m4.429s
+sys	0m0.011s
+------------128x128-------------
+Read time: 0.00170500 seconds
+Multiplication time (avg): 0.01259253 seconds
+Write time: 0.00135000 seconds
+real	0m0.407s
+user	0m4.579s
+sys	0m0.009s
+------------256x256-------------
+Read time: 0.00667200 seconds
+Multiplication time (avg): 0.01445423 seconds
+Write time: 0.00403000 seconds
+real	0m0.470s
+user	0m6.201s
+sys	0m0.010s
+------------512x512-------------
+Read time: 0.02669600 seconds
+Multiplication time (avg): 0.02291233 seconds
+Write time: 0.01491000 seconds
+real	0m0.792s
+user	0m11.171s
+sys	0m0.033s
+------------1024x1024-------------
+Read time: 0.10710500 seconds
+Multiplication time (avg): 0.27543173 seconds
+Write time: 0.06124200 seconds
+real	0m8.767s
+user	1m58.670s
+sys	0m0.089s
+Session Completed Successfully at: 2024-11-04 16:42:46
+Session Time: 0m 24s
+###############################################
+

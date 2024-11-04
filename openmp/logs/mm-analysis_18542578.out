@@ -1,0 +1,171 @@
+* ----------------------------------------------------------------
+* Running PROLOG for mm-analysis on Mon Nov  4 16:42:22 WET 2024
+*    JOB_NAME                : mm-analysis
+*    JOB_ID                  : 18542578
+*    JOB_PARTITION           : hpc
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : normal
+*    NODE_LIST               : hpc067
+*    SLURM_NNODES            : 1
+*    SLURM_NPROCS            : 16
+*    SLURM_NTASKS            : 16
+*    SLURM_CPUS_ON_NODE      : 16
+*    SLURM_TASKS_PER_NODE    : 16
+*    SLURM_JOB_CPUS_PER_NODE : 16
+*    SLURM_MEM_PER_CPU       : 5000
+*    SUBMIT_HOST             : cirrus09.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/classes/cps/openmp/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/classes/cps/openmp/scripts/c_run.sh
+* ----------------------------------------------------------------
+
+=== Environment ===
+Using existing input data...
+=== Initiating tests with ../data/random_matrix.txt ===
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/1024x1024_results.log
+===============================================
+=== Initiating tests with ../data/diag_matrix.txt ===
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_18542578
+Execution succeeded.
+Times saved to ../logs/18542578/times.log
+Results saved to ../logs/18542578/1024x1024_results.log
+===============================================
+
+=== Finalizing ===
+Session Time: 0m 24s
+Job Completed Successfully.
