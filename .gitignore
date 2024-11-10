@@ -56,5 +56,5 @@ bin/
 # or
 */bin/*
 
-# Unignore all `cirrus out` in `logs` dir
-!*/logs/*.out
+# Ignore all log files
+*/logs/*
