@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------	#
 #SBATCH -p hpc
 #SBATCH --ntasks-per-node=1
-#SBATCH --nodes=2
+#SBATCH --nodes=4
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-analysis
@@ -11,7 +11,7 @@
 #SBATCH --error=../logs/%j/%x_%j.err
 
 # ---------------------------------------------------------------------	#
-Increase 
+# todo: still need to fix
 
 echo
 echo "=== Environment ==="
@@ -35,7 +35,7 @@ mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR"
 # ****************************
 if ([[ ! -f "$DATA_DIR/$DIAG_DATA" ]] || [[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
     echo "=== Compiling generate_matrix.c ==="
-    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE"
+    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=1048576
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1
@@ -59,7 +59,8 @@ else
 fi
 
 # ****************************
-sizes=(2 4 8 16 32 64 128 256 512 1024)
+# sizes=(1 2 3 4 5 6 7 8 9 10)
+sizes=(2048 4096 8192 16384 32768 65536 131072 262144 524288 1048576)
 
 run_matrix_multiplication() {
     local input_file=$1
