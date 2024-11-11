@@ -7,8 +7,8 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-analysis
-#SBATCH --output=../logs/%j/%x_%j.out
-#SBATCH --error=../logs/%j/%x_%j.err
+#SBATCH --output=../logs/slurm/%x_%j.out
+#SBATCH --error=../logs/slurm/%x_%j.err
 
 # ---------------------------------------------------------------------	#
 # todo: still need to fix
