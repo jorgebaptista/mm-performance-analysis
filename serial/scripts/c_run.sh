@@ -16,11 +16,9 @@ echo "=== Environment ==="
 module purge
 module load gcc-13.2
 
-cd "$(dirname "$0")"
-
 # *******Variables***********
 DATE=$(date +%y-%m-%d)
-MACHINE= "cirrus"
+MACHINE="cirrus"
 SESSION_DESCRIPTION="serial multiplication"
 
 # Matrix size - 2 to power of P
@@ -37,7 +35,7 @@ GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
-RAND_DATA="$DATA_DIR/random_matrix_$MAX_P.txt"
+RAND_DATA="random_matrix_$MAX_P.txt"
 DIAG_DATA="diag_matrix_$MAX_P.txt"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"

@@ -27,8 +27,7 @@ GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
-DIAG_DATA="$DATA_DIR/diag_matrix.txt"
-RAND_DATA="$DATA_DIR/random_matrix.txt"
+RAND_DATA="random_matrix_$MAX_P.txt"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR"
 
