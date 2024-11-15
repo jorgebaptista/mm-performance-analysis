@@ -62,3 +62,4 @@ bin/
 # Ignore data folders
 */data/*
 */shared_data/*
+shared_data/
