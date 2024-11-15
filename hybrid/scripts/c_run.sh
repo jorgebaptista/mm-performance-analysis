@@ -7,13 +7,11 @@
 #SBATCH --cpus-per-task=24
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-analysis
+#SBATCH --job-name=mm-analysis-hybrid
 #SBATCH --output=../logs/slurm/%x_%j.out
 #SBATCH --error=../logs/slurm/%x_%j.err
 
 # ---------------------------------------------------------------------	#
-# todo: still need to fix
-
 echo
 echo "=== Environment ==="
 module purge
@@ -33,11 +31,11 @@ THREADS=24
 # ********Directories********* #
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
-LOGS_DIR="../logs/$ID"
+LOGS_DIR="../logs/$SLURM_JOB_ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
-GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
+GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_matrix_$MAX_P.txt"
@@ -81,7 +79,7 @@ run_matrix_multiplication() {
     for ((power = MIN_P; power <= MAX_P; power++)); do
         size=$((2 ** power))
 
-        MULTIPLY_MATRIX_EXE="$BIN_DIR/multiply_matrix_${size}x${size}_$ID"
+        MULTIPLY_MATRIX_EXE="$BIN_DIR/multiply_matrix_${size}x${size}_$SLURM_JOB_ID"
         LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
         echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
@@ -97,8 +95,9 @@ run_matrix_multiplication() {
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-        echo "Nodes allocated: $SLURM_NNODES" | tee -a "$LOG_TIMES"
-        echo "Using $SLURM_CPUS_PER_TASK cores, across $SLURM_NTASKS_PER_NODE workers" | tee -a "$LOG_TIMES"
+        echo "Nodes: $SLURM_NNODES" | tee -a "$LOG_TIMES"
+        echo "Workers: $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
+        echo "CPUs: $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
         { time mpiexec -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
@@ -119,10 +118,11 @@ run_matrix_multiplication() {
 
 # *******Start Session******** #
 start_time=$(date +%s)
-# todo Add n of cores used and available
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-echo "Available threads: $(lscpu | grep "^CPU(s):" | awk '{print $2}')" | tee -a "$LOG_TIMES"
+echo "Available Nodes: $SLURM_NNODES)" | tee -a "$LOG_TIMES"
+echo "Available Workers: $SLURM_NTASKS_PER_NODE)" | tee -a "$LOG_TIMES"
+echo "Available CPUs: $SLURM_CPUS_PER_TASK)" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 

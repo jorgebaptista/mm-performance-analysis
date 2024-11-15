@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=96
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-analysis
+#SBATCH --job-name=mm-analysis-openmp
 #SBATCH --output=../logs/slurm/%x_%j.out
 #SBATCH --error=../logs/slurm/%x_%j.err
 
@@ -26,7 +26,7 @@ SESSION_DESCRIPTION="OpenMP Parallelization"
 MIN_P=9
 MAX_P=15
 
-THREADS=96
+THREADS="$SLURM_CPUS_PER_TASK"
 
 # ***************************
 BIN_DIR="../bin"
@@ -94,11 +94,13 @@ run_matrix_multiplication() {
         echo "Compilation succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
-        export OMP_NUM_THREADS=$THREADS
-        echo "Using $THREADS threads" | tee -a "$LOG_TIMES"
+        export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+        echo "Nodes: $SLURM_NNODES" | tee -a "$LOG_TIMES"
+        echo "Workers: $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
+        echo "CPUs: $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { time -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { time ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
@@ -118,8 +120,9 @@ run_matrix_multiplication() {
 start_time=$(date +%s)
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-echo "Available threads: $(lscpu | grep "^CPU(s):" | awk '{print $2}')" | tee -a "$LOG_TIMES"
-# Run multiply_matrix.c with different args
+echo "Available Nodes: $SLURM_NNODES)" | tee -a "$LOG_TIMES"
+echo "Available Workers: $SLURM_NTASKS_PER_NODE)" | tee -a "$LOG_TIMES"
+echo "Available CPUs: $SLURM_CPUS_PER_TASK)" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 

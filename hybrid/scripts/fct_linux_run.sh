@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 
 # *******Variables*********** #
 ID=$(date +%y-%m-%d-%H%M)
-MACHINE="fct-deei-linux"
+MACHINE="fct-deei-linux and fct-deei-avaal"
 SESSION_DESCRIPTION="Hybrid (MPI + OpenMP) Parallelization"
 
 # Matrix size - 2 to power of P
@@ -34,8 +34,8 @@ LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_matrix_$MAX_P.txt"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
-# ssh $AVAL_REMOTE "mkdir -p $AVAL_WD"
-# ssh $AVAL_REMOTE "mkdir -p $AVAL_BIN_DIR"
+ssh $AVAL_REMOTE "mkdir -p $AVAL_WD"
+ssh $AVAL_REMOTE "mkdir -p $AVAL_BIN_DIR"
 
 # *****Generate Matrices******
 if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
@@ -88,20 +88,21 @@ run_matrix_multiplication() {
         fi
         echo "Compilation succeeded."
 
-        # echo "Copying binary to fct-deei-aval"
-        # scp "$MULTIPLY_MATRIX_EXE" "$AVAL_REMOTE:$AVAL_BIN_DIR"
-        # if [ $? -ne 0 ]; then
-        #     echo "File transfer to fct-deei-aval failed."
-        #     exit 1
-        # fi
-        # echo "File transfer succeeded."
+        echo "Copying binary to fct-deei-aval"
+        scp "$MULTIPLY_MATRIX_EXE" "$AVAL_REMOTE:$AVAL_BIN_DIR"
+        if [ $? -ne 0 ]; then
+            echo "File transfer to fct-deei-aval failed."
+            exit 1
+        fi
+        echo "File transfer succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         export OMP_NUM_THREADS=$THREADS
         echo "Using $THREADS threads" | tee -a "$LOG_TIMES"
+        echo "Workers: 6 across avaal(2) and linux(4)" | tee -a "$LOG_TIMES"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { time mpiexec --host fct-deei-linux:4 -np 4 ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
-        # { time mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd "$(pwd)" ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        # { time mpiexec --host fct-deei-linux:4 -np 4 ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { time mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd "$(pwd)" ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
@@ -110,7 +111,7 @@ run_matrix_multiplication() {
 
         echo "Execution succeeded."
         rm -f "$MULTIPLY_MATRIX_EXE"
-        # ssh $AVAL_REMOTE "rm -f $AVAL_BIN_DIR/$MULTIPLY_MATRIX_EXE"
+        ssh $AVAL_REMOTE "rm -f $AVAL_BIN_DIR/$MULTIPLY_MATRIX_EXE"
 
         echo "===============================================" >>"$LOG_RESULTS"
         echo "Times saved to $LOG_TIMES"
@@ -120,10 +121,8 @@ run_matrix_multiplication() {
 
 # *******Start Session******** #
 start_time=$(date +%s)
-# todo Add n of cores used and available
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-echo "Available threads: $(lscpu | grep "^CPU(s):" | awk '{print $2}')" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 

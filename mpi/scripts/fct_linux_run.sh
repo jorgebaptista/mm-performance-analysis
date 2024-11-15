@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 # *******Variables*********** #
 
 ID=$(date +%y-%m-%d-%H%M)
-MACHINE="fct-deei-linux"
+MACHINE="fct-deei-linux and fct-deei-aval"
 SESSION_DESCRIPTION="MPI Parallelization"
 
 # Matrix size - 2 to power of P
@@ -98,6 +98,7 @@ run_matrix_multiplication() {
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
+        echo "Workers: 6 across aval(2) and linux(4)" | tee -a "$LOG_TIMES"
         # { time mpiexec --host fct-deei-linux:4 -np 4 ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         { time mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd "$(pwd)" ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
@@ -120,7 +121,6 @@ run_matrix_multiplication() {
 start_time=$(date +%s)
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-# Run multiply_matrix.c with different args
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 
