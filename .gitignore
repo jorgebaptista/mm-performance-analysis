@@ -58,3 +58,7 @@ bin/
 
 # Ignore all log files
 */logs/*
+
+# Ignore data folders
+*/data/*
+*/shared_data/*
