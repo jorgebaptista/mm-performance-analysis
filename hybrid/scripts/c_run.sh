@@ -100,7 +100,7 @@ run_matrix_multiplication() {
         echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { /usr/bin/time -v mpiexec -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { /usr/bin/time -v mpiexec -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
@@ -141,6 +141,8 @@ echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK)" >>"$LOG_TIMES"
 echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per node): $SLURM_MEM_PER_NODE MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per CPU): $SLURM_MEM_PER_CPU MB" >>"$LOG_TIMES"
+echo "=============== Active Modules =================" >>"$LOG_FILE"
+module list 2>>"$LOG_FILE"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
 sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"
