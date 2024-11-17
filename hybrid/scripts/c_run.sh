@@ -21,6 +21,7 @@ module load gcc13/openmpi/4.1.6
 DATE=$(date +%y-%m-%d)
 MACHINE="cirrus"
 SESSION_DESCRIPTION="Hybrid (MPI + OpenMP) Parallelization"
+TOTAL_MEM_AlLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
 
 # Matrix size - 2 to power of P
 MIN_P=9
@@ -94,10 +95,9 @@ run_matrix_multiplication() {
         echo "Compilation succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
-        export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-        echo "Nodes: $SLURM_NNODES" | tee -a "$LOG_TIMES"
-        echo "Workers: $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
-        echo "CPUs: $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
+        echo "Nodes: $SLURM_JOB_NUM_NODES" | tee -a "$LOG_TIMES"
+        echo "Workers (per node): $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
+        echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
         { time mpiexec -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
@@ -120,9 +120,6 @@ run_matrix_multiplication() {
 start_time=$(date +%s)
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-echo "Available Nodes: $SLURM_NNODES)" | tee -a "$LOG_TIMES"
-echo "Available Workers: $SLURM_NTASKS_PER_NODE)" | tee -a "$LOG_TIMES"
-echo "Available CPUs: $SLURM_CPUS_PER_TASK)" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 
@@ -136,6 +133,18 @@ echo "===============================================" >>"$LOG_TIMES"
 echo "Session Time: ${elapsed_minutes}m ${remaining_seconds}s" | tee -a "$LOG_TIMES"
 echo "Session Completed Successfully at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "###############################################" >>"$LOG_TIMES"
+echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
+echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
+echo "Allocated Nodes: $SLURM_JOB_NUM_NODES)" >>"$LOG_TIMES"
+echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE)" >>"$LOG_TIMES"
+echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK)" >>"$LOG_TIMES"
+echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
+echo "Allocated Memory (per node): $SLURM_MEM_PER_NODE MB" >>"$LOG_TIMES"
+echo "Allocated Memory (per CPU): $SLURM_MEM_PER_CPU MB" >>"$LOG_TIMES"
+echo "================ Memory Usage ==================" >>"$LOG_TIMES"
+sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
+echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"
+scontrol show hostname $SLURM_NODELIST >>"$LOG_TIMES"
 echo >>"$LOG_TIMES"
 
 # ***********Exit************ #
