@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=96
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-analysis-openmp
+#SBATCH --job-name=mm-omp-analysis
 #SBATCH --output=../logs/slurm/%x_%j.out
 #SBATCH --error=../logs/slurm/%x_%j.err
 
