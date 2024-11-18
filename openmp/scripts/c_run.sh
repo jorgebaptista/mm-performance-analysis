@@ -100,7 +100,7 @@ run_matrix_multiplication() {
         echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { /usr/bin/time -v -mcmodel=medium ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
+        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
