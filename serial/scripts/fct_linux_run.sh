@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 
 # *******Variables***********
 ID=$(date +%y-%m-%d-%H%M)
-MACHINE="fct-deei-linux"
+MACHINE=$(hostname)
 SESSION_DESCRIPTION="serial multiplication"
 
 # Matrix size - 2 to power of P
@@ -83,7 +83,7 @@ run_matrix_multiplication() {
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { time ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"

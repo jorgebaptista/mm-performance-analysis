@@ -18,7 +18,7 @@ module load gcc-13.2
 
 # *******Variables***********
 DATE=$(date +%y-%m-%d)
-MACHINE="cirrus"
+MACHINE=$(hostname)
 SESSION_DESCRIPTION="serial multiplication"
 
 # Matrix size - 2 to power of P
@@ -128,6 +128,8 @@ echo "===============================================" >>"$LOG_TIMES"
 echo "Session Time: ${elapsed_minutes}m ${remaining_seconds}s" | tee -a "$LOG_TIMES"
 echo "Session Completed Successfully at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "###############################################" >>"$LOG_TIMES"
+
+# *********Log Session******** #
 echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
 echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
