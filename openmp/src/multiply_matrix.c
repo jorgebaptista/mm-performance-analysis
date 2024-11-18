@@ -12,10 +12,10 @@ int C[SIZE][SIZE];
 
 struct timeval start, end;
 
-void read_matrix(FILE *file, int arr[SIZE][SIZE], int n)
+void read_matrix(FILE *file, int arr[SIZE][SIZE], int n, int offset)
 {
    for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++)
+      for (int j = offset; j < n + offset; j++)
          fscanf(file, "%d", &arr[i][j]);
 }
 
@@ -91,8 +91,8 @@ int main(int argc, char *argv[])
    FILE *matrix_file = fopen(matrix_file_name, "r");
 
    gettimeofday(&start, NULL);
-   read_matrix(matrix_file, A, n);
-   read_matrix(matrix_file, B, n);
+   read_matrix(matrix_file, A, n, 0);
+   read_matrix(matrix_file, B, n, n);
    gettimeofday(&end, NULL);
    read_time = total_time(start, end);
    fclose(matrix_file);

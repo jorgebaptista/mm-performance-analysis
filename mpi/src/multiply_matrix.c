@@ -16,10 +16,10 @@ int A[SIZE][SIZE];
 int B[SIZE][SIZE];
 int C[SIZE][SIZE];
 
-void read_matrix(FILE *file, int arr[SIZE][SIZE], int n)
+void read_matrix(FILE *file, int arr[SIZE][SIZE], int n, int offset)
 {
    for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++)
+      for (int j = offset; j < n + offset; j++)
          fscanf(file, "%d", &arr[i][j]);
 }
 
@@ -93,8 +93,8 @@ int main(int argc, char *argv[])
 
       // read input
       start_time = MPI_Wtime();
-      read_matrix(matrix_file, A, n);
-      read_matrix(matrix_file, B, n);
+      read_matrix(matrix_file, A, n, 0);
+      read_matrix(matrix_file, B, n, n);
       end_time = MPI_Wtime();
       read_time = end_time - start_time;
       fclose(matrix_file);
