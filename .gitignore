@@ -57,7 +57,8 @@ bin/
 */bin/*
 
 # Ignore all log files
-*/logs/*
+*/results
+*_results.log
 
 # Ignore data folders
 */data/*
