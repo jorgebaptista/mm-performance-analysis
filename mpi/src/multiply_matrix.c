@@ -156,7 +156,7 @@ int main(int argc, char *argv[])
       fclose(result_log);
 
       FILE *time_log = fopen(time_log_name, "a");
-      fprintf(time_log, "Read time: %.8f seconds\nMultiplication time (avg): %.8f seconds\nWrite time: %.8f seconds", read_time, mean, write_time);
+      fprintf(time_log, "Read time: %.8f seconds\nMultiplication time (avg): %.8f seconds\nWrite time: %.8f seconds\n", read_time, mean, write_time);
       fclose(time_log);
 
       // signal workers to stop
