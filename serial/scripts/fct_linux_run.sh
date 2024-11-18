@@ -102,8 +102,15 @@ run_matrix_multiplication() {
 # *******Start Session******** #
 start_time=$(date +%s)
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
+
+# *****log pre-execution****** #
+PRE_MEM_TOTAL=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+PRE_MEM_FREE=$(awk '/MemFree/ {print $2}' /proc/meminfo)
+PRE_MEM_AVAILABLE=$(awk '/MemAvailable/ {print $2}' /proc/meminfo)
+PRE_CPU_STAT=$(cat /proc/stat)
+
+# **********Execute*********** #
 echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
-# Run multiply_matrix.c with different args
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 run_matrix_multiplication "$DATA_DIR/$DIAG_DATA" "$DIAG_DATA"
 end_time=$(date +%s)
@@ -118,6 +125,24 @@ echo "===============================================" >>"$LOG_TIMES"
 echo "Session Time: ${elapsed_minutes}m ${remaining_seconds}s" | tee -a "$LOG_TIMES"
 echo "Session Completed Successfully at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
 echo "###############################################" >>"$LOG_TIMES"
+
+# *********Log Session******** #
+echo "========= Pre-Execution Memory Usage ==========" >>"$LOG_FILE"
+echo "Pre-Execution Memory:" >>"$LOG_FILE"
+echo "  MemTotal: ${PRE_MEM_TOTAL} kB" >>"$LOG_FILE"
+echo "  MemFree: ${PRE_MEM_FREE} kB" >>"$LOG_FILE"
+echo "  MemAvailable: ${PRE_MEM_AVAILABLE} kB" >>"$LOG_FILE"
+echo "========= Post-Execution Memory Usage =========" >>"$LOG_FILE"
+echo "Memory Usage at $(date '+%Y-%m-%d %H:%M:%S'):" >>"$LOG_FILE"
+awk '/MemTotal|MemFree|MemAvailable/ {printf "%s: %s kB\n", $1, $2}' /proc/meminfo >>"$LOG_FILE"
+echo "============== Pre-Execution CPU ==============" >>"$LOG_FILE"
+echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE"
+echo "$PRE_CPU_STAT" >>$LOG_FILE
+echo "============= Post-Execution CPU ==============" >>"$LOG_FILE"
+echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE"
+cat /proc/stat >>"$LOG_FILE"
+echo "user: $user, nice: $nice, system: $system, idle: $idle, iowait: $iowait, irq: $irq, softirq: $softirq, steal: $steal, guest: $guest, guest_nice: $guest_nice"
+echo "###############################################" >>"$LOG_FILE"
 echo >>"$LOG_TIMES"
 
 # ***********Exit************ #
