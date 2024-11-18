@@ -21,7 +21,7 @@ module load gcc-13.2
 DATE=$(date +%y-%m-%d)
 MACHINE=$(hostname)
 SESSION_DESCRIPTION="OpenMP Parallelization"
-TOTAL_MEM_AlLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
+TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
 
 # Matrix size - 2 to power of P
 MIN_P=9
@@ -100,7 +100,7 @@ run_matrix_multiplication() {
         echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
+        { /usr/bin/time -v -mcmodel=medium ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
@@ -137,14 +137,14 @@ echo "###############################################" >>"$LOG_TIMES"
 # *********Log Session******** #
 echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
-echo "Allocated Nodes: $SLURM_JOB_NUM_NODES)" >>"$LOG_TIMES"
-echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE)" >>"$LOG_TIMES"
-echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK)" >>"$LOG_TIMES"
-echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
+echo "Allocated Nodes: $SLURM_JOB_NUM_NODES" >>"$LOG_TIMES"
+echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE" >>"$LOG_TIMES"
+echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK" >>"$LOG_TIMES"
+echo "Allocated Memory (total): $TOTAL_MEM_ALLOC MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per node): $SLURM_MEM_PER_NODE MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per CPU): $SLURM_MEM_PER_CPU MB" >>"$LOG_TIMES"
-echo "=============== Active Modules =================" >>"$LOG_FILE"
-module list 2>>"$LOG_FILE"
+echo "=============== Active Modules =================" >>"$LOG_TIMES"
+module list >>"$LOG_TIMES"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
 sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"

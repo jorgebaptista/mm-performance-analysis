@@ -20,6 +20,7 @@ module load gcc-13.2
 DATE=$(date +%y-%m-%d)
 MACHINE=$(hostname)
 SESSION_DESCRIPTION="serial multiplication"
+TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
 
 # Matrix size - 2 to power of P
 MIN_P=1
@@ -133,8 +134,8 @@ echo "###############################################" >>"$LOG_TIMES"
 echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
 echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
-echo "=============== Active Modules =================" >>"$LOG_FILE"
-module list 2>>"$LOG_FILE"
+echo "=============== Active Modules =================" >>"$LOG_TIMES"
+module list >>"$LOG_TIMES"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
 sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"

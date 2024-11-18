@@ -27,8 +27,6 @@ TOTAL_MEM_AlLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
 MIN_P=9
 MAX_P=15
 
-THREADS=24
-
 # ********Directories********* #
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
@@ -137,14 +135,14 @@ echo "###############################################" >>"$LOG_TIMES"
 # *********Log Session******** #
 echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
-echo "Allocated Nodes: $SLURM_JOB_NUM_NODES)" >>"$LOG_TIMES"
-echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE)" >>"$LOG_TIMES"
-echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK)" >>"$LOG_TIMES"
-echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
+echo "Allocated Nodes: $SLURM_JOB_NUM_NODES" >>"$LOG_TIMES"
+echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE" >>"$LOG_TIMES"
+echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK" >>"$LOG_TIMES"
+echo "Allocated Memory (total): $TOTAL_MEM_ALLOC MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per node): $SLURM_MEM_PER_NODE MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per CPU): $SLURM_MEM_PER_CPU MB" >>"$LOG_TIMES"
-echo "=============== Active Modules =================" >>"$LOG_FILE"
-module list 2>>"$LOG_FILE"
+echo "=============== Active Modules =================" >>"$LOG_TIMES"
+module list >>"$LOG_TIMES"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
 sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"

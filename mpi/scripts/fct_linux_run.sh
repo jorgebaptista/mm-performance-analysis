@@ -144,6 +144,8 @@ echo "Session Completed Successfully at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a 
 echo "###############################################" >>"$LOG_TIMES"
 
 # *********Log Session******** #
+echo "=============== Users on Machine ==============" >>"$LOG_TIMES"
+w >>"$LOG_TIMES"
 echo "========= Pre-Execution Memory Usage ==========" >>"$LOG_TIMES"
 echo "Pre-Execution Memory:" >>"$LOG_TIMES"
 echo "  MemTotal: ${PRE_MEM_TOTAL} kB" >>"$LOG_TIMES"
@@ -153,12 +155,11 @@ echo "========= Post-Execution Memory Usage =========" >>"$LOG_TIMES"
 echo "Memory Usage at $(date '+%Y-%m-%d %H:%M:%S'):" >>"$LOG_TIMES"
 awk '/MemTotal|MemFree|MemAvailable/ {printf "%s: %s kB\n", $1, $2}' /proc/meminfo >>"$LOG_TIMES"
 echo "============== Pre-Execution CPU ==============" >>"$LOG_TIMES"
-echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE"
+echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE" >>$LOG_TIMES
 echo "$PRE_CPU_STAT" >>$LOG_TIMES
 echo "============= Post-Execution CPU ==============" >>"$LOG_TIMES"
-echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE"
+echo "USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE" >>$LOG_TIMES
 cat /proc/stat >>"$LOG_TIMES"
-echo "user: $user, nice: $nice, system: $system, idle: $idle, iowait: $iowait, irq: $irq, softirq: $softirq, steal: $steal, guest: $guest, guest_nice: $guest_nice"
 echo "###############################################" >>"$LOG_TIMES"
 echo >>"$LOG_TIMES"
 
