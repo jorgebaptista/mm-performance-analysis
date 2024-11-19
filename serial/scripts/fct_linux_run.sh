@@ -18,7 +18,7 @@ MAX_P=10
 # ********Directories*********
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
-LOGS_DIR="../logs/$ID"
+LOGS_DIR="../logs/fct-deei-linux/$ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
@@ -83,7 +83,7 @@ run_matrix_multiplication() {
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"

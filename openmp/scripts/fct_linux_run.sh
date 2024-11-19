@@ -20,7 +20,7 @@ THREADS=4
 # ********Directories********* #
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
-LOGS_DIR="../logs/$ID"
+LOGS_DIR="../logs/fct-deei-linux/$ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"

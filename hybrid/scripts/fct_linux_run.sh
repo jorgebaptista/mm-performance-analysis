@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------	#
 # Running on fct-deei-linux
 # ---------------------------------------------------------------------	#
-# todo create usingaval bool for faster trying with aval
+
 cd "$(dirname "$0")"
 
 # *******Variables*********** #
@@ -20,7 +20,7 @@ THREADS=1
 # ********Directories********* #
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
-LOGS_DIR="../logs/$ID"
+LOGS_DIR="../logs/fct-deei-linux/$ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
 AVAL_REMOTE="a90113@fct-deei-aval"

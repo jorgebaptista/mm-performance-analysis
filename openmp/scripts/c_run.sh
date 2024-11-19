@@ -8,8 +8,8 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-omp-analysis
-#SBATCH --output=../logs/slurm/%x_%j.out
-#SBATCH --error=../logs/slurm/%x_%j.err
+#SBATCH --output=../logs/cirrus/%j/%x_%j.out
+#SBATCH --error=../logs/cirrus/%j/%x_%j.err
 
 # ---------------------------------------------------------------------	#
 echo
@@ -18,7 +18,6 @@ module purge
 module load gcc-13.2
 
 # *******Variables***********
-DATE=$(date +%y-%m-%d)
 MACHINE=$(hostname)
 SESSION_DESCRIPTION="OpenMP Parallelization"
 TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
@@ -27,12 +26,10 @@ TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU)
 MIN_P=9
 MAX_P=15
 
-THREADS="$SLURM_CPUS_PER_TASK"
-
 # ***************************
 BIN_DIR="../bin"
 DATA_DIR="../../shared_data"
-LOGS_DIR="../logs/$DATE-$SLURM_JOB_ID"
+LOGS_DIR="../logs/cirrus/$SLURM_JOB_ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
