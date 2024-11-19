@@ -83,7 +83,7 @@ run_matrix_multiplication() {
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        { time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"

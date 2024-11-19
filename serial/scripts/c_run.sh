@@ -20,7 +20,7 @@ module load gcc-13.2
 DATE=$(date +%y-%m-%d)
 MACHINE=$(hostname)
 SESSION_DESCRIPTION="serial multiplication"
-TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
+TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
 
 # Matrix size - 2 to power of P
 MIN_P=1
@@ -88,17 +88,17 @@ run_matrix_multiplication() {
         gcc -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
-            exit 1
+            break
         fi
         echo "Compilation succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { time ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
+        /usr/bin/time -v -o "$LOG_TIMES" -a ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
-            exit 1
+            break
         fi
 
         echo "Execution succeeded."
@@ -135,9 +135,9 @@ echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
 echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
 echo "Allocated Memory (total): ${TOTAL_MEM_ALLOC} MB" >>"$LOG_TIMES"
 echo "=============== Active Modules =================" >>"$LOG_TIMES"
-module list >>"$LOG_TIMES"
+module list 2>&1 | awk NF | sed 's/^/ - /' >>"$LOG_TIMES"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
-sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
+sstat -j "${SLURM_JOB_ID}.batch" --format=JobID,MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"
 scontrol show hostname $SLURM_NODELIST >>"$LOG_TIMES"
 echo >>"$LOG_TIMES"

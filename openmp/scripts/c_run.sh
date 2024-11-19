@@ -21,7 +21,7 @@ module load gcc-13.2
 DATE=$(date +%y-%m-%d)
 MACHINE=$(hostname)
 SESSION_DESCRIPTION="OpenMP Parallelization"
-TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_MEM_PER_NODE))
+TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
 
 # Matrix size - 2 to power of P
 MIN_P=9
@@ -81,7 +81,7 @@ run_matrix_multiplication() {
         size=$((2 ** power))
 
         MULTIPLY_MATRIX_EXE="$BIN_DIR/multiply_matrix_${size}x${size}_$SLURM_JOB_ID"
-        LOG_RESULTS="$LOGS_DIR/${size}x${size}_results.log"
+        LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
         echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
 
@@ -90,7 +90,7 @@ run_matrix_multiplication() {
         gcc -fopenmp -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
-            exit 1
+            break
         fi
         echo "Compilation succeeded."
 
@@ -100,11 +100,11 @@ run_matrix_multiplication() {
         echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        { /usr/bin/time -v ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } >>"$LOG_TIMES"
+        /usr/bin/time -v -o "$LOG_TIMES" -a ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
-            exit 1
+            break
         fi
 
         echo "Execution succeeded."
@@ -144,9 +144,9 @@ echo "Allocated Memory (total): $TOTAL_MEM_ALLOC MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per node): $SLURM_MEM_PER_NODE MB" >>"$LOG_TIMES"
 echo "Allocated Memory (per CPU): $SLURM_MEM_PER_CPU MB" >>"$LOG_TIMES"
 echo "=============== Active Modules =================" >>"$LOG_TIMES"
-module list >>"$LOG_TIMES"
+module list 2>&1 | awk NF | sed 's/^/ - /' >>"$LOG_TIMES"
 echo "================ Memory Usage ==================" >>"$LOG_TIMES"
-sacct -j $SLURM_JOB_ID --format=MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
+sstat -j "${SLURM_JOB_ID}.batch" --format=JobID,MaxRSS,MaxVMSize,MaxDiskRead,MaxDiskWrite >>"$LOG_TIMES"
 echo "=============== Nodes Assigned =================" >>"$LOG_TIMES"
 scontrol show hostname $SLURM_NODELIST >>"$LOG_TIMES"
 echo >>"$LOG_TIMES"
