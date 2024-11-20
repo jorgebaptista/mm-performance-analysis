@@ -57,7 +57,14 @@ bin/
 */bin/*
 
 # Ignore all log files
-*/results
+*/logs/*
+
+# Allow .log files in logs/final
+!*/logs/final/
+!*/logs/final/**
+
+# Ignore all results files
+*/results/*
 *_results.log
 
 # Ignore data folders
