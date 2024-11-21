@@ -1,7 +1,6 @@
-
-/****************************/
-/* Using dynamic allocation */
-/***************************/
+/*****************************************/
+/* Using dynamic contiguous  allocation */
+/*****************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,9 +23,9 @@
 #define THREADS 4
 #endif
 
-MATRIX_TYPE **A;
-MATRIX_TYPE **B;
-MATRIX_TYPE **C;
+MATRIX_TYPE *A;
+MATRIX_TYPE *B;
+MATRIX_TYPE *C;
 
 double MULT_TIMES[NRUNS];
 double THREAD_TIMES[NRUNS][THREADS];
@@ -37,35 +36,25 @@ double total_time(struct timeval start, struct timeval end)
    return (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1e6;
 }
 
-MATRIX_TYPE **allocate_matrix(int n)
+MATRIX_TYPE *allocate_matrix(int n)
 {
-   MATRIX_TYPE **matrix = malloc(n * sizeof(MATRIX_TYPE *));
-   matrix[0] = malloc(n * n * sizeof(MATRIX_TYPE));
-   for (int i = 1; i < n; i++)
-      matrix[i] = matrix[0] + i * n;
-
+   MATRIX_TYPE *matrix = malloc(n * n * sizeof(MATRIX_TYPE));
    return matrix;
 }
 
-void free_matrix(MATRIX_TYPE **matrix)
-{
-   free(matrix[0]);
-   free(matrix);
-}
-
-double read_matrix(FILE *file, MATRIX_TYPE **arr, int n, int start_element)
+double read_matrix(FILE *file, MATRIX_TYPE *arr, int n, int start_element)
 {
    gettimeofday(&start, NULL);
 
-   long offset = start_element * sizeof(MATRIX_TYPE);
+   size_t offset = start_element * sizeof(MATRIX_TYPE);
    fseek(file, offset, SEEK_SET);
-   fread(arr[0], sizeof(MATRIX_TYPE), n * n, file);
+   fread(arr, sizeof(MATRIX_TYPE), n * n, file);
 
    gettimeofday(&end, NULL);
    return total_time(start, end);
 }
 
-double print_matrix(FILE *file, MATRIX_TYPE **C, int n)
+double print_matrix(FILE *file, MATRIX_TYPE *C, int n)
 {
    gettimeofday(&start, NULL);
 
@@ -75,7 +64,7 @@ double print_matrix(FILE *file, MATRIX_TYPE **C, int n)
    {
       for (int j = 0; j < n; j++)
       {
-         fprintf(file, format, C[i][j]);
+         fprintf(file, format, C[i * n + j]);
       }
       fprintf(file, "\n");
    }
@@ -84,7 +73,7 @@ double print_matrix(FILE *file, MATRIX_TYPE **C, int n)
    return total_time(start, end);
 }
 
-double multiply_matrices(MATRIX_TYPE **A, MATRIX_TYPE **B, MATRIX_TYPE **C, int n, int nrun)
+double multiply_matrices(MATRIX_TYPE *A, MATRIX_TYPE *B, MATRIX_TYPE *C, int n, int nrun)
 {
    double mult_start = omp_get_wtime();
 
@@ -101,9 +90,9 @@ double multiply_matrices(MATRIX_TYPE **A, MATRIX_TYPE **B, MATRIX_TYPE **C, int 
             MATRIX_TYPE sum = 0;
             for (int k = 0; k < n; k++)
             {
-               sum += A[i][k] * B[k][j];
+               sum += A[i * n + k] * B[k * n + j];
             }
-            C[i][j] = sum;
+            C[i * n + j] = sum;
          }
       }
 
@@ -162,9 +151,9 @@ int main(int argc, char *argv[])
       fprintf(time_log, "Thread %d time (avg): %.8f seconds\n", i, avg_thread_times[i]);
    fclose(time_log);
 
-   free_matrix(A);
-   free_matrix(B);
-   free_matrix(C);
+   free(A);
+   free(B);
+   free(C);
 
    return 0;
 }
