@@ -5,19 +5,36 @@
 #ifndef SIZE
 #define SIZE 1024
 #endif
+#ifndef MATRIX_TYPE
+#define MATRIX_TYPE int
+#endif
 
-int **create_matrix(int n)
+MATRIX_TYPE **create_matrix(int n)
 {
-    int **matrix = (int **)malloc(n * sizeof(int *));
+    MATRIX_TYPE **matrix = (MATRIX_TYPE **)malloc(n * sizeof(MATRIX_TYPE *));
     for (int i = 0; i < n; i++)
     {
-        matrix[i] = (int *)malloc(n * sizeof(int));
+        matrix[i] = (MATRIX_TYPE *)malloc(n * sizeof(MATRIX_TYPE));
     }
     return matrix;
 }
 
+// helper func to generate random values
+MATRIX_TYPE generate_random_value()
+{
+    if (sizeof(MATRIX_TYPE) == sizeof(int))
+    {
+        return (MATRIX_TYPE)(rand() % 1000); // For integers
+    }
+    else if (sizeof(MATRIX_TYPE) == sizeof(float) || sizeof(MATRIX_TYPE) == sizeof(double))
+    {
+        return (MATRIX_TYPE)(rand() / (double)RAND_MAX * 1000.0); // For floats/doubles
+    }
+    return (MATRIX_TYPE)0; // Default case
+}
+
 // zeros and ones
-void init_ones_matrix(int **matrix, int n)
+void init_ones_matrix(MATRIX_TYPE **matrix, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -32,7 +49,7 @@ void init_ones_matrix(int **matrix, int n)
 }
 
 // random w diagonal zeroes
-void init_diag_matrix(int **matrix, int n)
+void init_diag_matrix(MATRIX_TYPE **matrix, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -41,20 +58,20 @@ void init_diag_matrix(int **matrix, int n)
             if (i == j)
                 matrix[i][j] = 0;
             else
-                matrix[i][j] = rand() % 1000;
+                matrix[i][j] = generate_random_value();
         }
     }
 }
 
 // all random
-void init_matrix(int **matrix, int n)
+void init_matrix(MATRIX_TYPE **matrix, int n)
 {
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
-            matrix[i][j] = rand() % 1000;
+            matrix[i][j] = generate_random_value();
 }
 
-void free_matrix(int **matrix, int n)
+void free_matrix(MATRIX_TYPE **matrix, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -71,22 +88,22 @@ int main(int argc, char const *argv[])
     const char *rand_matrix_file_name = argv[1];
     const char *diag_matrix_file_name = argv[2];
 
-    FILE *random_matrix_file = fopen(rand_matrix_file_name, "w");
-    int **A = create_matrix(n);
-    int **B = create_matrix(n);
+    FILE *random_matrix_file = fopen(rand_matrix_file_name, "wb");
+    MATRIX_TYPE **A = create_matrix(n);
+    MATRIX_TYPE **B = create_matrix(n);
     init_matrix(A, n);
     init_matrix(B, n);
-    fwrite(A[0], sizeof(int), n * n, random_matrix_file);
-    fwrite(B[0], sizeof(int), n * n, random_matrix_file);
+    fwrite(A[0], sizeof(MATRIX_TYPE), n * n, random_matrix_file);
+    fwrite(B[0], sizeof(MATRIX_TYPE), n * n, random_matrix_file);
     fclose(random_matrix_file);
 
-    FILE *diag_matrix_file = fopen(diag_matrix_file_name, "w");
+    FILE *diag_matrix_file = fopen(diag_matrix_file_name, "wb");
     A = create_matrix(n);
     B = create_matrix(n);
     init_diag_matrix(A, n);
     init_diag_matrix(B, n);
-    fwrite(A[0], sizeof(int), n * n, diag_matrix_file);
-    fwrite(B[0], sizeof(int), n * n, diag_matrix_file);
+    fwrite(A[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
+    fwrite(B[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
     fclose(diag_matrix_file);
 
     free_matrix(A, n);

@@ -42,11 +42,13 @@ double print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n)
 {
    gettimeofday(&start, NULL);
 
+   const char *format = (sizeof(MATRIX_TYPE) == sizeof(int)) ? "%d " : "%.2f ";
+
    for (int i = 0; i < n; i++)
    {
       for (int j = 0; j < n; j++)
       {
-         fprintf(file, "%d ", C[i][j]);
+         fprintf(file, format, C[i][j]);
       }
       fprintf(file, "\n");
    }
