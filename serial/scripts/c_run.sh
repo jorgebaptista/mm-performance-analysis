@@ -4,6 +4,7 @@
 #SBATCH -p hpc
 #SBATCH --ntasks-per-node=1
 #SBATCH --nodes=1
+#SBATCH --time=00:07:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-serial-analysis
