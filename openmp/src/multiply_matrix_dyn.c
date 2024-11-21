@@ -1,4 +1,10 @@
+
+/****************************/
+/* Using dynamic allocation */
+/***************************/
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/time.h>
 #include <omp.h>
 
@@ -18,9 +24,9 @@
 #define THREADS 4
 #endif
 
-MATRIX_TYPE A[SIZE][SIZE];
-MATRIX_TYPE B[SIZE][SIZE];
-MATRIX_TYPE C[SIZE][SIZE];
+MATRIX_TYPE **A;
+MATRIX_TYPE **B;
+MATRIX_TYPE **C;
 
 double MULT_TIMES[NRUNS];
 double THREAD_TIMES[NRUNS][THREADS];
@@ -31,7 +37,23 @@ double total_time(struct timeval start, struct timeval end)
    return (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1e6;
 }
 
-double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, int start_element)
+MATRIX_TYPE **allocate_matrix(int n)
+{
+   MATRIX_TYPE **matrix = malloc(n * sizeof(MATRIX_TYPE *));
+   matrix[0] = malloc(n * n * sizeof(MATRIX_TYPE));
+   for (int i = 1; i < n; i++)
+      matrix[i] = matrix[0] + i * n;
+
+   return matrix;
+}
+
+void free_matrix(MATRIX_TYPE **matrix)
+{
+   free(matrix[0]);
+   free(matrix);
+}
+
+double read_matrix(FILE *file, MATRIX_TYPE **arr, int n, int start_element)
 {
    gettimeofday(&start, NULL);
 
@@ -43,7 +65,7 @@ double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, int start_ele
    return total_time(start, end);
 }
 
-double print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n)
+double print_matrix(FILE *file, MATRIX_TYPE **C, int n)
 {
    gettimeofday(&start, NULL);
 
@@ -62,7 +84,7 @@ double print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n)
    return total_time(start, end);
 }
 
-double multiply_matrices(MATRIX_TYPE A[SIZE][SIZE], MATRIX_TYPE B[SIZE][SIZE], MATRIX_TYPE C[SIZE][SIZE], int n, int nrun)
+double multiply_matrices(MATRIX_TYPE **A, MATRIX_TYPE **B, MATRIX_TYPE **C, int n, int nrun)
 {
    double mult_start = omp_get_wtime();
 
@@ -102,6 +124,10 @@ int main(int argc, char *argv[])
 
    omp_set_num_threads(THREADS);
 
+   A = allocate_matrix(SIZE);
+   B = allocate_matrix(SIZE);
+   C = allocate_matrix(SIZE);
+
    FILE *matrix_file = fopen(matrix_file_name, "rb");
    read_time = read_matrix(matrix_file, A, SIZE, 0) + read_matrix(matrix_file, B, SIZE, MAX_SIZE * MAX_SIZE);
    fclose(matrix_file);
@@ -135,6 +161,10 @@ int main(int argc, char *argv[])
    for (int i = 0; i < THREADS; i++)
       fprintf(time_log, "Thread %d time (avg): %.8f seconds\n", i, avg_thread_times[i]);
    fclose(time_log);
+
+   free_matrix(A);
+   free_matrix(B);
+   free_matrix(C);
 
    return 0;
 }
