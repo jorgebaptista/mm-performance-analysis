@@ -25,8 +25,8 @@ GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
-RAND_DATA="random_matrix_$MAX_P.txt"
-DIAG_DATA="diag_matrix_$MAX_P.txt"
+RAND_DATA="random_matrix_$MAX_P.bin"
+DIAG_DATA="diag_matrix_$MAX_P.bin"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 
@@ -74,7 +74,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        gcc -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
+        gcc -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P))
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             exit 1

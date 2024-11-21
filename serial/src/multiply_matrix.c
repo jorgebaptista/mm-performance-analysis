@@ -4,6 +4,9 @@
 #ifndef SIZE
 #define SIZE 1024
 #endif
+#ifndef MAX_SIZE
+#define MAX_SIZE 1024
+#endif
 #ifndef NRUNS
 #define NRUNS 30
 #endif
@@ -23,13 +26,13 @@ double total_time(struct timeval start, struct timeval end)
    return (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1e6;
 }
 
-double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, int offset)
+double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, int start_element)
 {
    gettimeofday(&start, NULL);
 
-   for (int i = 0; i < n; i++)
-      for (int j = offset; j < n + offset; j++)
-         fscanf(file, "%d", &arr[i][j]);
+   long offset = start_element * sizeof(MATRIX_TYPE);
+   fseek(file, offset, SEEK_SET);
+   fread(arr[0], sizeof(MATRIX_TYPE), n * n, file);
 
    gettimeofday(&end, NULL);
    return total_time(start, end);
@@ -81,8 +84,8 @@ int main(int argc, char *argv[])
 
    double read_time = 0.0, write_time = 0.0, avg_mult_time = 0.0;
 
-   FILE *matrix_file = fopen(matrix_file_name, "r");
-   read_time = read_matrix(matrix_file, A, SIZE, 0) + read_matrix(matrix_file, B, SIZE, SIZE);
+   FILE *matrix_file = fopen(matrix_file_name, "rb");
+   read_time = read_matrix(matrix_file, A, SIZE, 0) + read_matrix(matrix_file, B, SIZE, MAX_SIZE * MAX_SIZE); // Start reading B from the end of A
    fclose(matrix_file);
 
    for (int i = 0; i <= NRUNS; i++)

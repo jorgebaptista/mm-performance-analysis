@@ -63,18 +63,6 @@ void free_matrix(int **matrix, int n)
     free(matrix);
 }
 
-void print_matrix(int **matrix, int n, FILE *file)
-{
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            fprintf(file, "%d ", matrix[i][j]);
-        }
-        fprintf(file, "\n");
-    }
-}
-
 int main(int argc, char const *argv[])
 {
     srand(time(0));
@@ -88,8 +76,8 @@ int main(int argc, char const *argv[])
     int **B = create_matrix(n);
     init_matrix(A, n);
     init_matrix(B, n);
-    print_matrix(A, n, random_matrix_file);
-    print_matrix(B, n, random_matrix_file);
+    fwrite(A[0], sizeof(int), n * n, random_matrix_file);
+    fwrite(B[0], sizeof(int), n * n, random_matrix_file);
     fclose(random_matrix_file);
 
     FILE *diag_matrix_file = fopen(diag_matrix_file_name, "w");
@@ -97,8 +85,8 @@ int main(int argc, char const *argv[])
     B = create_matrix(n);
     init_diag_matrix(A, n);
     init_diag_matrix(B, n);
-    print_matrix(A, n, diag_matrix_file);
-    print_matrix(B, n, diag_matrix_file);
+    fwrite(A[0], sizeof(int), n * n, diag_matrix_file);
+    fwrite(B[0], sizeof(int), n * n, diag_matrix_file);
     fclose(diag_matrix_file);
 
     free_matrix(A, n);
