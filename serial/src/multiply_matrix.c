@@ -75,8 +75,6 @@ double multiply_matrices(MATRIX_TYPE A[SIZE][SIZE], MATRIX_TYPE B[SIZE][SIZE], M
 
 int main(int argc, char *argv[])
 {
-   int n = SIZE;
-
    const char *matrix_file_name = argv[1];
    const char *time_log_name = argv[2];
    const char *result_log_name = argv[3];
@@ -84,21 +82,22 @@ int main(int argc, char *argv[])
    double read_time = 0.0, write_time = 0.0, avg_mult_time = 0.0;
 
    FILE *matrix_file = fopen(matrix_file_name, "r");
-   read_time = read_matrix(matrix_file, A, n, 0) + read_matrix(matrix_file, B, n, n);
+   read_time = read_matrix(matrix_file, A, SIZE, 0) + read_matrix(matrix_file, B, SIZE, SIZE);
    fclose(matrix_file);
 
    for (int i = 0; i <= NRUNS; i++)
    {
       if (i > 0)
-         MULT_TIMES[i - 1] = multiply_matrices(A, B, C, n);
+         MULT_TIMES[i - 1] = multiply_matrices(A, B, C, SIZE);
       else
-         multiply_matrices(A, B, C, n); // Warm up
+         multiply_matrices(A, B, C, SIZE); // Warm up
    }
 
    FILE *result_log = fopen(result_log_name, "a");
-   write_time = print_matrix(result_log, C, n);
+   write_time = print_matrix(result_log, C, SIZE);
    fclose(result_log);
 
+   // Calculate average times
    for (int i = 0; i < NRUNS; i++)
       avg_mult_time += MULT_TIMES[i];
 

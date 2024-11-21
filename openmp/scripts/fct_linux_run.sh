@@ -14,7 +14,7 @@ SESSION_DESCRIPTION="OpenMP Parallelization"
 # Matrix size - 2 to power of P
 MIN_P=1
 MAX_P=10
-
+NRUNS=30 # Number of runs for each matrix size
 THREADS=4
 
 # ********Directories********* #
@@ -75,7 +75,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        gcc -fopenmp -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
+        gcc -fopenmp -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DTHREADS=$THREADS -DNRUNS=$NRUNS
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             exit 1
