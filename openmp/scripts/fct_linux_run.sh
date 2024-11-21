@@ -14,7 +14,7 @@ SESSION_DESCRIPTION="OpenMP Parallelization"
 MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-10}
-NRUNS=30
+NRUNS=${4:-30}
 THREADS=4
 
 # ********Directories********* #

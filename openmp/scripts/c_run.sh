@@ -25,7 +25,7 @@ TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU)
 MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-10}
-NRUNS=30
+NRUNS=${4:-30}
 THREADS= $((SLURM_CPUS_PER_TASK * SLURM_NTASKS_PER_NODE * SLURM_JOB_NUM_NODES))
 
 # ***************************
@@ -36,7 +36,7 @@ RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
-MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
+MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn.c"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
