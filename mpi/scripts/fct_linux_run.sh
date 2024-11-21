@@ -7,18 +7,17 @@
 cd "$(dirname "$0")"
 
 # *******Variables*********** #
-
 ID=$(date +%y-%m-%d-%H%M)
 MACHINE="fct-deei-linux and fct-deei-aval"
 SESSION_DESCRIPTION="MPI Parallelization"
 
-# Matrix size - 2 to power of P
-MIN_P=1
-MAX_P=10
+MATRIX_TYPE=${1:-int}
+MIN_P=${2:-1}
+MAX_P=${3:-10}
 
 # ********Directories********* #
 BIN_DIR="../bin"
-DATA_DIR="../../shared_data"
+DATA_DIR="../../data"
 LOGS_DIR="../logs/fct-deei-linux/$ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
@@ -26,12 +25,11 @@ AVAL_REMOTE="a90113@fct-deei-aval"
 AVAL_WD="$(pwd)"
 AVAL_BIN_DIR="$(dirname "$AVAL_WD")/bin"
 
-GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
+GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
-RAND_DATA="random_matrix_$MAX_P.txt"
-DIAG_DATA="diag_matrix_$MAX_P.txt"
+RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 ssh $AVAL_REMOTE "mkdir -p $AVAL_WD"
@@ -40,7 +38,7 @@ ssh $AVAL_REMOTE "mkdir -p $AVAL_BIN_DIR"
 # *****Generate Matrices******
 if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
     echo "=== Compiling $GENERATE_MATRIX_SOURCE ==="
-    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P))
+    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1
@@ -81,7 +79,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
+        mpicc -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             exit 1
@@ -128,7 +126,7 @@ PRE_MEM_AVAILABLE=$(awk '/MemAvailable/ {print $2}' /proc/meminfo)
 PRE_CPU_STAT=$(cat /proc/stat)
 
 # **********Execute*********** #
-echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
+echo "Running $SESSION_DESCRIPTION with $MATRIX_TYPE values on $MACHINE" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 

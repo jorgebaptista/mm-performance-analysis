@@ -12,17 +12,16 @@ MACHINE=$(hostname)
 SESSION_DESCRIPTION="serial multiplication"
 
 MATRIX_TYPE=${1:-int}
-# Matrix size - 2 to power of P
 MIN_P=${2:-1}
 MAX_P=${3:-10}
 
 # ********Directories*********
 BIN_DIR="../bin"
-DATA_DIR="../../shared_data"
+DATA_DIR="../../data"
 LOGS_DIR="../logs/fct-deei-linux/$ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
-GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
+GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"

@@ -22,28 +22,28 @@ MACHINE=$(hostname)
 SESSION_DESCRIPTION="Hybrid (MPI + OpenMP) Parallelization"
 TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
 
-# Matrix size - 2 to power of P
-MIN_P=9
-MAX_P=15
+MATRIX_TYPE=${1:-int}
+MIN_P=${2:-1}
+MAX_P=${3:-10}
 
 # ********Directories********* #
 BIN_DIR="../bin"
-DATA_DIR="../../shared_data"
+DATA_DIR="../../data"
 LOGS_DIR="../logs/cirrus/$SLURM_JOB_ID"
 RESULTS_DIR="$LOGS_DIR/results"
 
-GENERATE_MATRIX_SOURCE="../src/generate_matrix.c"
+GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
 MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
 LOG_TIMES="$LOGS_DIR/times.log"
-RAND_DATA="random_matrix_$MAX_P.txt"
+RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 
 # *****Generate Matrices******
 if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
     echo "=== Compiling $GENERATE_MATRIX_SOURCE ==="
-    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P))
+    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1
@@ -84,7 +84,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size
+        mpicc -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
@@ -116,7 +116,7 @@ run_matrix_multiplication() {
 # *******Start Session******** #
 start_time=$(date +%s)
 echo "Session started at: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_TIMES"
-echo "Running $SESSION_DESCRIPTION on $MACHINE" | tee -a "$LOG_TIMES"
+echo "Running $SESSION_DESCRIPTION with $MATRIX_TYPE values on $MACHINE" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 
@@ -133,7 +133,7 @@ echo "###############################################" >>"$LOG_TIMES"
 
 # *********Log Session******** #
 echo "Details for Job ID $SLURM_JOB_ID" >>"$LOG_TIMES"
-echo "Running $SESSION_DESCRIPTION on $MACHINE" >>"$LOG_TIMES"
+echo "Running $SESSION_DESCRIPTION with $MATRIX_TYPE values on $MACHINE" >>"$LOG_TIMES"
 echo "Allocated Nodes: $SLURM_JOB_NUM_NODES" >>"$LOG_TIMES"
 echo "Allocated Workers (per node): $SLURM_NTASKS_PER_NODE" >>"$LOG_TIMES"
 echo "Allocated CPUs (per task): $SLURM_CPUS_PER_TASK" >>"$LOG_TIMES"
