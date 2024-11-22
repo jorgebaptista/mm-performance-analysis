@@ -26,11 +26,11 @@ double total_time(struct timeval start, struct timeval end)
    return (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1e6;
 }
 
-double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, int start_element)
+double read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, size_t start_element)
 {
    gettimeofday(&start, NULL);
 
-   long offset = start_element * sizeof(MATRIX_TYPE);
+   size_t offset = start_element * sizeof(MATRIX_TYPE);
    fseek(file, offset, SEEK_SET);
    fread(arr[0], sizeof(MATRIX_TYPE), n * n, file);
 

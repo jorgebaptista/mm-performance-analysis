@@ -42,7 +42,7 @@ MATRIX_TYPE *allocate_matrix(int n)
    return matrix;
 }
 
-double read_matrix(FILE *file, MATRIX_TYPE *arr, int n, int start_element)
+double read_matrix(FILE *file, MATRIX_TYPE *arr, int n, size_t start_element)
 {
    gettimeofday(&start, NULL);
 
