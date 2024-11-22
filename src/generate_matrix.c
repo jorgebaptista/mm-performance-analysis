@@ -85,26 +85,50 @@ int main(int argc, char const *argv[])
     srand(time(0));
     int n = SIZE;
 
-    const char *rand_matrix_file_name = argv[1];
-    const char *diag_matrix_file_name = argv[2];
+    if (argc < 2)
+    {
+        fprintf(stderr, "Usage: %s <rand_matrix_file_name> [diag_matrix_file_name]\n", argv[0]);
+        return 1;
+    }
 
-    FILE *random_matrix_file = fopen(rand_matrix_file_name, "wb");
+    const char *rand_matrix_file_name = argv[1];
+    const char *diag_matrix_file_name = (argc >= 3) ? argv[2] : NULL;
+
     MATRIX_TYPE **A = create_matrix(n);
     MATRIX_TYPE **B = create_matrix(n);
+
+    FILE *random_matrix_file = fopen(rand_matrix_file_name, "wb");
+    if (!random_matrix_file)
+    {
+        fprintf(stderr, "Error: Could not open file %s for writing.\n", rand_matrix_file_name);
+        free_matrix(A, n);
+        free_matrix(B, n);
+        return 1;
+    }
     init_matrix(A, n);
     init_matrix(B, n);
     fwrite(A[0], sizeof(MATRIX_TYPE), n * n, random_matrix_file);
     fwrite(B[0], sizeof(MATRIX_TYPE), n * n, random_matrix_file);
     fclose(random_matrix_file);
 
-    FILE *diag_matrix_file = fopen(diag_matrix_file_name, "wb");
-    A = create_matrix(n);
-    B = create_matrix(n);
-    init_diag_matrix(A, n);
-    init_diag_matrix(B, n);
-    fwrite(A[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
-    fwrite(B[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
-    fclose(diag_matrix_file);
+    if (diag_matrix_file_name != NULL)
+    {
+        FILE *diag_matrix_file = fopen(diag_matrix_file_name, "wb");
+        if (diag_matrix_file != NULL)
+        {
+            A = create_matrix(n);
+            B = create_matrix(n);
+            init_diag_matrix(A, n);
+            init_diag_matrix(B, n);
+            fwrite(A[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
+            fwrite(B[0], sizeof(MATRIX_TYPE), n * n, diag_matrix_file);
+            fclose(diag_matrix_file);
+        }
+        else
+        {
+            fprintf(stderr, "Error: Could not open file %s for writing.\n", diag_matrix_file_name);
+        }
+    }
 
     free_matrix(A, n);
     free_matrix(B, n);
