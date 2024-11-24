@@ -1,0 +1,392 @@
+Session started at: 2024-11-24 19:39:44
+Running MPI Parallelization with int values on fct-deei-linux and fct-deei-aval
+Available CPUs: 4
+===============================================
+Using random_int_matrix_10.bin input file:
+------------2x2-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00000860 seconds
+Write time: 0.00000940 seconds
+Multiplication time (avg): 0.00040759 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00000006 seconds
+Worker 2 time (avg): 0.00000004 seconds
+Worker 3 time (avg): 0.00000004 seconds
+Worker 4 time (avg): 0.00000009 seconds
+Worker 5 time (avg): 0.00000011 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_2x2_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/2x2_results.log"
+	User time (seconds): 1.58
+	System time (seconds): 1.15
+	Percent of CPU this job got: 62%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24540
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2154
+	Minor (reclaiming a frame) page faults: 8357
+	Voluntary context switches: 59699
+	Involuntary context switches: 349
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16488
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4x4-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00000430 seconds
+Write time: 0.00006130 seconds
+Multiplication time (avg): 0.00067452 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00000005 seconds
+Worker 2 time (avg): 0.00000005 seconds
+Worker 3 time (avg): 0.00000007 seconds
+Worker 4 time (avg): 0.00000007 seconds
+Worker 5 time (avg): 0.00000009 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_4x4_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/4x4_results.log"
+	User time (seconds): 1.72
+	System time (seconds): 1.20
+	Percent of CPU this job got: 66%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24500
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2152
+	Minor (reclaiming a frame) page faults: 8322
+	Voluntary context switches: 59359
+	Involuntary context switches: 284
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16464
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8x8-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00000870 seconds
+Write time: 0.00005870 seconds
+Multiplication time (avg): 0.00032970 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00000010 seconds
+Worker 2 time (avg): 0.00000010 seconds
+Worker 3 time (avg): 0.00000010 seconds
+Worker 4 time (avg): 0.00000011 seconds
+Worker 5 time (avg): 0.00000020 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_8x8_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/8x8_results.log"
+	User time (seconds): 1.93
+	System time (seconds): 1.15
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2152
+	Minor (reclaiming a frame) page faults: 8346
+	Voluntary context switches: 59645
+	Involuntary context switches: 369
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16464
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16x16-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00000360 seconds
+Write time: 0.00014520 seconds
+Multiplication time (avg): 0.00028285 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00000076 seconds
+Worker 2 time (avg): 0.00000038 seconds
+Worker 3 time (avg): 0.00000062 seconds
+Worker 4 time (avg): 0.00000050 seconds
+Worker 5 time (avg): 0.00000049 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_16x16_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/16x16_results.log"
+	User time (seconds): 1.75
+	System time (seconds): 1.25
+	Percent of CPU this job got: 67%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.44
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24472
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 8347
+	Voluntary context switches: 60736
+	Involuntary context switches: 3747
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16464
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32x32-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00001560 seconds
+Write time: 0.00013890 seconds
+Multiplication time (avg): 0.00036763 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00000390 seconds
+Worker 2 time (avg): 0.00000484 seconds
+Worker 3 time (avg): 0.00000422 seconds
+Worker 4 time (avg): 0.00000249 seconds
+Worker 5 time (avg): 0.00000249 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_32x32_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/32x32_results.log"
+	User time (seconds): 1.58
+	System time (seconds): 1.24
+	Percent of CPU this job got: 64%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24400
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 8353
+	Voluntary context switches: 59374
+	Involuntary context switches: 371
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16480
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------64x64-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00003270 seconds
+Write time: 0.00044801 seconds
+Multiplication time (avg): 0.00041939 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00001846 seconds
+Worker 2 time (avg): 0.00001861 seconds
+Worker 3 time (avg): 0.00001868 seconds
+Worker 4 time (avg): 0.00001939 seconds
+Worker 5 time (avg): 0.00001756 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_64x64_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/64x64_results.log"
+	User time (seconds): 1.66
+	System time (seconds): 1.27
+	Percent of CPU this job got: 67%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24560
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2148
+	Minor (reclaiming a frame) page faults: 8392
+	Voluntary context switches: 60004
+	Involuntary context switches: 205
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16536
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------128x128-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00008210 seconds
+Write time: 0.00168604 seconds
+Multiplication time (avg): 0.00054349 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00015766 seconds
+Worker 2 time (avg): 0.00015250 seconds
+Worker 3 time (avg): 0.00015279 seconds
+Worker 4 time (avg): 0.00015691 seconds
+Worker 5 time (avg): 0.00015499 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_128x128_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/128x128_results.log"
+	User time (seconds): 1.67
+	System time (seconds): 1.24
+	Percent of CPU this job got: 66%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 8451
+	Voluntary context switches: 61137
+	Involuntary context switches: 2853
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16760
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------256x256-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00037451 seconds
+Write time: 0.00624766 seconds
+Multiplication time (avg): 0.00204495 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.00135699 seconds
+Worker 2 time (avg): 0.00128035 seconds
+Worker 3 time (avg): 0.00124777 seconds
+Worker 4 time (avg): 0.00126897 seconds
+Worker 5 time (avg): 0.00126956 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_256x256_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/256x256_results.log"
+	User time (seconds): 1.93
+	System time (seconds): 1.27
+	Percent of CPU this job got: 72%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 8857
+	Voluntary context switches: 59701
+	Involuntary context switches: 277
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 17616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00089202 seconds
+Write time: 0.02507094 seconds
+Multiplication time (avg): 0.02226159 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.01759611 seconds
+Worker 2 time (avg): 0.01842592 seconds
+Worker 3 time (avg): 0.01904570 seconds
+Worker 4 time (avg): 0.01212866 seconds
+Worker 5 time (avg): 0.01415718 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_512x512_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/512x512_results.log"
+	User time (seconds): 4.13
+	System time (seconds): 1.55
+	Percent of CPU this job got: 112%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26524
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 10180
+	Voluntary context switches: 60241
+	Involuntary context switches: 373
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 21584
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Workers: 6 across aval(2) and linux(4)
+Read time: 0.00243276 seconds
+Write time: 0.10093327 seconds
+Multiplication time (avg): 0.36082778 seconds
+Master time (avg): 0.00000000 seconds
+Worker 1 time (avg): 0.33298600 seconds
+Worker 2 time (avg): 0.33155318 seconds
+Worker 3 time (avg): 0.18633662 seconds
+Worker 4 time (avg): 0.18976911 seconds
+Worker 5 time (avg): 0.19904450 seconds
+	Command being timed: "mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd /home/a90113/mm-performance-analysis/mpi/scripts ./../bin/multiply_matrix_1024x1024_24-11-24-1939 ../../data/random_int_matrix_10.bin ../logs/fct-deei-linux/24-11-24-1939/times.log ../logs/fct-deei-linux/24-11-24-1939/results/1024x1024_results.log"
+	User time (seconds): 40.53
+	System time (seconds): 5.65
+	Percent of CPU this job got: 301%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24460
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2144
+	Minor (reclaiming a frame) page faults: 9485
+	Voluntary context switches: 61756
+	Involuntary context switches: 2247
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 36944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 1m 3s
+Session Completed Successfully at: 2024-11-24 19:40:47
+###############################################
+=============== Users on Machine ==============
+ 19:40:47 up 6 days,  1:18,  0 users,  load average: 1.10, 0.45, 0.26
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+========= Pre-Execution Memory Usage ==========
+Pre-Execution Memory:
+  MemTotal: 8066360 kB
+  MemFree: 524564 kB
+  MemAvailable: 6398540 kB
+========= Post-Execution Memory Usage =========
+Memory Usage at 2024-11-24 19:40:47:
+MemTotal:: 8066360 kB
+MemFree:: 541304 kB
+MemAvailable:: 6430780 kB
+============== Pre-Execution CPU ==============
+USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE
+cpu  6364340 885 185141 202490187 34334 0 7730 0 0 0
+cpu0 1366289 100 48151 50852216 4998 0 3354 0 0 0
+cpu1 1374460 166 49151 50836793 14318 0 2324 0 0 0
+cpu2 1662777 290 44086 50530215 7814 0 1296 0 0 0
+cpu3 1960814 328 43751 50270961 7203 0 755 0 0 0
+intr 11349647 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 97329200
+btime 1731954159
+processes 158968
+procs_running 1
+procs_blocked 0
+softirq 40627426 0 12521626 2 3675288 0 0 1093771 14041432 530 9294777
+============= Post-Execution CPU ==============
+USER NICE SYSTEM IDLE IOWAIT IRQ SOFTIRQ STEAL GUEST GUEST_NICE
+cpu  6370581 885 187012 202506489 34338 0 7751 0 0 0
+cpu0 1367946 100 48518 50856216 5001 0 3359 0 0 0
+cpu1 1376272 166 49566 50840704 14319 0 2328 0 0 0
+cpu2 1664096 290 44963 50534147 7814 0 1302 0 0 0
+cpu3 1962265 328 43964 50275421 7203 0 760 0 0 0
+intr 11375441 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 98438193
+btime 1731954159
+processes 159693
+procs_running 1
+procs_blocked 0
+softirq 40666812 0 12527192 3 3685587 0 0 1094070 14052319 530 9307111
+###############################################
+
