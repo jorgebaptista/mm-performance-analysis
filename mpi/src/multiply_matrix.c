@@ -28,8 +28,7 @@ MATRIX_TYPE A[SIZE][SIZE];
 MATRIX_TYPE B[SIZE][SIZE];
 MATRIX_TYPE C[SIZE][SIZE];
 
-double MULT_TIMES[NRUNS];
-double WORKER_TIMES[NRUNS][WORKERS];
+double AVG_WORKER_TIMES[WORKERS];
 
 void read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, size_t start_element, double *time)
 {
@@ -62,7 +61,7 @@ void print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n, double *time)
 
 int main(int argc, char *argv[])
 {
-   int numtasks, taskid, numworkers, source, dest, mtype, averow, extra, offset, rows;
+   int numtasks, taskid, dest, mtype, averow, extra, offset, rows;
    MPI_Status status;
    MPI_Datatype mpi_type;
    if (sizeof(MATRIX_TYPE) == sizeof(int))
@@ -83,23 +82,28 @@ int main(int argc, char *argv[])
       MPI_Abort(MPI_COMM_WORLD, 1);
    }
 
-   double read_time = 0.0, write_time = 0.0, avg_multi_times = 0.0,
-          avg_worker_times[WORKERS] = {0.0};
-
    MPI_Init(&argc, &argv);
    MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
    MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
+
+   if (numtasks != WORKERS)
+   {
+      fprintf(stderr, "Number of workers must be %d\n", numtasks);
+      MPI_Abort(MPI_COMM_WORLD, 1);
+   }
    if (numtasks < 2)
    {
       printf("Need at least two MPI tasks. Quitting...\n");
       MPI_Abort(MPI_COMM_WORLD, 0);
       exit(1);
    }
-   numworkers = numtasks - 1;
 
    /**************************** Master Task ************************************/
    if (taskid == MASTER)
    {
+      int numworkers = numtasks - 1;
+      double read_time = 0.0, write_time = 0.0, avg_multi_times = 0.0;
+
       const char *matrix_file_name = argv[1];
       const char *time_log_name = argv[2];
       const char *result_log_name = argv[3];
@@ -115,10 +119,9 @@ int main(int argc, char *argv[])
       offset = 0;
       mtype = FROM_MASTER;
 
-      for (dest = 1; dest <= numworkers; dest++)
+      for (int dest = 1; dest <= numworkers; dest++)
       {
          rows = (dest <= extra) ? averow + 1 : averow;
-         printf("Sending %d rows to task %d offset=%d\n", rows, dest, offset);
          MPI_Send(&offset, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
          MPI_Send(&rows, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
          MPI_Send(&A[offset][0], rows * SIZE, mpi_type, dest, mtype, MPI_COMM_WORLD);
@@ -133,39 +136,39 @@ int main(int argc, char *argv[])
          // TODO have master do stuff too ??
          // TODO see difference of times if masster helps or not
 
-         for (dest = 1; dest <= numworkers; dest++)
+         for (int dest = 1; dest <= numworkers; dest++)
          {
             MPI_Send(&i, 1, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD); // Send current nrun
          }
 
          // receive results from workers. source = worker
          mtype = FROM_WORKER;
-         for (source = 1; source <= numworkers; source++)
+         for (int source = 1; source <= numworkers; source++)
          {
             MPI_Recv(&offset, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
             MPI_Recv(&rows, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
             MPI_Recv(&C[offset][0], rows * SIZE, mpi_type, source, mtype, MPI_COMM_WORLD, &status);
          }
 
-         MULT_TIMES[i] = MPI_Wtime() - start_time;
-         avg_multi_times += MULT_TIMES[i];
+         avg_multi_times += MPI_Wtime() - start_time;
       }
 
-      for (dest = 1; dest <= numworkers; dest++)
+      for (int dest = 1; dest <= numworkers; dest++)
          MPI_Send(NULL, 0, MPI_INT, dest, STOP_WORKERS, MPI_COMM_WORLD); // stop workers
 
       FILE *result_log = fopen(result_log_name, "a");
       print_matrix(result_log, C, SIZE, &write_time);
       fclose(result_log);
 
-      avg_multi_times /= NRUNS;
       for (int i = 0; i < WORKERS; i++)
-         avg_worker_times[i] /= NRUNS;
+         AVG_WORKER_TIMES[i] /= NRUNS;
+
+      avg_multi_times /= NRUNS;
 
       FILE *time_log = fopen(time_log_name, "a");
       fprintf(time_log, "Read time: %.8f seconds\nWrite time: %.8f seconds\nMultiplication time (avg): %.8f seconds\n", read_time, write_time, avg_multi_times);
       for (int i = 0; i < WORKERS; i++)
-         fprintf(time_log, "Thread %d time (avg): %.8f seconds\n", i, avg_worker_times[i]);
+         fprintf(time_log, "Worker %d time (avg): %.8f seconds\n", i, AVG_WORKER_TIMES[i]);
       fclose(time_log);
    }
 
@@ -205,11 +208,7 @@ int main(int argc, char *argv[])
             }
 
             if (nrun > 0)
-            {
-               double worker_time = MPI_Wtime() - start_time;
-               WORKER_TIMES[nrun - 1][taskid - 1] = worker_time;
-               avg_worker_times[taskid - 1] += worker_time;
-            }
+               AVG_WORKER_TIMES[taskid - 1] += MPI_Wtime() - start_time;
 
             // send results to master
             MPI_Send(&offset, 1, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);

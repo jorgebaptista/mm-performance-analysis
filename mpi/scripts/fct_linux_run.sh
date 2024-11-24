@@ -15,7 +15,9 @@ MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-10}
 NRUNS=${4:-30}
-WORKERS=4
+AVAL_WORKERS=0
+LINUX_WORKERS=4
+WORKERS=$((AVAL_WORKERS + LINUX_WORKERS))
 
 # ********Directories********* #
 BIN_DIR="../bin"
@@ -88,19 +90,19 @@ run_matrix_multiplication() {
         fi
         echo "Compilation succeeded."
 
-        echo "Copying binary to fct-deei-aval"
-        scp "$MULTIPLY_MATRIX_EXE" "$AVAL_REMOTE:$AVAL_BIN_DIR"
-        if [ $? -ne 0 ]; then
-            echo "File transfer to fct-deei-aval failed."
-            exit 1
-        fi
-        echo "File transfer succeeded."
+        # echo "Copying binary to fct-deei-aval"
+        # scp "$MULTIPLY_MATRIX_EXE" "$AVAL_REMOTE:$AVAL_BIN_DIR"
+        # if [ $? -ne 0 ]; then
+        #     echo "File transfer to fct-deei-aval failed."
+        #     exit 1
+        # fi
+        # echo "File transfer succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
         chmod u+x "$MULTIPLY_MATRIX_EXE"
-        echo "Workers: 6 across aval(2) and linux(4)" | tee -a "$LOG_TIMES"
-        # { time mpiexec --host fct-deei-linux:4 -np 4 ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
-        { /usr/bin/time -v mpiexec --host fct-deei-aval:2,fct-deei-linux:4 -np 6 -wd "$(pwd)" ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        echo "Workers: $WORKERS across aval($AVAL_WORKERS) and linux($LINUX_WORKERS)" | tee -a "$LOG_TIMES"
+        { /usr/bin/time -v mpiexec --host fct-deei-linux:$LINUX_WORKERS -np $WORKERS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
+        # { /usr/bin/time -v mpiexec --host fct-deei-aval:$AVAL_WORKERS,fct-deei-linux:$LINUX_WORKERS -np $WORKERS -wd "$(pwd)" ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"; } 2>>"$LOG_TIMES"
         if [ $? -ne 0 ]; then
             echo "Execution failed."
             rm -f "$MULTIPLY_MATRIX_EXE"
