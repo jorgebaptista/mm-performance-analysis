@@ -43,7 +43,7 @@ mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 # *****Generate Matrices******
 if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
     echo "=== Compiling $GENERATE_MATRIX_SOURCE ==="
-    gcc -Wall -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
+    gcc -Wall -O3 -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1
@@ -84,7 +84,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
+        mpicc -O3 -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
