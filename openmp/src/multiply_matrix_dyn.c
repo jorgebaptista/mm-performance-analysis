@@ -27,7 +27,6 @@ MATRIX_TYPE *A;
 MATRIX_TYPE *B;
 MATRIX_TYPE *C;
 
-double MULT_TIMES[NRUNS];
 double THREAD_TIMES[NRUNS][THREADS];
 struct timeval start, end;
 
@@ -124,7 +123,7 @@ int main(int argc, char *argv[])
    for (int i = 0; i <= NRUNS; i++)
    {
       if (i > 0)
-         MULT_TIMES[i - 1] = multiply_matrices(A, B, C, SIZE, i - 1);
+         avg_multi_times += multiply_matrices(A, B, C, SIZE, i - 1);
       else
          multiply_matrices(A, B, C, SIZE, 0); // Warm up
    }
@@ -135,11 +134,8 @@ int main(int argc, char *argv[])
 
    // Calculate average times
    for (int i = 0; i < NRUNS; i++)
-   {
-      avg_multi_times += MULT_TIMES[i];
       for (int j = 0; j < THREADS; j++)
          avg_thread_times[j] += THREAD_TIMES[i][j];
-   }
 
    avg_multi_times /= NRUNS;
    for (int i = 0; i < THREADS; i++)
