@@ -5,6 +5,18 @@
 #ifndef SIZE
 #define SIZE 1024
 #endif
+#ifndef MAX_SIZE
+#define MAX_SIZE 1024
+#endif
+#ifndef NRUNS
+#define NRUNS 30
+#endif
+#ifndef MATRIX_TYPE
+#define MATRIX_TYPE int
+#endif
+#ifndef WORKERS
+#define WORKERS 4
+#endif
 
 #define MASTER 0
 #define FROM_MASTER 1
@@ -12,63 +24,67 @@
 #define START_MULTIPLY 3
 #define STOP_WORKERS 4
 
-int A[SIZE][SIZE];
-int B[SIZE][SIZE];
-int C[SIZE][SIZE];
+MATRIX_TYPE A[SIZE][SIZE];
+MATRIX_TYPE B[SIZE][SIZE];
+MATRIX_TYPE C[SIZE][SIZE];
 
-void read_matrix(FILE *file, int arr[SIZE][SIZE], int n, int offset)
+double MULT_TIMES[NRUNS];
+double WORKER_TIMES[NRUNS][WORKERS];
+
+void read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, size_t start_element, double *time)
 {
-   for (int i = 0; i < n; i++)
-      for (int j = offset; j < n + offset; j++)
-         fscanf(file, "%d", &arr[i][j]);
+   double start_time = MPI_Wtime();
+
+   size_t offset = start_element * sizeof(MATRIX_TYPE);
+   fseek(file, offset, SEEK_SET);
+   fread(arr[0], sizeof(MATRIX_TYPE), n * n, file);
+
+   *time = MPI_Wtime() - start_time;
 }
 
-void print_matrix(FILE *file, int C[SIZE][SIZE], int n)
+void print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n, double *time)
 {
+   double start_time = MPI_Wtime();
+
+   const char *format = (sizeof(MATRIX_TYPE) == sizeof(int)) ? "%d " : "%.2f ";
+
    for (int i = 0; i < n; i++)
    {
       for (int j = 0; j < n; j++)
       {
-         fprintf(file, "%d ", C[i][j]);
+         fprintf(file, format, C[i][j]);
       }
       fprintf(file, "\n");
    }
-}
 
-void multiply_matrices(int A[SIZE][SIZE], int B[SIZE][SIZE], int C[SIZE][SIZE], int rows, int n)
-{
-   for (int i = 0; i < rows; i++)
-   {
-      for (int j = 0; j < n; j++)
-      {
-         int sum = 0;
-         for (int k = 0; k < n; k++)
-         {
-            sum += A[i][k] * B[k][j];
-         }
-         C[i][j] = sum;
-      }
-   }
-}
-
-double calculate_mean(double arr[], int size)
-{
-   double sum = 0.0;
-   for (int i = 0; i < size; i++)
-      sum += arr[i];
-   return (sum / size);
+   *time = MPI_Wtime() - start_time;
 }
 
 int main(int argc, char *argv[])
 {
    int numtasks, taskid, numworkers, source, dest, mtype, averow, extra, offset, rows;
    MPI_Status status;
+   MPI_Datatype mpi_type;
+   if (sizeof(MATRIX_TYPE) == sizeof(int))
+   {
+      mpi_type = MPI_INT;
+   }
+   else if (sizeof(MATRIX_TYPE) == sizeof(double))
+   {
+      mpi_type = MPI_DOUBLE;
+   }
+   else if (sizeof(MATRIX_TYPE) == sizeof(float))
+   {
+      mpi_type = MPI_FLOAT;
+   }
+   else
+   {
+      fprintf(stderr, "Unsupported MATRIX_TYPE\n");
+      MPI_Abort(MPI_COMM_WORLD, 1);
+   }
 
-   int n = SIZE;
-   double results[30] = {0.0};
-   const int result_size = 30;
-   double start_time, end_time;
-   double read_time = 0.0, multiplication_time = 0.0, mean = 0.0, write_time = 0.0;
+   double read_time = 0.0, write_time = 0.0, avg_multi_times = 0.0,
+          avg_worker_times[WORKERS] = {0.0};
 
    MPI_Init(&argc, &argv);
    MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
@@ -84,28 +100,20 @@ int main(int argc, char *argv[])
    /**************************** Master Task ************************************/
    if (taskid == MASTER)
    {
-      // todo error checking?
       const char *matrix_file_name = argv[1];
       const char *time_log_name = argv[2];
       const char *result_log_name = argv[3];
 
-      FILE *matrix_file = fopen(matrix_file_name, "r");
-
-      // read input
-      start_time = MPI_Wtime();
-      read_matrix(matrix_file, A, n, 0);
-      read_matrix(matrix_file, B, n, n);
-      end_time = MPI_Wtime();
-      read_time = end_time - start_time;
+      FILE *matrix_file = fopen(matrix_file_name, "rb");
+      read_matrix(matrix_file, A, SIZE, 0, &read_time);
+      read_matrix(matrix_file, B, SIZE, MAX_SIZE * MAX_SIZE, &read_time);
       fclose(matrix_file);
 
       // send matrix data to workers
-      averow = n / numworkers;
-      extra = n % numworkers;
+      averow = SIZE / numworkers;
+      extra = SIZE % numworkers;
       offset = 0;
       mtype = FROM_MASTER;
-
-      // todo use MPI_Bcast
 
       for (dest = 1; dest <= numworkers; dest++)
       {
@@ -113,22 +121,21 @@ int main(int argc, char *argv[])
          printf("Sending %d rows to task %d offset=%d\n", rows, dest, offset);
          MPI_Send(&offset, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
          MPI_Send(&rows, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
-         MPI_Send(&A[offset][0], rows * n, MPI_INT, dest, mtype, MPI_COMM_WORLD);
-         MPI_Send(&B[0][0], n * n, MPI_INT, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&A[offset][0], rows * SIZE, mpi_type, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&B[0][0], SIZE * SIZE, mpi_type, dest, mtype, MPI_COMM_WORLD);
          offset += rows;
       }
 
-      // test 31 times, ignoring first
-      for (int i = 0; i <= 30; i++)
+      for (int i = 0; i <= NRUNS; i++)
       {
-         //TODO have master do stuff too ??
-         //TODO see difference of times if masster helps or not
-         start_time = MPI_Wtime();
+         double start_time = MPI_Wtime();
 
-         // signal workers to start
+         // TODO have master do stuff too ??
+         // TODO see difference of times if masster helps or not
+
          for (dest = 1; dest <= numworkers; dest++)
          {
-            MPI_Send(NULL, 0, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD);
+            MPI_Send(&i, 1, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD); // Send current nrun
          }
 
          // receive results from workers. source = worker
@@ -137,33 +144,29 @@ int main(int argc, char *argv[])
          {
             MPI_Recv(&offset, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
             MPI_Recv(&rows, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
-            MPI_Recv(&C[offset][0], rows * n, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
+            MPI_Recv(&C[offset][0], rows * SIZE, mpi_type, source, mtype, MPI_COMM_WORLD, &status);
          }
 
-         end_time = MPI_Wtime();
-         multiplication_time = end_time - start_time;
-         if (i > 0)
-            results[i - 1] = multiplication_time;
+         MULT_TIMES[i] = MPI_Wtime() - start_time;
+         avg_multi_times += MULT_TIMES[i];
       }
 
-      mean = calculate_mean(results, result_size);
+      for (dest = 1; dest <= numworkers; dest++)
+         MPI_Send(NULL, 0, MPI_INT, dest, STOP_WORKERS, MPI_COMM_WORLD); // stop workers
 
       FILE *result_log = fopen(result_log_name, "a");
-      start_time = MPI_Wtime();
-      print_matrix(result_log, C, n);
-      end_time = MPI_Wtime();
-      write_time = end_time - start_time;
+      print_matrix(result_log, C, SIZE, &write_time);
       fclose(result_log);
 
-      FILE *time_log = fopen(time_log_name, "a");
-      fprintf(time_log, "Read time: %.8f seconds\nMultiplication time (avg): %.8f seconds\nWrite time: %.8f seconds\n", read_time, mean, write_time);
-      fclose(time_log);
+      avg_multi_times /= NRUNS;
+      for (int i = 0; i < WORKERS; i++)
+         avg_worker_times[i] /= NRUNS;
 
-      // signal workers to stop
-      for (dest = 1; dest <= numworkers; dest++)
-      {
-         MPI_Send(NULL, 0, MPI_INT, dest, STOP_WORKERS, MPI_COMM_WORLD);
-      }
+      FILE *time_log = fopen(time_log_name, "a");
+      fprintf(time_log, "Read time: %.8f seconds\nWrite time: %.8f seconds\nMultiplication time (avg): %.8f seconds\n", read_time, write_time, avg_multi_times);
+      for (int i = 0; i < WORKERS; i++)
+         fprintf(time_log, "Thread %d time (avg): %.8f seconds\n", i, avg_worker_times[i]);
+      fclose(time_log);
    }
 
    /**************************** Worker Tasks ************************************/
@@ -173,24 +176,45 @@ int main(int argc, char *argv[])
       mtype = FROM_MASTER;
       MPI_Recv(&offset, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
       MPI_Recv(&rows, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
-      MPI_Recv(&A[0][0], rows * n, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
-      MPI_Recv(&B[0][0], n * n, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&A[0][0], rows * SIZE, mpi_type, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&B[0][0], SIZE * SIZE, mpi_type, MASTER, mtype, MPI_COMM_WORLD, &status);
 
+      int nrun;
       while (1)
       {
          // get signal from master to either start or stop multiplication
-         MPI_Recv(NULL, 0, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+         MPI_Recv(&nrun, 1, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD, &status); // Get current nrun
 
          if (status.MPI_TAG == STOP_WORKERS)
             break;
          else if (status.MPI_TAG == START_MULTIPLY)
          {
-            multiply_matrices(A, B, C, rows, n);
+            double start_time = MPI_Wtime();
+
+            for (int i = 0; i < rows; i++)
+            {
+               for (int j = 0; j < SIZE; j++)
+               {
+                  MATRIX_TYPE sum = 0;
+                  for (int k = 0; k < SIZE; k++)
+                  {
+                     sum += A[i][k] * B[k][j];
+                  }
+                  C[i][j] = sum;
+               }
+            }
+
+            if (nrun > 0)
+            {
+               double worker_time = MPI_Wtime() - start_time;
+               WORKER_TIMES[nrun - 1][taskid - 1] = worker_time;
+               avg_worker_times[taskid - 1] += worker_time;
+            }
 
             // send results to master
             MPI_Send(&offset, 1, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);
             MPI_Send(&rows, 1, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);
-            MPI_Send(&C[0][0], rows * n, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);
+            MPI_Send(&C[0][0], rows * SIZE, mpi_type, MASTER, FROM_WORKER, MPI_COMM_WORLD);
          }
       }
    }
