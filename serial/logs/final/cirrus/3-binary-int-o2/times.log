@@ -1,0 +1,318 @@
+Session started at: 2024-11-23 19:14:25
+Running serial multiplication with int values on hpc067.a.incd.pt
+===============================================
+Using random_int_matrix_11.bin input file:
+------------2x2-------------
+Read time: 0.00862500 seconds
+Write time: 0.00038700 seconds
+Multiplication time (avg): 0.00000007 seconds
+	Command being timed: "./../bin/multiply_matrix_2x2_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/2x2_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 50%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 72
+	Voluntary context switches: 10
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 32784
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4x4-------------
+Read time: 0.00004500 seconds
+Write time: 0.00042900 seconds
+Multiplication time (avg): 0.00000010 seconds
+	Command being timed: "./../bin/multiply_matrix_4x4_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/4x4_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 50%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 72
+	Voluntary context switches: 8
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8x8-------------
+Read time: 0.00003300 seconds
+Write time: 0.00026300 seconds
+Multiplication time (avg): 0.00000030 seconds
+	Command being timed: "./../bin/multiply_matrix_8x8_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/8x8_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 50%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 72
+	Voluntary context switches: 8
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16x16-------------
+Read time: 0.00003900 seconds
+Write time: 0.00043300 seconds
+Multiplication time (avg): 0.00000200 seconds
+	Command being timed: "./../bin/multiply_matrix_16x16_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/16x16_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 50%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 72
+	Voluntary context switches: 8
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32x32-------------
+Read time: 0.00004100 seconds
+Write time: 0.00057100 seconds
+Multiplication time (avg): 0.00001597 seconds
+	Command being timed: "./../bin/multiply_matrix_32x32_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/32x32_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 33%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 75
+	Voluntary context switches: 8
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------64x64-------------
+Read time: 0.00234100 seconds
+Write time: 0.00070500 seconds
+Multiplication time (avg): 0.00012733 seconds
+	Command being timed: "./../bin/multiply_matrix_64x64_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/64x64_results.log"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 77%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1492
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 84
+	Voluntary context switches: 9
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------128x128-------------
+Read time: 0.00303900 seconds
+Write time: 0.00152000 seconds
+Multiplication time (avg): 0.00273673 seconds
+	Command being timed: "./../bin/multiply_matrix_128x128_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/128x128_results.log"
+	User time (seconds): 0.08
+	System time (seconds): 0.00
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1636
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 120
+	Voluntary context switches: 9
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 96
+	File system outputs: 288
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------256x256-------------
+Read time: 0.00284000 seconds
+Write time: 0.00417200 seconds
+Multiplication time (avg): 0.02117443 seconds
+	Command being timed: "./../bin/multiply_matrix_256x256_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/256x256_results.log"
+	User time (seconds): 0.65
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2212
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 264
+	Voluntary context switches: 9
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 384
+	File system outputs: 1152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Read time: 0.00438800 seconds
+Write time: 0.01460300 seconds
+Multiplication time (avg): 0.23851747 seconds
+	Command being timed: "./../bin/multiply_matrix_512x512_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/512x512_results.log"
+	User time (seconds): 7.40
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4516
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 840
+	Voluntary context switches: 9
+	Involuntary context switches: 18
+	Swaps: 0
+	File system inputs: 1536
+	File system outputs: 5136
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Read time: 0.01345100 seconds
+Write time: 0.05921300 seconds
+Multiplication time (avg): 9.70984760 seconds
+	Command being timed: "./../bin/multiply_matrix_1024x1024_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/1024x1024_results.log"
+	User time (seconds): 297.61
+	System time (seconds): 0.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:58.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 589
+	Voluntary context switches: 12
+	Involuntary context switches: 639
+	Swaps: 0
+	File system inputs: 6200
+	File system outputs: 20496
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------2048x2048-------------
+Read time: 0.03921800 seconds
+Write time: 0.22872500 seconds
+Multiplication time (avg): 76.06863727 seconds
+	Command being timed: "./../bin/multiply_matrix_2048x2048_18945125 ../../data/random_int_matrix_11.bin ../logs/cirrus/18945125/times.log ../logs/cirrus/18945125/results/2048x2048_results.log"
+	User time (seconds): 2358.62
+	System time (seconds): 0.08
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 39:25.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 50596
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 607
+	Voluntary context switches: 18
+	Involuntary context switches: 4886
+	Swaps: 0
+	File system inputs: 32648
+	File system outputs: 81936
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 44m 34s
+Session Completed Successfully at: 2024-11-23 19:58:59
+###############################################
+Details for Job ID 18945125
+Running serial multiplication with int values on hpc067.a.incd.pt
+Allocated Memory (total): 5000 MB
+=============== Active Modules =================
+ - Currently Loaded Modules:
+ -   1) gcc-13.2
+================ Memory Usage ==================
+JobID            MaxRSS  MaxVMSize  MaxDiskRead MaxDiskWrite 
+------------ ---------- ---------- ------------ ------------ 
+18945125.ba+     49824K     91456K     64797068     56223593 
+=============== Nodes Assigned =================
+hpc067
+

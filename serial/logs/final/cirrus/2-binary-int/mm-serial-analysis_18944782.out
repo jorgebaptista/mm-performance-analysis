@@ -1,0 +1,185 @@
+* ----------------------------------------------------------------
+* Running PROLOG for mm-serial-analysis on Sat Nov 23 18:06:59 WET 2024
+*    JOB_NAME                : mm-serial-analysis
+*    JOB_ID                  : 18944782
+*    JOB_PARTITION           : hpc
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : normal
+*    NODE_LIST               : hpc067
+*    SLURM_NNODES            : 1
+*    SLURM_NPROCS            : 1
+*    SLURM_NTASKS            : 1
+*    SLURM_CPUS_ON_NODE      : 1
+*    SLURM_TASKS_PER_NODE    : 1
+*    SLURM_JOB_CPUS_PER_NODE : 1
+*    SLURM_MEM_PER_CPU       : 5000
+*    SUBMIT_HOST             : cirrus09.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/mm-performance-analysis/serial/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/mm-performance-analysis/serial/scripts/c_run.sh
+* ----------------------------------------------------------------
+
+=== Environment ===
+Using existing input data...
+Session started at: 2024-11-23 18:06:59
+Running serial multiplication with int values on hpc067.a.incd.pt
+===============================================
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/1024x1024_results.log
+------------2048x2048-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2048x2048_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/2048x2048_results.log
+===============================================
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/1024x1024_results.log
+------------2048x2048-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2048x2048_18944782
+Execution succeeded.
+Times saved to ../logs/cirrus/18944782/times.log
+Results saved to ../logs/cirrus/18944782/results/2048x2048_results.log
+
+=== Finalizing ===
+Session Time: 35m 47s
+Session Completed Successfully at: 2024-11-23 18:42:46
