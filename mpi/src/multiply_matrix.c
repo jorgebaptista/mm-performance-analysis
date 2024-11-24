@@ -28,8 +28,6 @@ MATRIX_TYPE A[SIZE][SIZE];
 MATRIX_TYPE B[SIZE][SIZE];
 MATRIX_TYPE C[SIZE][SIZE];
 
-double AVG_WORKER_TIMES[WORKERS];
-
 void read_matrix(FILE *file, MATRIX_TYPE arr[SIZE][SIZE], int n, size_t start_element, double *time)
 {
    double start_time = MPI_Wtime();
@@ -61,7 +59,7 @@ void print_matrix(FILE *file, MATRIX_TYPE C[SIZE][SIZE], int n, double *time)
 
 int main(int argc, char *argv[])
 {
-   int numtasks, taskid, dest, mtype, averow, extra, offset, rows;
+   int numtasks, taskid, offset, rows;
    MPI_Status status;
    MPI_Datatype mpi_type;
    if (sizeof(MATRIX_TYPE) == sizeof(int))
@@ -102,7 +100,8 @@ int main(int argc, char *argv[])
    if (taskid == MASTER)
    {
       int numworkers = numtasks - 1;
-      double read_time = 0.0, write_time = 0.0, avg_multi_times = 0.0;
+      double read_time = 0.0, write_time = 0.0, avg_multi_times = 0.0,
+             avg_worker_times[WORKERS] = {0.0}, worker_times[NRUNS][WORKERS];
 
       const char *matrix_file_name = argv[1];
       const char *time_log_name = argv[2];
@@ -114,18 +113,17 @@ int main(int argc, char *argv[])
       fclose(matrix_file);
 
       // send matrix data to workers
-      averow = SIZE / numworkers;
-      extra = SIZE % numworkers;
+      int averow = SIZE / numworkers;
+      int extra = SIZE % numworkers;
       offset = 0;
-      mtype = FROM_MASTER;
 
       for (int dest = 1; dest <= numworkers; dest++)
       {
          rows = (dest <= extra) ? averow + 1 : averow;
-         MPI_Send(&offset, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
-         MPI_Send(&rows, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
-         MPI_Send(&A[offset][0], rows * SIZE, mpi_type, dest, mtype, MPI_COMM_WORLD);
-         MPI_Send(&B[0][0], SIZE * SIZE, mpi_type, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&offset, 1, MPI_INT, dest, FROM_MASTER, MPI_COMM_WORLD);
+         MPI_Send(&rows, 1, MPI_INT, dest, FROM_MASTER, MPI_COMM_WORLD);
+         MPI_Send(&A[offset][0], rows * SIZE, mpi_type, dest, FROM_MASTER, MPI_COMM_WORLD);
+         MPI_Send(&B[0][0], SIZE * SIZE, mpi_type, dest, FROM_MASTER, MPI_COMM_WORLD);
          offset += rows;
       }
 
@@ -137,17 +135,15 @@ int main(int argc, char *argv[])
          // TODO see difference of times if masster helps or not
 
          for (int dest = 1; dest <= numworkers; dest++)
-         {
             MPI_Send(&i, 1, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD); // Send current nrun
-         }
 
          // receive results from workers. source = worker
-         mtype = FROM_WORKER;
          for (int source = 1; source <= numworkers; source++)
          {
-            MPI_Recv(&offset, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
-            MPI_Recv(&rows, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
-            MPI_Recv(&C[offset][0], rows * SIZE, mpi_type, source, mtype, MPI_COMM_WORLD, &status);
+            MPI_Recv(&offset, 1, MPI_INT, source, FROM_WORKER, MPI_COMM_WORLD, &status);
+            MPI_Recv(&rows, 1, MPI_INT, source, FROM_WORKER, MPI_COMM_WORLD, &status);
+            MPI_Recv(&C[offset][0], rows * SIZE, mpi_type, source, FROM_WORKER, MPI_COMM_WORLD, &status);
+            MPI_Recv(&worker_times[i][source], 1, MPI_DOUBLE, source, FROM_WORKER, MPI_COMM_WORLD, &status);
          }
 
          avg_multi_times += MPI_Wtime() - start_time;
@@ -160,15 +156,24 @@ int main(int argc, char *argv[])
       print_matrix(result_log, C, SIZE, &write_time);
       fclose(result_log);
 
+      for (int i = 0; i < NRUNS; i++)
+         for (int j = 1; j < WORKERS; j++)
+            avg_worker_times[j] += worker_times[i][j];
+
       for (int i = 0; i < WORKERS; i++)
-         AVG_WORKER_TIMES[i] /= NRUNS;
+         avg_worker_times[i] /= NRUNS;
 
       avg_multi_times /= NRUNS;
 
       FILE *time_log = fopen(time_log_name, "a");
       fprintf(time_log, "Read time: %.8f seconds\nWrite time: %.8f seconds\nMultiplication time (avg): %.8f seconds\n", read_time, write_time, avg_multi_times);
       for (int i = 0; i < WORKERS; i++)
-         fprintf(time_log, "Worker %d time (avg): %.8f seconds\n", i, AVG_WORKER_TIMES[i]);
+      {
+         if (i == 0)
+            fprintf(time_log, "Master time (avg): %.8f seconds\n", avg_worker_times[i]);
+         else
+            fprintf(time_log, "Worker %d time (avg): %.8f seconds\n", i, avg_worker_times[i]);
+      }
       fclose(time_log);
    }
 
@@ -176,11 +181,10 @@ int main(int argc, char *argv[])
    if (taskid > MASTER)
    {
       // receive matrix data from master
-      mtype = FROM_MASTER;
-      MPI_Recv(&offset, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
-      MPI_Recv(&rows, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
-      MPI_Recv(&A[0][0], rows * SIZE, mpi_type, MASTER, mtype, MPI_COMM_WORLD, &status);
-      MPI_Recv(&B[0][0], SIZE * SIZE, mpi_type, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&offset, 1, MPI_INT, MASTER, FROM_MASTER, MPI_COMM_WORLD, &status);
+      MPI_Recv(&rows, 1, MPI_INT, MASTER, FROM_MASTER, MPI_COMM_WORLD, &status);
+      MPI_Recv(&A[0][0], rows * SIZE, mpi_type, MASTER, FROM_MASTER, MPI_COMM_WORLD, &status);
+      MPI_Recv(&B[0][0], SIZE * SIZE, mpi_type, MASTER, FROM_MASTER, MPI_COMM_WORLD, &status);
 
       int nrun;
       while (1)
@@ -193,6 +197,7 @@ int main(int argc, char *argv[])
          else if (status.MPI_TAG == START_MULTIPLY)
          {
             double start_time = MPI_Wtime();
+            double worker_time;
 
             for (int i = 0; i < rows; i++)
             {
@@ -208,12 +213,13 @@ int main(int argc, char *argv[])
             }
 
             if (nrun > 0)
-               AVG_WORKER_TIMES[taskid - 1] += MPI_Wtime() - start_time;
+               worker_time = MPI_Wtime() - start_time;
 
             // send results to master
             MPI_Send(&offset, 1, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);
             MPI_Send(&rows, 1, MPI_INT, MASTER, FROM_WORKER, MPI_COMM_WORLD);
             MPI_Send(&C[0][0], rows * SIZE, mpi_type, MASTER, FROM_WORKER, MPI_COMM_WORLD);
+            MPI_Send(&worker_time, 1, MPI_DOUBLE, MASTER, FROM_WORKER, MPI_COMM_WORLD);
          }
       }
    }
