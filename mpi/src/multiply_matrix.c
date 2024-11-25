@@ -163,7 +163,8 @@ int main(int argc, char *argv[])
             }
          }
 
-         worker_times[i][MASTER] += MPI_Wtime() - master_time;
+         if (i > 0)
+            worker_times[i][MASTER] += MPI_Wtime() - master_time;
 
          // receive results from workers. source = worker
          for (int source = 1; source < numtasks; source++)
@@ -174,7 +175,8 @@ int main(int argc, char *argv[])
             MPI_Recv(&worker_times[i][source], 1, MPI_DOUBLE, source, FROM_WORKER, MPI_COMM_WORLD, &status);
          }
 
-         avg_multi_times += MPI_Wtime() - start_time;
+         if (i > 0)
+            avg_multi_times += MPI_Wtime() - start_time;
       }
 
       for (int dest = 1; dest < numtasks; dest++)

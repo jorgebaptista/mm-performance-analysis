@@ -137,7 +137,7 @@ PRE_CPU_STAT=$(cat /proc/stat)
 
 # **********Execute*********** #
 echo "Running $SESSION_DESCRIPTION with $MATRIX_TYPE values on $MACHINE" | tee -a "$LOG_TIMES"
-echo "Available CPUs: $(lscpu | grep "^CPU(s):" | awk '{print $2}')" | tee -a "$LOG_TIMES"
+echo "Total CPUs: $WORKERS" | tee -a "$LOG_TIMES"
 run_matrix_multiplication "$DATA_DIR/$RAND_DATA" "$RAND_DATA"
 end_time=$(date +%s)
 
