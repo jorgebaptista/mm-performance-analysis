@@ -28,6 +28,7 @@ RESULTS_DIR="$LOGS_DIR/results"
 AVAL_REMOTE="a90113@fct-deei-aval"
 AVAL_WD="$(pwd)"
 AVAL_BIN_DIR="$(dirname "$AVAL_WD")/bin"
+AVAL_DATA_DIR="$(dirname "$AVAL_WD")/../data"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
@@ -38,6 +39,7 @@ RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 ssh $AVAL_REMOTE "mkdir -p $AVAL_WD"
 ssh $AVAL_REMOTE "mkdir -p $AVAL_BIN_DIR"
+ssh $AVAL_REMOTE "mkdir -p $AVAL_DATA_DIR"
 
 # *****Generate Matrices******
 if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
@@ -63,6 +65,21 @@ if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
 
 else
     echo "Using existing input data..."
+fi
+
+if [ "$AVAL_WORKERS" -gt 0 ]; then
+    echo "Checking if data already exists on fct-deei-aval"
+    if ssh "$AVAL_REMOTE" "[[ ! -f \"$AVAL_DATA_DIR/$RAND_DATA\" ]]"; then
+        echo "Copying data to fct-deei-aval"
+        scp "$DATA_DIR/$RAND_DATA" "$AVAL_REMOTE:$AVAL_DATA_DIR"
+        if [ $? -ne 0 ]; then
+            echo "File transfer to fct-deei-aval failed."
+            exit 1
+        fi
+        echo "File transfer succeeded."
+    else
+        echo "Data already exists on fct-deei-aval"
+    fi
 fi
 
 # ******Multiply Matrices******
