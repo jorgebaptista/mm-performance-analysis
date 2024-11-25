@@ -15,7 +15,7 @@ MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-10}
 NRUNS=${4:-30}
-AVAL_WORKERS=2
+AVAL_WORKERS=0
 LINUX_WORKERS=4
 WORKERS=$((AVAL_WORKERS + LINUX_WORKERS))
 
@@ -31,7 +31,7 @@ AVAL_BIN_DIR="$(dirname "$AVAL_WD")/bin"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
-MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn.c"
+MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn_io.c"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
@@ -77,8 +77,8 @@ run_matrix_multiplication() {
         size=$((2 ** power))
 
         MULTIPLY_MATRIX_EXE="$BIN_DIR/multiply_matrix_${size}x${size}_$ID"
-        LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
-        echo "Matrix product from $description:" >>"$LOG_RESULTS"
+        LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.bin"
+        # echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
 
         echo "Compiling multiply_matrix.c"
