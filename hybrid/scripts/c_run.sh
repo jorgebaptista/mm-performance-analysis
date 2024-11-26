@@ -5,6 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=24
+#SBATCH --qos=cpuvlabualg 
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-hyb-analysis
