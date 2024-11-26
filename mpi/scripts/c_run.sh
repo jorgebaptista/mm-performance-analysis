@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=24
 #SBATCH --time=02:30:00
-#SBATCH --qos=cpuvlabualg 
+#SBATCH --qos=cpuvlabualg
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=mm-mpi-analysis
@@ -27,6 +27,7 @@ TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU)
 MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-10}
+NRUNS=${4:-30}
 
 # ********Directories********* #
 BIN_DIR="../bin"
@@ -86,7 +87,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -Wall -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
+        mpicc -Wall -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DWORKERS=$WORKERS
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
@@ -96,7 +97,7 @@ run_matrix_multiplication() {
         echo "Running $MULTIPLY_MATRIX_EXE"
         echo "Nodes: $SLURM_JOB_NUM_NODES" | tee -a "$LOG_TIMES"
         echo "Workers (per node): $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
-        echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"
+        echo "Total Workers: $SLURM_NTASKS" | tee -a "$LOG_TIMES"
 
         chmod u+x "$MULTIPLY_MATRIX_EXE"
         /usr/bin/time -v -o "$LOG_TIMES" -a mpiexec -np $SLURM_NTASKS ./"$MULTIPLY_MATRIX_EXE" "$input_file" "$LOG_TIMES" "$LOG_RESULTS"

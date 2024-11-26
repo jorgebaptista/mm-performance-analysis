@@ -95,7 +95,7 @@ run_matrix_multiplication() {
 
         MULTIPLY_MATRIX_EXE="$BIN_DIR/multiply_matrix_${size}x${size}_$ID"
         LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.bin"
-        # echo "Matrix product from $description:" >>"$LOG_RESULTS"
+        echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
 
         echo "Compiling multiply_matrix.c"
