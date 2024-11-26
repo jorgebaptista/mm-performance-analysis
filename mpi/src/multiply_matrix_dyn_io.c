@@ -120,9 +120,9 @@ int main(int argc, char *argv[])
    MPI_File matrix_file;
    MPI_File_open(MPI_COMM_WORLD, matrix_file_name, MPI_MODE_RDONLY, MPI_INFO_NULL, &matrix_file);
 
-   read_time = MPI_Wtime();
    if (rows > 0)
    {
+      read_time = MPI_Wtime();
       MPI_Offset a_offset = sizeof(MATRIX_TYPE) * offset * SIZE;
       MPI_File_read_at_all(matrix_file, a_offset, A, rows * SIZE, mpi_type, MPI_STATUS_IGNORE);
       MPI_Offset b_offset = sizeof(MATRIX_TYPE) * SIZE * SIZE;
@@ -185,7 +185,8 @@ int main(int argc, char *argv[])
       free(C);
    }
 
-   double total_avg_time, avg_read_time, avg_write_time, max_read_time, max_write_time;
+   double total_avg_time = 0.0, avg_read_time = 0.0, avg_write_time = 0.0,
+    max_read_time = 0.0, max_write_time = 0.0;
    double avg_multi_times[active_tasks];
    MPI_Reduce(&avg_multi_time, &total_avg_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
    MPI_Gather(&avg_multi_time, 1, MPI_DOUBLE, avg_multi_times, 1, MPI_DOUBLE, MASTER, MPI_COMM_WORLD);
