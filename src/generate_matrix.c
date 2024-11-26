@@ -1,3 +1,8 @@
+/*****************************************************/
+/*    This program generates matrix input files      */
+/*                  in binary form                   */
+/*****************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

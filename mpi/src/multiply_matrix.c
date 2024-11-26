@@ -1,3 +1,10 @@
+/*****************************************************/
+/*    This program multiplies two square matrices    */
+/*     using Master-Worker communication in MPI      */
+/*          and static matrix allocation             */
+/*        reading from a binary input file           */
+/*****************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "mpi.h"

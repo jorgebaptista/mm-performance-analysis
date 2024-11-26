@@ -1,3 +1,10 @@
+/*****************************************************/
+/*    This program multiplies two square matrices    */
+/*            using OpenMP parallelization           */
+/*            with static matrix allocation          */
+/*        reading from a binary input file           */
+/*****************************************************/
+
 #include <stdio.h>
 #include <sys/time.h>
 #include <omp.h>

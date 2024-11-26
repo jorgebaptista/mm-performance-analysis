@@ -1,6 +1,9 @@
-/*****************************************/
-/* Using dynamic contiguous  allocation */
-/*****************************************/
+/*****************************************************/
+/*    This program multiplies two square matrices    */
+/*            using OpenMP parallelization           */
+/*     with dybamic contiguous matrix allocation     */
+/*        reading from a binary input file           */
+/*****************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>

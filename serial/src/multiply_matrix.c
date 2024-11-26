@@ -1,3 +1,9 @@
+/*****************************************************/
+/*    This program multiplies two square matrices    */
+/*          with static matrix allocation            */
+/*         reading from a binary input file          */
+/*****************************************************/
+
 #include <stdio.h>
 #include <sys/time.h>
 
