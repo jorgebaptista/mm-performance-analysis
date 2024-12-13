@@ -1,0 +1,962 @@
+Session started at: 2024-11-23 16:39:32
+Running OpenMP Parallelization with int values on hpc074.a.incd.pt
+===============================================
+Using random_int_matrix_12.bin input file:
+------------2x2-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00188200 seconds
+Write time: 0.00019900 seconds
+Multiplication time (avg): 0.00001512 seconds
+Thread 0 time (avg): 0.00000377 seconds
+Thread 1 time (avg): 0.00000304 seconds
+Thread 2 time (avg): 0.00000258 seconds
+Thread 3 time (avg): 0.00000264 seconds
+Thread 4 time (avg): 0.00000262 seconds
+Thread 5 time (avg): 0.00000280 seconds
+Thread 6 time (avg): 0.00000246 seconds
+Thread 7 time (avg): 0.00000258 seconds
+Thread 8 time (avg): 0.00000376 seconds
+Thread 9 time (avg): 0.00000300 seconds
+Thread 10 time (avg): 0.00000255 seconds
+Thread 11 time (avg): 0.00000259 seconds
+Thread 12 time (avg): 0.00000265 seconds
+Thread 13 time (avg): 0.00000284 seconds
+Thread 14 time (avg): 0.00000248 seconds
+Thread 15 time (avg): 0.00000260 seconds
+Thread 16 time (avg): 0.00000373 seconds
+Thread 17 time (avg): 0.00000308 seconds
+Thread 18 time (avg): 0.00000264 seconds
+Thread 19 time (avg): 0.00000256 seconds
+Thread 20 time (avg): 0.00000249 seconds
+Thread 21 time (avg): 0.00000292 seconds
+Thread 22 time (avg): 0.00000249 seconds
+Thread 23 time (avg): 0.00000267 seconds
+Thread 24 time (avg): 0.00000372 seconds
+Thread 25 time (avg): 0.00000302 seconds
+Thread 26 time (avg): 0.00000255 seconds
+Thread 27 time (avg): 0.00000255 seconds
+Thread 28 time (avg): 0.00000245 seconds
+Thread 29 time (avg): 0.00000291 seconds
+Thread 30 time (avg): 0.00000251 seconds
+Thread 31 time (avg): 0.00000265 seconds
+Thread 32 time (avg): 0.00000374 seconds
+Thread 33 time (avg): 0.00000258 seconds
+Thread 34 time (avg): 0.00000254 seconds
+Thread 35 time (avg): 0.00000246 seconds
+Thread 36 time (avg): 0.00000300 seconds
+Thread 37 time (avg): 0.00000283 seconds
+Thread 38 time (avg): 0.00000242 seconds
+Thread 39 time (avg): 0.00000257 seconds
+Thread 40 time (avg): 0.00000368 seconds
+Thread 41 time (avg): 0.00000251 seconds
+Thread 42 time (avg): 0.00000259 seconds
+Thread 43 time (avg): 0.00000261 seconds
+Thread 44 time (avg): 0.00000299 seconds
+Thread 45 time (avg): 0.00000289 seconds
+Thread 46 time (avg): 0.00000245 seconds
+Thread 47 time (avg): 0.00000259 seconds
+	Command being timed: "./../bin/multiply_matrix_2x2_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/2x2_results.log"
+	User time (seconds): 0.11
+	System time (seconds): 0.00
+	Percent of CPU this job got: 434%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 224
+	Voluntary context switches: 16
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 480
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4x4-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00003900 seconds
+Write time: 0.00040200 seconds
+Multiplication time (avg): 0.00001482 seconds
+Thread 0 time (avg): 0.00000381 seconds
+Thread 1 time (avg): 0.00000239 seconds
+Thread 2 time (avg): 0.00000241 seconds
+Thread 3 time (avg): 0.00000270 seconds
+Thread 4 time (avg): 0.00000287 seconds
+Thread 5 time (avg): 0.00000232 seconds
+Thread 6 time (avg): 0.00000243 seconds
+Thread 7 time (avg): 0.00000240 seconds
+Thread 8 time (avg): 0.00000375 seconds
+Thread 9 time (avg): 0.00000236 seconds
+Thread 10 time (avg): 0.00000234 seconds
+Thread 11 time (avg): 0.00000286 seconds
+Thread 12 time (avg): 0.00000274 seconds
+Thread 13 time (avg): 0.00000247 seconds
+Thread 14 time (avg): 0.00000232 seconds
+Thread 15 time (avg): 0.00000243 seconds
+Thread 16 time (avg): 0.00000374 seconds
+Thread 17 time (avg): 0.00000243 seconds
+Thread 18 time (avg): 0.00000240 seconds
+Thread 19 time (avg): 0.00000285 seconds
+Thread 20 time (avg): 0.00000271 seconds
+Thread 21 time (avg): 0.00000250 seconds
+Thread 22 time (avg): 0.00000241 seconds
+Thread 23 time (avg): 0.00000230 seconds
+Thread 24 time (avg): 0.00000375 seconds
+Thread 25 time (avg): 0.00000246 seconds
+Thread 26 time (avg): 0.00000235 seconds
+Thread 27 time (avg): 0.00000296 seconds
+Thread 28 time (avg): 0.00000270 seconds
+Thread 29 time (avg): 0.00000247 seconds
+Thread 30 time (avg): 0.00000237 seconds
+Thread 31 time (avg): 0.00000240 seconds
+Thread 32 time (avg): 0.00000370 seconds
+Thread 33 time (avg): 0.00000236 seconds
+Thread 34 time (avg): 0.00000242 seconds
+Thread 35 time (avg): 0.00000292 seconds
+Thread 36 time (avg): 0.00000274 seconds
+Thread 37 time (avg): 0.00000242 seconds
+Thread 38 time (avg): 0.00000235 seconds
+Thread 39 time (avg): 0.00000238 seconds
+Thread 40 time (avg): 0.00000376 seconds
+Thread 41 time (avg): 0.00000245 seconds
+Thread 42 time (avg): 0.00000244 seconds
+Thread 43 time (avg): 0.00000270 seconds
+Thread 44 time (avg): 0.00000287 seconds
+Thread 45 time (avg): 0.00000240 seconds
+Thread 46 time (avg): 0.00000240 seconds
+Thread 47 time (avg): 0.00000233 seconds
+	Command being timed: "./../bin/multiply_matrix_4x4_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/4x4_results.log"
+	User time (seconds): 0.11
+	System time (seconds): 0.00
+	Percent of CPU this job got: 2340%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 242
+	Voluntary context switches: 12
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8x8-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00002400 seconds
+Write time: 0.00041600 seconds
+Multiplication time (avg): 0.00001643 seconds
+Thread 0 time (avg): 0.00000409 seconds
+Thread 1 time (avg): 0.00000294 seconds
+Thread 2 time (avg): 0.00000286 seconds
+Thread 3 time (avg): 0.00000305 seconds
+Thread 4 time (avg): 0.00000284 seconds
+Thread 5 time (avg): 0.00000226 seconds
+Thread 6 time (avg): 0.00000292 seconds
+Thread 7 time (avg): 0.00000300 seconds
+Thread 8 time (avg): 0.00000391 seconds
+Thread 9 time (avg): 0.00000284 seconds
+Thread 10 time (avg): 0.00000295 seconds
+Thread 11 time (avg): 0.00000263 seconds
+Thread 12 time (avg): 0.00000238 seconds
+Thread 13 time (avg): 0.00000290 seconds
+Thread 14 time (avg): 0.00000303 seconds
+Thread 15 time (avg): 0.00000303 seconds
+Thread 16 time (avg): 0.00000407 seconds
+Thread 17 time (avg): 0.00000279 seconds
+Thread 18 time (avg): 0.00000280 seconds
+Thread 19 time (avg): 0.00000233 seconds
+Thread 20 time (avg): 0.00000272 seconds
+Thread 21 time (avg): 0.00000260 seconds
+Thread 22 time (avg): 0.00000292 seconds
+Thread 23 time (avg): 0.00000304 seconds
+Thread 24 time (avg): 0.00000382 seconds
+Thread 25 time (avg): 0.00000222 seconds
+Thread 26 time (avg): 0.00000269 seconds
+Thread 27 time (avg): 0.00000286 seconds
+Thread 28 time (avg): 0.00000283 seconds
+Thread 29 time (avg): 0.00000281 seconds
+Thread 30 time (avg): 0.00000291 seconds
+Thread 31 time (avg): 0.00000301 seconds
+Thread 32 time (avg): 0.00000381 seconds
+Thread 33 time (avg): 0.00000287 seconds
+Thread 34 time (avg): 0.00000236 seconds
+Thread 35 time (avg): 0.00000288 seconds
+Thread 36 time (avg): 0.00000271 seconds
+Thread 37 time (avg): 0.00000270 seconds
+Thread 38 time (avg): 0.00000295 seconds
+Thread 39 time (avg): 0.00000301 seconds
+Thread 40 time (avg): 0.00000382 seconds
+Thread 41 time (avg): 0.00000281 seconds
+Thread 42 time (avg): 0.00000242 seconds
+Thread 43 time (avg): 0.00000276 seconds
+Thread 44 time (avg): 0.00000268 seconds
+Thread 45 time (avg): 0.00000278 seconds
+Thread 46 time (avg): 0.00000304 seconds
+Thread 47 time (avg): 0.00000322 seconds
+	Command being timed: "./../bin/multiply_matrix_8x8_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/8x8_results.log"
+	User time (seconds): 0.11
+	System time (seconds): 0.00
+	Percent of CPU this job got: 2400%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2316
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 258
+	Voluntary context switches: 11
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16x16-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00003000 seconds
+Write time: 0.00041700 seconds
+Multiplication time (avg): 0.00001646 seconds
+Thread 0 time (avg): 0.00000464 seconds
+Thread 1 time (avg): 0.00000361 seconds
+Thread 2 time (avg): 0.00000353 seconds
+Thread 3 time (avg): 0.00000401 seconds
+Thread 4 time (avg): 0.00000386 seconds
+Thread 5 time (avg): 0.00000337 seconds
+Thread 6 time (avg): 0.00000370 seconds
+Thread 7 time (avg): 0.00000344 seconds
+Thread 8 time (avg): 0.00000459 seconds
+Thread 9 time (avg): 0.00000338 seconds
+Thread 10 time (avg): 0.00000388 seconds
+Thread 11 time (avg): 0.00000355 seconds
+Thread 12 time (avg): 0.00000350 seconds
+Thread 13 time (avg): 0.00000403 seconds
+Thread 14 time (avg): 0.00000337 seconds
+Thread 15 time (avg): 0.00000379 seconds
+Thread 16 time (avg): 0.00000460 seconds
+Thread 17 time (avg): 0.00000380 seconds
+Thread 18 time (avg): 0.00000342 seconds
+Thread 19 time (avg): 0.00000380 seconds
+Thread 20 time (avg): 0.00000354 seconds
+Thread 21 time (avg): 0.00000359 seconds
+Thread 22 time (avg): 0.00000413 seconds
+Thread 23 time (avg): 0.00000334 seconds
+Thread 24 time (avg): 0.00000462 seconds
+Thread 25 time (avg): 0.00000336 seconds
+Thread 26 time (avg): 0.00000381 seconds
+Thread 27 time (avg): 0.00000379 seconds
+Thread 28 time (avg): 0.00000356 seconds
+Thread 29 time (avg): 0.00000349 seconds
+Thread 30 time (avg): 0.00000408 seconds
+Thread 31 time (avg): 0.00000330 seconds
+Thread 32 time (avg): 0.00000459 seconds
+Thread 33 time (avg): 0.00000338 seconds
+Thread 34 time (avg): 0.00000374 seconds
+Thread 35 time (avg): 0.00000385 seconds
+Thread 36 time (avg): 0.00000359 seconds
+Thread 37 time (avg): 0.00000357 seconds
+Thread 38 time (avg): 0.00000401 seconds
+Thread 39 time (avg): 0.00000340 seconds
+Thread 40 time (avg): 0.00000456 seconds
+Thread 41 time (avg): 0.00000340 seconds
+Thread 42 time (avg): 0.00000377 seconds
+Thread 43 time (avg): 0.00000388 seconds
+Thread 44 time (avg): 0.00000362 seconds
+Thread 45 time (avg): 0.00000352 seconds
+Thread 46 time (avg): 0.00000405 seconds
+Thread 47 time (avg): 0.00000332 seconds
+	Command being timed: "./../bin/multiply_matrix_16x16_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/16x16_results.log"
+	User time (seconds): 0.11
+	System time (seconds): 0.00
+	Percent of CPU this job got: 3000%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2316
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 258
+	Voluntary context switches: 10
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32x32-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00003600 seconds
+Write time: 0.00067900 seconds
+Multiplication time (avg): 0.00001643 seconds
+Thread 0 time (avg): 0.00000537 seconds
+Thread 1 time (avg): 0.00000416 seconds
+Thread 2 time (avg): 0.00000457 seconds
+Thread 3 time (avg): 0.00000445 seconds
+Thread 4 time (avg): 0.00000403 seconds
+Thread 5 time (avg): 0.00000433 seconds
+Thread 6 time (avg): 0.00000410 seconds
+Thread 7 time (avg): 0.00000410 seconds
+Thread 8 time (avg): 0.00000530 seconds
+Thread 9 time (avg): 0.00000435 seconds
+Thread 10 time (avg): 0.00000397 seconds
+Thread 11 time (avg): 0.00000413 seconds
+Thread 12 time (avg): 0.00000440 seconds
+Thread 13 time (avg): 0.00000405 seconds
+Thread 14 time (avg): 0.00000454 seconds
+Thread 15 time (avg): 0.00000413 seconds
+Thread 16 time (avg): 0.00000532 seconds
+Thread 17 time (avg): 0.00000436 seconds
+Thread 18 time (avg): 0.00000405 seconds
+Thread 19 time (avg): 0.00000436 seconds
+Thread 20 time (avg): 0.00000414 seconds
+Thread 21 time (avg): 0.00000413 seconds
+Thread 22 time (avg): 0.00000460 seconds
+Thread 23 time (avg): 0.00000407 seconds
+Thread 24 time (avg): 0.00000532 seconds
+Thread 25 time (avg): 0.00000441 seconds
+Thread 26 time (avg): 0.00000435 seconds
+Thread 27 time (avg): 0.00000402 seconds
+Thread 28 time (avg): 0.00000421 seconds
+Thread 29 time (avg): 0.00000417 seconds
+Thread 30 time (avg): 0.00000459 seconds
+Thread 31 time (avg): 0.00000414 seconds
+Thread 32 time (avg): 0.00000538 seconds
+Thread 33 time (avg): 0.00000443 seconds
+Thread 34 time (avg): 0.00000406 seconds
+Thread 35 time (avg): 0.00000442 seconds
+Thread 36 time (avg): 0.00000412 seconds
+Thread 37 time (avg): 0.00000411 seconds
+Thread 38 time (avg): 0.00000458 seconds
+Thread 39 time (avg): 0.00000407 seconds
+Thread 40 time (avg): 0.00000532 seconds
+Thread 41 time (avg): 0.00000432 seconds
+Thread 42 time (avg): 0.00000401 seconds
+Thread 43 time (avg): 0.00000439 seconds
+Thread 44 time (avg): 0.00000409 seconds
+Thread 45 time (avg): 0.00000408 seconds
+Thread 46 time (avg): 0.00000454 seconds
+Thread 47 time (avg): 0.00000414 seconds
+	Command being timed: "./../bin/multiply_matrix_32x32_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/32x32_results.log"
+	User time (seconds): 0.10
+	System time (seconds): 0.04
+	Percent of CPU this job got: 2940%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2324
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 222
+	Voluntary context switches: 10
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------64x64-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00057500 seconds
+Write time: 0.00089000 seconds
+Multiplication time (avg): 0.00003833 seconds
+Thread 0 time (avg): 0.00002725 seconds
+Thread 1 time (avg): 0.00002635 seconds
+Thread 2 time (avg): 0.00002676 seconds
+Thread 3 time (avg): 0.00002615 seconds
+Thread 4 time (avg): 0.00002643 seconds
+Thread 5 time (avg): 0.00002625 seconds
+Thread 6 time (avg): 0.00002631 seconds
+Thread 7 time (avg): 0.00002641 seconds
+Thread 8 time (avg): 0.00002716 seconds
+Thread 9 time (avg): 0.00002648 seconds
+Thread 10 time (avg): 0.00002615 seconds
+Thread 11 time (avg): 0.00002630 seconds
+Thread 12 time (avg): 0.00002635 seconds
+Thread 13 time (avg): 0.00002638 seconds
+Thread 14 time (avg): 0.00002673 seconds
+Thread 15 time (avg): 0.00002631 seconds
+Thread 16 time (avg): 0.00002722 seconds
+Thread 17 time (avg): 0.00002642 seconds
+Thread 18 time (avg): 0.00002621 seconds
+Thread 19 time (avg): 0.00002637 seconds
+Thread 20 time (avg): 0.00002624 seconds
+Thread 21 time (avg): 0.00002641 seconds
+Thread 22 time (avg): 0.00002669 seconds
+Thread 23 time (avg): 0.00002625 seconds
+Thread 24 time (avg): 0.00002717 seconds
+Thread 25 time (avg): 0.00002639 seconds
+Thread 26 time (avg): 0.00002625 seconds
+Thread 27 time (avg): 0.00002629 seconds
+Thread 28 time (avg): 0.00002668 seconds
+Thread 29 time (avg): 0.00002632 seconds
+Thread 30 time (avg): 0.00002635 seconds
+Thread 31 time (avg): 0.00002637 seconds
+Thread 32 time (avg): 0.00002722 seconds
+Thread 33 time (avg): 0.00002648 seconds
+Thread 34 time (avg): 0.00002617 seconds
+Thread 35 time (avg): 0.00002629 seconds
+Thread 36 time (avg): 0.00002633 seconds
+Thread 37 time (avg): 0.00002671 seconds
+Thread 38 time (avg): 0.00002627 seconds
+Thread 39 time (avg): 0.00002641 seconds
+Thread 40 time (avg): 0.00002722 seconds
+Thread 41 time (avg): 0.00002643 seconds
+Thread 42 time (avg): 0.00002620 seconds
+Thread 43 time (avg): 0.00002634 seconds
+Thread 44 time (avg): 0.00002635 seconds
+Thread 45 time (avg): 0.00002671 seconds
+Thread 46 time (avg): 0.00002627 seconds
+Thread 47 time (avg): 0.00002641 seconds
+	Command being timed: "./../bin/multiply_matrix_64x64_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/64x64_results.log"
+	User time (seconds): 0.16
+	System time (seconds): 0.00
+	Percent of CPU this job got: 2816%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2360
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 256
+	Voluntary context switches: 12
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------128x128-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00092600 seconds
+Write time: 0.00173100 seconds
+Multiplication time (avg): 0.00016824 seconds
+Thread 0 time (avg): 0.00015793 seconds
+Thread 1 time (avg): 0.00015670 seconds
+Thread 2 time (avg): 0.00015720 seconds
+Thread 3 time (avg): 0.00015724 seconds
+Thread 4 time (avg): 0.00015712 seconds
+Thread 5 time (avg): 0.00015716 seconds
+Thread 6 time (avg): 0.00015720 seconds
+Thread 7 time (avg): 0.00015713 seconds
+Thread 8 time (avg): 0.00015788 seconds
+Thread 9 time (avg): 0.00015712 seconds
+Thread 10 time (avg): 0.00015722 seconds
+Thread 11 time (avg): 0.00015716 seconds
+Thread 12 time (avg): 0.00015675 seconds
+Thread 13 time (avg): 0.00015722 seconds
+Thread 14 time (avg): 0.00015715 seconds
+Thread 15 time (avg): 0.00015709 seconds
+Thread 16 time (avg): 0.00015788 seconds
+Thread 17 time (avg): 0.00015713 seconds
+Thread 18 time (avg): 0.00015712 seconds
+Thread 19 time (avg): 0.00015710 seconds
+Thread 20 time (avg): 0.00015717 seconds
+Thread 21 time (avg): 0.00015669 seconds
+Thread 22 time (avg): 0.00015710 seconds
+Thread 23 time (avg): 0.00015713 seconds
+Thread 24 time (avg): 0.00015791 seconds
+Thread 25 time (avg): 0.00015719 seconds
+Thread 26 time (avg): 0.00015720 seconds
+Thread 27 time (avg): 0.00015721 seconds
+Thread 28 time (avg): 0.00015717 seconds
+Thread 29 time (avg): 0.00015676 seconds
+Thread 30 time (avg): 0.00015719 seconds
+Thread 31 time (avg): 0.00015711 seconds
+Thread 32 time (avg): 0.00015789 seconds
+Thread 33 time (avg): 0.00015724 seconds
+Thread 34 time (avg): 0.00015721 seconds
+Thread 35 time (avg): 0.00015709 seconds
+Thread 36 time (avg): 0.00015718 seconds
+Thread 37 time (avg): 0.00015673 seconds
+Thread 38 time (avg): 0.00015723 seconds
+Thread 39 time (avg): 0.00015723 seconds
+Thread 40 time (avg): 0.00015789 seconds
+Thread 41 time (avg): 0.00015721 seconds
+Thread 42 time (avg): 0.00015716 seconds
+Thread 43 time (avg): 0.00015711 seconds
+Thread 44 time (avg): 0.00015713 seconds
+Thread 45 time (avg): 0.00015672 seconds
+Thread 46 time (avg): 0.00015720 seconds
+Thread 47 time (avg): 0.00015722 seconds
+	Command being timed: "./../bin/multiply_matrix_128x128_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/128x128_results.log"
+	User time (seconds): 0.40
+	System time (seconds): 0.00
+	Percent of CPU this job got: 3645%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 288
+	Voluntary context switches: 12
+	Involuntary context switches: 9
+	Swaps: 0
+	File system inputs: 192
+	File system outputs: 288
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------256x256-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00114300 seconds
+Write time: 0.00450500 seconds
+Multiplication time (avg): 0.00101454 seconds
+Thread 0 time (avg): 0.00100175 seconds
+Thread 1 time (avg): 0.00100167 seconds
+Thread 2 time (avg): 0.00100135 seconds
+Thread 3 time (avg): 0.00100174 seconds
+Thread 4 time (avg): 0.00100150 seconds
+Thread 5 time (avg): 0.00100197 seconds
+Thread 6 time (avg): 0.00100132 seconds
+Thread 7 time (avg): 0.00100215 seconds
+Thread 8 time (avg): 0.00100171 seconds
+Thread 9 time (avg): 0.00100215 seconds
+Thread 10 time (avg): 0.00100154 seconds
+Thread 11 time (avg): 0.00100159 seconds
+Thread 12 time (avg): 0.00100144 seconds
+Thread 13 time (avg): 0.00100174 seconds
+Thread 14 time (avg): 0.00100196 seconds
+Thread 15 time (avg): 0.00100130 seconds
+Thread 16 time (avg): 0.00100167 seconds
+Thread 17 time (avg): 0.00100212 seconds
+Thread 18 time (avg): 0.00100153 seconds
+Thread 19 time (avg): 0.00100159 seconds
+Thread 20 time (avg): 0.00100137 seconds
+Thread 21 time (avg): 0.00100161 seconds
+Thread 22 time (avg): 0.00100196 seconds
+Thread 23 time (avg): 0.00100131 seconds
+Thread 24 time (avg): 0.00100172 seconds
+Thread 25 time (avg): 0.00100220 seconds
+Thread 26 time (avg): 0.00100130 seconds
+Thread 27 time (avg): 0.00100156 seconds
+Thread 28 time (avg): 0.00100165 seconds
+Thread 29 time (avg): 0.00100140 seconds
+Thread 30 time (avg): 0.00100161 seconds
+Thread 31 time (avg): 0.00100192 seconds
+Thread 32 time (avg): 0.00100169 seconds
+Thread 33 time (avg): 0.00100209 seconds
+Thread 34 time (avg): 0.00100124 seconds
+Thread 35 time (avg): 0.00100166 seconds
+Thread 36 time (avg): 0.00100162 seconds
+Thread 37 time (avg): 0.00100144 seconds
+Thread 38 time (avg): 0.00100173 seconds
+Thread 39 time (avg): 0.00100193 seconds
+Thread 40 time (avg): 0.00100174 seconds
+Thread 41 time (avg): 0.00100215 seconds
+Thread 42 time (avg): 0.00100120 seconds
+Thread 43 time (avg): 0.00100159 seconds
+Thread 44 time (avg): 0.00100167 seconds
+Thread 45 time (avg): 0.00100137 seconds
+Thread 46 time (avg): 0.00100167 seconds
+Thread 47 time (avg): 0.00100185 seconds
+	Command being timed: "./../bin/multiply_matrix_256x256_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/256x256_results.log"
+	User time (seconds): 1.75
+	System time (seconds): 0.05
+	Percent of CPU this job got: 4407%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 405
+	Voluntary context switches: 12
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 768
+	File system outputs: 1152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.00306300 seconds
+Write time: 0.01553100 seconds
+Multiplication time (avg): 0.00713007 seconds
+Thread 0 time (avg): 0.00711851 seconds
+Thread 1 time (avg): 0.00711710 seconds
+Thread 2 time (avg): 0.00711779 seconds
+Thread 3 time (avg): 0.00711678 seconds
+Thread 4 time (avg): 0.00711723 seconds
+Thread 5 time (avg): 0.00711720 seconds
+Thread 6 time (avg): 0.00711757 seconds
+Thread 7 time (avg): 0.00711751 seconds
+Thread 8 time (avg): 0.00711854 seconds
+Thread 9 time (avg): 0.00711762 seconds
+Thread 10 time (avg): 0.00711719 seconds
+Thread 11 time (avg): 0.00711710 seconds
+Thread 12 time (avg): 0.00711779 seconds
+Thread 13 time (avg): 0.00711720 seconds
+Thread 14 time (avg): 0.00711671 seconds
+Thread 15 time (avg): 0.00711751 seconds
+Thread 16 time (avg): 0.00711861 seconds
+Thread 17 time (avg): 0.00711763 seconds
+Thread 18 time (avg): 0.00711716 seconds
+Thread 19 time (avg): 0.00711699 seconds
+Thread 20 time (avg): 0.00711769 seconds
+Thread 21 time (avg): 0.00711720 seconds
+Thread 22 time (avg): 0.00711684 seconds
+Thread 23 time (avg): 0.00711754 seconds
+Thread 24 time (avg): 0.00711853 seconds
+Thread 25 time (avg): 0.00711764 seconds
+Thread 26 time (avg): 0.00711720 seconds
+Thread 27 time (avg): 0.00711709 seconds
+Thread 28 time (avg): 0.00711780 seconds
+Thread 29 time (avg): 0.00711708 seconds
+Thread 30 time (avg): 0.00711681 seconds
+Thread 31 time (avg): 0.00711747 seconds
+Thread 32 time (avg): 0.00711856 seconds
+Thread 33 time (avg): 0.00711754 seconds
+Thread 34 time (avg): 0.00711712 seconds
+Thread 35 time (avg): 0.00711703 seconds
+Thread 36 time (avg): 0.00711773 seconds
+Thread 37 time (avg): 0.00711707 seconds
+Thread 38 time (avg): 0.00711676 seconds
+Thread 39 time (avg): 0.00711742 seconds
+Thread 40 time (avg): 0.00711854 seconds
+Thread 41 time (avg): 0.00711750 seconds
+Thread 42 time (avg): 0.00711713 seconds
+Thread 43 time (avg): 0.00711692 seconds
+Thread 44 time (avg): 0.00711767 seconds
+Thread 45 time (avg): 0.00711711 seconds
+Thread 46 time (avg): 0.00711673 seconds
+Thread 47 time (avg): 0.00711758 seconds
+	Command being timed: "./../bin/multiply_matrix_512x512_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/512x512_results.log"
+	User time (seconds): 10.95
+	System time (seconds): 0.05
+	Percent of CPU this job got: 4474%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5384
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 986
+	Voluntary context switches: 59
+	Involuntary context switches: 74
+	Swaps: 0
+	File system inputs: 3072
+	File system outputs: 5128
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.01059400 seconds
+Write time: 0.05936700 seconds
+Multiplication time (avg): 0.10894149 seconds
+Thread 0 time (avg): 0.10892365 seconds
+Thread 1 time (avg): 0.10892234 seconds
+Thread 2 time (avg): 0.10891613 seconds
+Thread 3 time (avg): 0.10892195 seconds
+Thread 4 time (avg): 0.10890929 seconds
+Thread 5 time (avg): 0.10890685 seconds
+Thread 6 time (avg): 0.10891783 seconds
+Thread 7 time (avg): 0.10891928 seconds
+Thread 8 time (avg): 0.10891937 seconds
+Thread 9 time (avg): 0.10892359 seconds
+Thread 10 time (avg): 0.10892081 seconds
+Thread 11 time (avg): 0.10892290 seconds
+Thread 12 time (avg): 0.10891322 seconds
+Thread 13 time (avg): 0.10890541 seconds
+Thread 14 time (avg): 0.10891700 seconds
+Thread 15 time (avg): 0.10892198 seconds
+Thread 16 time (avg): 0.10891149 seconds
+Thread 17 time (avg): 0.10891529 seconds
+Thread 18 time (avg): 0.10891574 seconds
+Thread 19 time (avg): 0.10891768 seconds
+Thread 20 time (avg): 0.10890751 seconds
+Thread 21 time (avg): 0.10890767 seconds
+Thread 22 time (avg): 0.10891474 seconds
+Thread 23 time (avg): 0.10891562 seconds
+Thread 24 time (avg): 0.10891214 seconds
+Thread 25 time (avg): 0.10891620 seconds
+Thread 26 time (avg): 0.10891430 seconds
+Thread 27 time (avg): 0.10891770 seconds
+Thread 28 time (avg): 0.10891317 seconds
+Thread 29 time (avg): 0.10892063 seconds
+Thread 30 time (avg): 0.10890991 seconds
+Thread 31 time (avg): 0.10891116 seconds
+Thread 32 time (avg): 0.10890922 seconds
+Thread 33 time (avg): 0.10891019 seconds
+Thread 34 time (avg): 0.10890877 seconds
+Thread 35 time (avg): 0.10890889 seconds
+Thread 36 time (avg): 0.10890377 seconds
+Thread 37 time (avg): 0.10890681 seconds
+Thread 38 time (avg): 0.10891441 seconds
+Thread 39 time (avg): 0.10891360 seconds
+Thread 40 time (avg): 0.10891234 seconds
+Thread 41 time (avg): 0.10891149 seconds
+Thread 42 time (avg): 0.10890998 seconds
+Thread 43 time (avg): 0.10890713 seconds
+Thread 44 time (avg): 0.10890473 seconds
+Thread 45 time (avg): 0.10891850 seconds
+Thread 46 time (avg): 0.10891104 seconds
+Thread 47 time (avg): 0.10891593 seconds
+	Command being timed: "./../bin/multiply_matrix_1024x1024_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/1024x1024_results.log"
+	User time (seconds): 153.31
+	System time (seconds): 0.04
+	Percent of CPU this job got: 4418%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.47
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 14600
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 737
+	Voluntary context switches: 1133
+	Involuntary context switches: 275
+	Swaps: 0
+	File system inputs: 12288
+	File system outputs: 20488
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------2048x2048-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.03101400 seconds
+Write time: 0.24606000 seconds
+Multiplication time (avg): 0.77056133 seconds
+Thread 0 time (avg): 0.77052993 seconds
+Thread 1 time (avg): 0.77053314 seconds
+Thread 2 time (avg): 0.77054215 seconds
+Thread 3 time (avg): 0.77053778 seconds
+Thread 4 time (avg): 0.77054211 seconds
+Thread 5 time (avg): 0.77053981 seconds
+Thread 6 time (avg): 0.77053468 seconds
+Thread 7 time (avg): 0.77053637 seconds
+Thread 8 time (avg): 0.77054209 seconds
+Thread 9 time (avg): 0.77053745 seconds
+Thread 10 time (avg): 0.77053790 seconds
+Thread 11 time (avg): 0.77053693 seconds
+Thread 12 time (avg): 0.77053913 seconds
+Thread 13 time (avg): 0.77053714 seconds
+Thread 14 time (avg): 0.77053465 seconds
+Thread 15 time (avg): 0.77053638 seconds
+Thread 16 time (avg): 0.77053893 seconds
+Thread 17 time (avg): 0.77054012 seconds
+Thread 18 time (avg): 0.77053903 seconds
+Thread 19 time (avg): 0.77053514 seconds
+Thread 20 time (avg): 0.77054488 seconds
+Thread 21 time (avg): 0.77053397 seconds
+Thread 22 time (avg): 0.77054058 seconds
+Thread 23 time (avg): 0.77053506 seconds
+Thread 24 time (avg): 0.77053926 seconds
+Thread 25 time (avg): 0.77054089 seconds
+Thread 26 time (avg): 0.77054101 seconds
+Thread 27 time (avg): 0.77053969 seconds
+Thread 28 time (avg): 0.77053209 seconds
+Thread 29 time (avg): 0.77053824 seconds
+Thread 30 time (avg): 0.77054080 seconds
+Thread 31 time (avg): 0.77053599 seconds
+Thread 32 time (avg): 0.77052746 seconds
+Thread 33 time (avg): 0.77052696 seconds
+Thread 34 time (avg): 0.77053592 seconds
+Thread 35 time (avg): 0.77052406 seconds
+Thread 36 time (avg): 0.77052383 seconds
+Thread 37 time (avg): 0.77052762 seconds
+Thread 38 time (avg): 0.77053135 seconds
+Thread 39 time (avg): 0.77053238 seconds
+Thread 40 time (avg): 0.77052694 seconds
+Thread 41 time (avg): 0.77053031 seconds
+Thread 42 time (avg): 0.77052725 seconds
+Thread 43 time (avg): 0.77053007 seconds
+Thread 44 time (avg): 0.77052408 seconds
+Thread 45 time (avg): 0.77052468 seconds
+Thread 46 time (avg): 0.77052851 seconds
+Thread 47 time (avg): 0.77053303 seconds
+	Command being timed: "./../bin/multiply_matrix_2048x2048_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/2048x2048_results.log"
+	User time (seconds): 1115.03
+	System time (seconds): 0.09
+	Percent of CPU this job got: 4611%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 51464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 766
+	Voluntary context switches: 1419
+	Involuntary context switches: 2158
+	Swaps: 0
+	File system inputs: 49152
+	File system outputs: 81936
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4096x4096-------------
+Nodes: 1
+Workers (per node): 1
+CPUs (per task): 48
+Read time: 0.11421800 seconds
+Write time: 0.96650600 seconds
+Multiplication time (avg): 8.18386556 seconds
+Thread 0 time (avg): 8.18382410 seconds
+Thread 1 time (avg): 8.18383428 seconds
+Thread 2 time (avg): 8.18383321 seconds
+Thread 3 time (avg): 8.18379888 seconds
+Thread 4 time (avg): 8.18382941 seconds
+Thread 5 time (avg): 8.18383696 seconds
+Thread 6 time (avg): 8.18383193 seconds
+Thread 7 time (avg): 8.18382062 seconds
+Thread 8 time (avg): 8.18381145 seconds
+Thread 9 time (avg): 8.18383239 seconds
+Thread 10 time (avg): 8.18383117 seconds
+Thread 11 time (avg): 8.18381823 seconds
+Thread 12 time (avg): 8.18382857 seconds
+Thread 13 time (avg): 8.18383667 seconds
+Thread 14 time (avg): 8.18381641 seconds
+Thread 15 time (avg): 8.18383176 seconds
+Thread 16 time (avg): 8.18382983 seconds
+Thread 17 time (avg): 8.18382937 seconds
+Thread 18 time (avg): 8.18384218 seconds
+Thread 19 time (avg): 8.18383615 seconds
+Thread 20 time (avg): 8.18383100 seconds
+Thread 21 time (avg): 8.18383132 seconds
+Thread 22 time (avg): 8.18383071 seconds
+Thread 23 time (avg): 8.18382897 seconds
+Thread 24 time (avg): 8.18383872 seconds
+Thread 25 time (avg): 8.18383197 seconds
+Thread 26 time (avg): 8.18384043 seconds
+Thread 27 time (avg): 8.18383357 seconds
+Thread 28 time (avg): 8.18383442 seconds
+Thread 29 time (avg): 8.18383201 seconds
+Thread 30 time (avg): 8.18382682 seconds
+Thread 31 time (avg): 8.18383140 seconds
+Thread 32 time (avg): 8.18383941 seconds
+Thread 33 time (avg): 8.18382890 seconds
+Thread 34 time (avg): 8.18384134 seconds
+Thread 35 time (avg): 8.18383395 seconds
+Thread 36 time (avg): 8.18383321 seconds
+Thread 37 time (avg): 8.18383225 seconds
+Thread 38 time (avg): 8.18382637 seconds
+Thread 39 time (avg): 8.18383018 seconds
+Thread 40 time (avg): 8.18383924 seconds
+Thread 41 time (avg): 8.18383127 seconds
+Thread 42 time (avg): 8.18384158 seconds
+Thread 43 time (avg): 8.18383648 seconds
+Thread 44 time (avg): 8.18383553 seconds
+Thread 45 time (avg): 8.18383337 seconds
+Thread 46 time (avg): 8.18382982 seconds
+Thread 47 time (avg): 8.18383312 seconds
+	Command being timed: "./../bin/multiply_matrix_4096x4096_18944294 ../../data/random_int_matrix_12.bin ../logs/cirrus/18944294/times.log ../logs/cirrus/18944294/results/4096x4096_results.log"
+	User time (seconds): 12045.38
+	System time (seconds): 0.36
+	Percent of CPU this job got: 4728%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:14.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 198920
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 834
+	Voluntary context switches: 1346
+	Involuntary context switches: 22384
+	Swaps: 0
+	File system inputs: 196608
+	File system outputs: 359736
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 4m 44s
+Session Finished at: 2024-11-23 16:44:16
+###############################################
+Details for Job ID 18944294
+Running OpenMP Parallelization with int values on hpc074.a.incd.pt
+Allocated Nodes: 1
+Allocated Workers (per node): 1
+Allocated CPUs (per task): 48
+Allocated Memory (total): 240000 MB
+Allocated Memory (per node):  MB
+Allocated Memory (per CPU): 5000 MB
+=============== Active Modules =================
+ - Currently Loaded Modules:
+ -   1) gcc-13.2
+================ Memory Usage ==================
+JobID            MaxRSS  MaxVMSize  MaxDiskRead MaxDiskWrite 
+------------ ---------- ---------- ------------ ------------ 
+18944294.ba+    197736K    411628K    203229813    240537613 
+=============== Nodes Assigned =================
+hpc074
+
