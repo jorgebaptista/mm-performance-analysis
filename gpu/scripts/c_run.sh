@@ -33,6 +33,7 @@ MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
 MAX_P=${3:-15}
 NRUNS=${4:-30}
+TILE_WIDTH=${5:-32}
 
 # ***************************
 BIN_DIR="../bin"
@@ -49,30 +50,30 @@ RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 mkdir -p "$BIN_DIR" "$DATA_DIR" "$LOGS_DIR" "$RESULTS_DIR"
 
 # *****Generate Matrices******
-# if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
-#     echo "=== Compiling $GENERATE_MATRIX_SOURCE ==="
-#     gcc -Wall -O3 -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
-#     if [ $? -ne 0 ]; then
-#         echo "Compilation failed."
-#         exit 1
-#     fi
-#     echo "Compilation succeeded."
+if ([[ ! -f "$DATA_DIR/$RAND_DATA" ]]) || ([[ " $@ " =~ " -n " ]]); then
+    echo "=== Compiling $GENERATE_MATRIX_SOURCE ==="
+    gcc -Wall -O3 -o "$GENERATE_MATRIX_EXE" "$GENERATE_MATRIX_SOURCE" -DSIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
+    if [ $? -ne 0 ]; then
+        echo "Compilation failed."
+        exit 1
+    fi
+    echo "Compilation succeeded."
 
-#     echo "=== Running $GENERATE_MATRIX_EXE ==="
-#     chmod u+x "$GENERATE_MATRIX_EXE"
-#     ./"$GENERATE_MATRIX_EXE" "$DATA_DIR/$RAND_DATA"
-#     if [ $? -ne 0 ]; then
-#         echo "Execution failed."
-#         rm -f "$GENERATE_MATRIX_EXE"
-#         exit 1
-#     fi
-#     echo "Execution succeeded."
+    echo "=== Running $GENERATE_MATRIX_EXE ==="
+    chmod u+x "$GENERATE_MATRIX_EXE"
+    ./"$GENERATE_MATRIX_EXE" "$DATA_DIR/$RAND_DATA"
+    if [ $? -ne 0 ]; then
+        echo "Execution failed."
+        rm -f "$GENERATE_MATRIX_EXE"
+        exit 1
+    fi
+    echo "Execution succeeded."
 
-#     rm -f "$GENERATE_MATRIX_EXE"
+    rm -f "$GENERATE_MATRIX_EXE"
 
-# else
-#     echo "Using existing input data..."
-# fi
+else
+    echo "Using existing input data..."
+fi
 
 # ******Multiply Matrices******
 run_matrix_multiplication() {
@@ -92,7 +93,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        nvcc -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DTHREADS=$THREADS
+        nvcc -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DTHREADS=$THREADS -DTILE_WIDTH=$TILE_WIDTH
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break

@@ -16,7 +16,7 @@
 // todo how to define best n?
 // todo how are n blocks being assigned, isnt it through job?
 #ifndef TILE_WIDTH
-#define TILE_WIDTH 64
+#define TILE_WIDTH 32
 #endif
 
 typedef MATRIX_TYPE *Matrix;
