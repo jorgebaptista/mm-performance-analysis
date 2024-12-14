@@ -5,6 +5,7 @@
 #SBATCH --partition=gpu
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu
+#SBATCH --mem=64G
 #SBATCH --qos=gpuvlabualg
 #SBATCH --time=03:00:00
 #SBATCH --output=../logs/cirrus/%j/%x_%j.out
