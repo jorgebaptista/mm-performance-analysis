@@ -43,7 +43,7 @@ RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
-MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
+MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.cu"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
