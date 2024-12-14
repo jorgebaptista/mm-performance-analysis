@@ -89,7 +89,7 @@ double multiply_matrices(const Matrix A, const Matrix B, Matrix C)
     cudaEventRecord(stopEvent, 0);
     cudaEventSynchronize(stopEvent);
 
-    double milliseconds = 0.0;
+    float milliseconds = 0.0f;
     cudaEventElapsedTime(&milliseconds, startEvent, stopEvent);
 
     cudaMemcpy(C, Cd, size, cudaMemcpyDeviceToHost);
@@ -138,7 +138,7 @@ double print_matrix(FILE *file, Matrix C, int n)
     return total_time(start, end);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     const char *matrix_file_name = argv[1];
     const char *time_log_name = argv[2];
