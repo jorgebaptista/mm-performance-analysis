@@ -20,7 +20,7 @@
 #endif
 
 typedef MATRIX_TYPE *Matrix;
-const int N = SIZE;
+const size_t N = SIZE;
 double MULT_TIMES[NRUNS];
 struct timeval start, end;
 
@@ -45,19 +45,19 @@ __global__ void MatMulKernel(Matrix A, Matrix B, Matrix C)
     int tx = threadIdx.x;
     int ty = threadIdx.y;
 
-    int row = by * TILE_WIDTH + ty;
-    int col = bx * TILE_WIDTH + tx;
+    size_t row = by * TILE_WIDTH + ty;
+    size_t col = bx * TILE_WIDTH + tx;
     MATRIX_TYPE Cval = 0;
 
     // loop over tiles
-    for (int m = 0; m < N / TILE_WIDTH; m++)
+    for (size_t m = 0; m < N / TILE_WIDTH; m++)
     {
         Ads[ty][tx] = A[row * N + m * TILE_WIDTH + tx];
         Bds[ty][tx] = B[(m * TILE_WIDTH + ty) * N + col];
         __syncthreads();
 
         // loop over elements in tile
-        for (int k = 0; k < TILE_WIDTH; k++)
+        for (size_t k = 0; k < TILE_WIDTH; k++)
         {
             Cval += Ads[ty][k] * Bds[k][tx];
         }
@@ -68,7 +68,7 @@ __global__ void MatMulKernel(Matrix A, Matrix B, Matrix C)
 
 double multiply_matrices(const Matrix A, const Matrix B, Matrix C)
 {
-    int size = N * N * sizeof(int);
+    size_t size = N * N * sizeof(int);
     Matrix Ad, Bd, Cd;
     cudaMalloc(&Ad, size);
     cudaMalloc(&Bd, size);
@@ -108,7 +108,7 @@ double total_time(struct timeval start, struct timeval end)
     return (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1e6;
 }
 
-double read_matrix(FILE *file, Matrix arr, int n, size_t start_element)
+double read_matrix(FILE *file, Matrix arr, size_t n, size_t start_element)
 {
     gettimeofday(&start, NULL);
 
@@ -120,14 +120,14 @@ double read_matrix(FILE *file, Matrix arr, int n, size_t start_element)
     return total_time(start, end);
 }
 
-double print_matrix(FILE *file, Matrix C, int n)
+double print_matrix(FILE *file, Matrix C, size_t n)
 {
     gettimeofday(&start, NULL);
 
     const char *format = (sizeof(n) == sizeof(int)) ? "%d " : "%.2f ";
-    for (int i = 0; i < n; i++)
+    for (size_t i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (size_t j = 0; j < n; j++)
         {
             fprintf(file, format, C[i * n + j]);
         }
