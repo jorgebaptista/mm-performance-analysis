@@ -26,7 +26,7 @@ module load cuda/12.6
 
 # *******Variables***********
 MACHINE=$(hostname)
-SESSION_DESCRIPTION="OpenMP Parallelization"
+SESSION_DESCRIPTION="GPU Parallelization"
 # todo we need to specify mem for creating the matrices
 # TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
 
