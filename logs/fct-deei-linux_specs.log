@@ -1,0 +1,188 @@
+=== SYSTEM INFORMATION REPORT ===
+Report generated on: Mon 16 Dec 2024 06:34:02 PM WET
+
+=== System Information ===
+Hostname: fct-deei-linux
+Operating System: Linux
+Kernel Version: 5.10.0-28-amd64
+Architecture: x86_64
+Distribution: Debian GNU/Linux 11 (bullseye)
+
+=== CPU INFORMATION ===
+Architecture:                       x86_64
+CPU op-mode(s):                     32-bit, 64-bit
+Byte Order:                         Little Endian
+Address sizes:                      44 bits physical, 48 bits virtual
+CPU(s):                             4
+On-line CPU(s) list:                0-3
+Thread(s) per core:                 1
+Core(s) per socket:                 4
+Socket(s):                          1
+NUMA node(s):                       1
+Vendor ID:                          GenuineIntel
+CPU family:                         6
+Model:                              85
+Model name:                         Intel(R) Xeon(R) Gold 6138 CPU @ 2.00GHz
+Stepping:                           4
+CPU MHz:                            1995.315
+BogoMIPS:                           3990.63
+Hypervisor vendor:                  Microsoft
+Virtualization type:                full
+L1d cache:                          128 KiB
+L1i cache:                          128 KiB
+L2 cache:                           4 MiB
+L3 cache:                           110 MiB
+NUMA node0 CPU(s):                  0-3
+Vulnerability Gather data sampling: Not affected
+Vulnerability Itlb multihit:        KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:                 Mitigation; PTE Inversion
+Vulnerability Mds:                  Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Meltdown:             Mitigation; PTI
+Vulnerability Mmio stale data:      Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Retbleed:             Vulnerable
+Vulnerability Spec rstack overflow: Not affected
+Vulnerability Spec store bypass:    Vulnerable
+Vulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:           Mitigation; Retpolines, STIBP disabled, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:                Not affected
+Vulnerability Tsx async abort:      Not affected
+Flags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx lm constant_tsc rep_good nopl cpuid pni cx16 hypervisor lahf_lm pti
+
+=== MEMORY INFORMATION ===
+               total        used        free      shared  buff/cache   available
+Mem:           7.7Gi       1.8Gi       3.9Gi       3.0Mi       2.0Gi       5.6Gi
+Swap:          8.0Gi       138Mi       7.9Gi
+
+=== Disk Information ===
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs          tmpfs     788M  652K  788M   1% /run
+/dev/sda2      ext4       11G  7.0G  3.4G  68% /
+tmpfs          tmpfs     3.9G   11M  3.9G   1% /dev/shm
+tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
+/dev/sda4      ext4       20G  8.7G   11G  47% /home
+/dev/sda1      vfat      511M  5.9M  506M   2% /boot/efi
+
+=== Partition Details ===
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   40G  0 disk 
+├─sda1   8:1    0  512M  0 part /boot/efi
+├─sda2   8:2    0 11.1G  0 part /
+├─sda3   8:3    0    8G  0 part [SWAP]
+└─sda4   8:4    0 20.4G  0 part /home
+sr0     11:0    1 1024M  0 rom  
+
+=== Active Network Connections ===
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:6010          0.0.0.0:*               LISTEN      -                   
+tcp        3      0 127.0.0.1:51579         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:7101            0.0.0.0:*               LISTEN      -                   
+tcp        3      0 127.0.0.1:41345         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:51651           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:38249         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:38541         0.0.0.0:*               LISTEN      303844/code-138f619 
+tcp        0      0 0.0.0.0:35727           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 ::1:6010                :::*                    LISTEN      -                   
+tcp6       0      0 :::7101                 :::*                    LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:42570           0.0.0.0:*                           -                   
+udp6       0      0 :::45949                :::*                                -                   
+udp6       0      0 :::5353                 :::*                                -                   
+
+=== FIREWALL RULES ===
+iptables command not found. Skipping firewall check.
+
+=== Latency to remote-server ===
+PING fct-deei-aval.ualg.pt (10.4.0.118) 56(84) bytes of data.
+64 bytes from fct-deei-aval.ualg.pt (10.4.0.118): icmp_seq=1 ttl=64 time=0.415 ms
+64 bytes from fct-deei-aval.ualg.pt (10.4.0.118): icmp_seq=2 ttl=64 time=0.307 ms
+64 bytes from fct-deei-aval.ualg.pt (10.4.0.118): icmp_seq=3 ttl=64 time=0.327 ms
+64 bytes from fct-deei-aval.ualg.pt (10.4.0.118): icmp_seq=4 ttl=64 time=0.965 ms
+
+--- fct-deei-aval.ualg.pt ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3067ms
+rtt min/avg/max/mdev = 0.307/0.503/0.965/0.269 ms
+
+=== SSH CONNECTIVITY TEST ===
+Testing SSH connectivity with verbose output (no password prompt expected)
+OpenSSH_8.4p1 Debian-5+deb11u3, OpenSSL 1.1.1w  11 Sep 2023
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to fct-deei-aval [10.4.0.118] port 22.
+debug1: fd 4 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /home/a90113/.ssh/id_rsa type 0
+debug1: identity file /home/a90113/.ssh/id_rsa-cert type -1
+debug1: identity file /home/a90113/.ssh/id_dsa type -1
+debug1: identity file /home/a90113/.ssh/id_dsa-cert type -1
+debug1: identity file /home/a90113/.ssh/id_ecdsa type -1
+debug1: identity file /home/a90113/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/a90113/.ssh/id_ecdsa_sk type -1
+debug1: identity file /home/a90113/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /home/a90113/.ssh/id_ed25519 type -1
+debug1: identity file /home/a90113/.ssh/id_ed25519-cert type -1
+debug1: identity file /home/a90113/.ssh/id_ed25519_sk type -1
+debug1: identity file /home/a90113/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /home/a90113/.ssh/id_xmss type -1
+debug1: identity file /home/a90113/.ssh/id_xmss-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_8.4p1 Debian-5+deb11u3
+debug1: Remote protocol version 2.0, remote software version OpenSSH_8.4p1 Debian-5+deb11u3
+debug1: match: OpenSSH_8.4p1 Debian-5+deb11u3 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to fct-deei-aval:22 as 'a90113'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:dlGwQVRH5Ai47BgjBRMLHMU76jWgsFym6DuvveoJlN8
+debug1: Host 'fct-deei-aval' is known and matches the ECDSA host key.
+debug1: Found key in /home/a90113/.ssh/known_hosts:1
+debug1: ssh_packet_send2_wrapped: resetting send seqnr 3
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: ssh_packet_read_poll2: resetting read seqnr 3
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: Will attempt key: /home/a90113/.ssh/id_rsa RSA SHA256:xN6qDVbHhno8RRcptBRaaManhh1ylLpG/NWWELWc0ns
+debug1: Will attempt key: /home/a90113/.ssh/id_dsa 
+debug1: Will attempt key: /home/a90113/.ssh/id_ecdsa 
+debug1: Will attempt key: /home/a90113/.ssh/id_ecdsa_sk 
+debug1: Will attempt key: /home/a90113/.ssh/id_ed25519 
+debug1: Will attempt key: /home/a90113/.ssh/id_ed25519_sk 
+debug1: Will attempt key: /home/a90113/.ssh/id_xmss 
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Offering public key: /home/a90113/.ssh/id_rsa RSA SHA256:xN6qDVbHhno8RRcptBRaaManhh1ylLpG/NWWELWc0ns
+debug1: Server accepts key: /home/a90113/.ssh/id_rsa RSA SHA256:xN6qDVbHhno8RRcptBRaaManhh1ylLpG/NWWELWc0ns
+Access denied
+Access denied
+Connection closed by 10.4.0.118 port 22
+SSH test to a90113@fct-deei-aval failed. Check credentials or network.
+
+=== PCI Devices ===
+
+=== GPU Information ===
+No NVIDIA GPU detected or 'nvidia-smi' not installed.
+
+=== File System Information ===
+/dev/sda2 on / type ext4 (rw,relatime,errors=remount-ro)
+/dev/sda4 on /home type ext4 (rw,relatime)
+/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+
+=== System Uptime and Load ===
+ 18:34:09 up 28 days, 11 min,  3 users,  load average: 0.00, 0.02, 0.00
+
