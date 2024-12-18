@@ -1,0 +1,176 @@
+* ----------------------------------------------------------------
+* Running PROLOG for system-specs on Wed Dec 18 20:31:15 WET 2024
+*    JOB_NAME                : system-specs
+*    JOB_ID                  : 19174613
+*    JOB_PARTITION           : gpu
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : gpuvlabualg
+*    JOB_GPUS                : 0
+*    NODE_LIST               : hpc064
+*    SLURM_NNODES            : 1
+*    SLURM_NPROCS            : 1
+*    SLURM_NTASKS            : 1
+*    SLURM_CPUS_ON_NODE      : 1
+*    SLURM_TASKS_PER_NODE    : 1
+*    SLURM_JOB_CPUS_PER_NODE : 1
+*    SLURM_GPUS_ON_NODE      : 1
+*    SUBMIT_HOST             : cirrus09.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/mm-performance-analysis/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/mm-performance-analysis/scripts/cirrus-spec-gen.sh
+*
+*    GPU 0                   : Name                 NVIDIA A100 80GB PCIe
+*                            : SN                   1322222099772
+*                            : Driver               560.35.03
+*                            : Memory               81156 MBytes
+*                            : Multiprocessors      108
+*                            : Cores/Multiprocessor 64
+*                            : Cores                6912
+* ----------------------------------------------------------------
+
+=== SYSTEM INFORMATION REPORT ===
+Partition: gpu
+Current Working Directory: /users5/vlabualg/jbaptista/mm-performance-analysis/scripts
+Report generated on: Wed Dec 18 20:31:15 WET 2024
+
+=== System Information ===
+Hostname: hpc064.a.incd.pt
+Operating System: Linux
+Kernel Version: 4.18.0-553.22.1.el8_10.x86_64
+Architecture: x86_64
+Distribution: AlmaLinux 8.10 (Cerulean Leopard)
+
+==== Gathering GPU specs for all GPUs on the node ====
+name, memory.total [MiB]
+NVIDIA A100 80GB PCIe, 81920 MiB
+Tesla V100-SXM2-32GB, 32768 MiB
+Tesla T4, 15360 MiB
+
+==== CUDA Detailed GPU Info ====
+Device: NVIDIA A100 80GB PCIe
+  Compute capability: 8.0
+  Total Global Memory: 81155 MB
+  Multiprocessors: 108
+  CUDA Cores/MP: 64
+  Total CUDA Cores: 6912
+  Max Threads/Block: 1024
+  Max Grid Size: (2147483647, 65535, 65535)
+  Max Threads/Dimension: (1024, 1024, 64)
+  
+Device: Tesla V100-SXM2-32GB
+  Compute capability: 7.0
+  Total Global Memory: 32494 MB
+  Multiprocessors: 80
+  CUDA Cores/MP: 64
+  Total CUDA Cores: 5120
+  Max Threads/Block: 1024
+  Max Grid Size: (2147483647, 65535, 65535)
+  Max Threads/Dimension: (1024, 1024, 64)
+  
+Device: Tesla T4
+  Compute capability: 7.5
+  Total Global Memory: 14915 MB
+  Multiprocessors: 40
+  CUDA Cores/MP: 64
+  Total CUDA Cores: 2560
+  Max Threads/Block: 1024
+  Max Grid Size: (2147483647, 65535, 65535)
+  Max Threads/Dimension: (1024, 1024, 64)
+
+=== CPU Information per Node ===
+CPU(s):              96
+Thread(s) per core:  1
+Core(s) per socket:  48
+Socket(s):           2
+NUMA node(s):        16
+Model name:          AMD EPYC 7643 48-Core Processor
+NUMA node0 CPU(s):   0-5
+NUMA node1 CPU(s):   6-11
+NUMA node2 CPU(s):   12-17
+NUMA node3 CPU(s):   18-23
+NUMA node4 CPU(s):   24-29
+NUMA node5 CPU(s):   30-35
+NUMA node6 CPU(s):   36-41
+NUMA node7 CPU(s):   42-47
+NUMA node8 CPU(s):   48-53
+NUMA node9 CPU(s):   54-59
+NUMA node10 CPU(s):  60-65
+NUMA node11 CPU(s):  66-71
+NUMA node12 CPU(s):  72-77
+NUMA node13 CPU(s):  78-83
+NUMA node14 CPU(s):  84-89
+NUMA node15 CPU(s):  90-95
+
+=== Memory Information ===
+MemTotal:       :     515053 MB
+MemFree:        :     149381 MB
+Buffers:        :          1 MB
+Cached:         :     291493 MB
+SwapCached:     :          2 MB
+SwapTotal:      :     524287 MB
+PageTables:     :        151 MB
+HugePages_Total::          0 MB
+HugePages_Free: :          0 MB
+
+=== Slurm Partition Information ===
+PartitionName=hpc
+   AllocNodes=ALL Default=YES QoS=N/A
+   MaxNodes=UNLIMITED MaxTime=4-00:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED
+   Nodes=hpc[067-080,083]
+   State=UP TotalCPUs=1440 TotalNodes=15 SelectTypeParameters=NONE
+   DefMemPerCPU=5000 MaxMemPerCPU=5000
+   TRES=cpu=1440,mem=7500G,node=15,billing=1440
+PartitionName=gpu
+   AllocNodes=ALL Default=NO QoS=N/A
+   MaxNodes=UNLIMITED MaxTime=4-00:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED
+   Nodes=hpc[060-065]
+   State=UP TotalCPUs=576 TotalNodes=6 SelectTypeParameters=NONE
+   TRES=cpu=144,mem=3000G,node=6,billing=144,gres/gpu=11,gres/gpu:a100=2,gres/gpu:t4=6,gres/gpu:v100s=3
+
+==== Available Resources (sinfo) ====
+PARTITION NODES CPUS(A/I/O/T) MEMORY GRES STATE
+medusa 1 0/96/0/96 512000 (null) idle
+fast_medusa 2 0/44/0/44 31000+ (null) idle
+bob 1 0/16/0/16 30000 (null) idle
+hpc* 1 0/96/0/96 512000 (null) reserved
+hpc* 4 291/93/0/384 512000 (null) mixed
+hpc* 10 960/0/0/960 512000 (null) allocated
+gpu 1 0/96/0/96 512000 gpu:v100s:1(S:0),gpu:t4:1(S:1) reserved
+gpu 1 8/88/0/96 512000 gpu:v100s:1(S:0),gpu:t4:2(S:0-1) mixed
+gpu 1 1/95/0/96 512000 gpu:a100:1(S:0) mixed
+gpu 1 0/96/0/96 512000 gpu:v100s:1(S:0),gpu:t4:1(S:1) idle
+gpu 1 0/96/0/96 512000 gpu:t4:2(S:0-1) idle
+gpu 1 0/96/0/96 512000 gpu:a100:1(S:0) idle
+fct 3 207/81/0/288 512000 (null) mixed
+fct 12 1152/0/0/1152 512000 (null) allocated
+short 1 0/96/0/96 512000 (null) reserved
+short 4 291/93/0/384 512000 (null) mixed
+short 12 1152/0/0/1152 512000 (null) allocated
+
+=== Disk Information ===
+Filesystem                   Type      Size  Used Avail Use% Mounted on
+devtmpfs                     devtmpfs  252G     0  252G   0% /dev
+tmpfs                        tmpfs     252G  4.0K  252G   1% /dev/shm
+tmpfs                        tmpfs     252G  707M  251G   1% /run
+tmpfs                        tmpfs     252G     0  252G   0% /sys/fs/cgroup
+/dev/mapper/vg_root-lv_root  xfs        64G   39G   26G  61% /
+/dev/mapper/vg_root-lv_cache xfs       4.5T  3.4T  1.2T  75% /var/cache
+/dev/mapper/vg_root-lv_tmp   xfs       2.0T   17G  2.0T   1% /tmp
+/dev/nvme0n1p2               xfs      1014M  461M  554M  46% /boot
+/dev/nvme0n1p1               vfat      200M  5.9M  194M   3% /boot/efi
+se25:/exports/uhomes/lnec    nfs       2.7T  1.9T  682G  74% /home/lnec
+10.193.4.26@tcp:/users3      lustre    109T   46T   58T  45% /users3
+10.193.4.39@tcp:/users5      lustre    433T   48T  386T  11% /users5
+10.193.4.22@tcp:/users2      lustre    109T   15T   89T  15% /users2
+cvmfs2                       fuse       25G  1.4M   25G   1% /cvmfs/config-egi.egi.eu
+cvmfs2                       fuse       49G   35G   15G  71% /cvmfs/sw.el8
+10.193.4.42@tcp:/dgt         lustre    109T  143G  108T   1% /dgt
+
+=== Storage Information ===
+NAME    ROTA RO  SIZE MODEL
+sr0        1  0 1024M Virtual CD/DVD  
+nvme0n1    0  0    7T Dell Ent NVMe v2 AGN RI U.2 7.68TB      
+
+SLURM Version:
+slurm 23.11.1
+

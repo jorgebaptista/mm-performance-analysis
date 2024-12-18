@@ -1,18 +1,24 @@
 #!/bin/bash
 
 # ---------------------------------------------------------------------	#
-#SBATCH -p hpc
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:a100:1
 #SBATCH --ntasks-per-node=1
-#SBATCH --nodes=1
-#SBATCH --time=00:05:00
+#SBATCH --time=00:01:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
+#SBATCH --qos=gpuvlabualg
 #SBATCH --job-name=system-specs
 #SBATCH --output=../logs/cirrus_specs.log
 # ---------------------------------------------------------------------	#
 
-mkdir -p ../logs
+module purge
+module load cuda/12.6
 
+mkdir -p ../logs
+mkdir -p ../bin
+
+echo ""
 echo "=== SYSTEM INFORMATION REPORT ==="
 echo "Partition: $SLURM_JOB_PARTITION"
 echo "Current Working Directory: $(pwd)"
@@ -29,38 +35,30 @@ if [ -f /etc/os-release ]; then
 fi
 echo ""
 
-echo "=== Slurm Partition Information ==="
-scontrol show partition
+echo "==== Gathering GPU specs for all GPUs on the node ===="
+nvidia-smi --query-gpu=name,memory.total --format=csv
 echo ""
 
-echo "=== Slurm Node Information ==="
-sinfo -N -l --format="%N %c %m %d %O"
-echo ""
-
-echo "=== Node Configuration (Detailed) ==="
-scontrol show nodes | grep -E 'NodeName|CPUs|RealMemory|Sockets|CoresPerSocket|ThreadsPerCore|State'
+echo "==== CUDA Detailed GPU Info ===="
+nvcc ../src/gpu_info.cu -o ../bin/gpu_info
+../bin/gpu_info
 echo ""
 
 echo "=== CPU Information per Node ==="
 lscpu | grep -E '^CPU\(s\)|Model name|Thread|Core|Socket|NUMA'
 echo ""
 
-echo "==== CPU Information ===="
-cat /proc/cpuinfo | grep "model name" | uniq
-cat /proc/cpuinfo | grep "cpu cores" | uniq
-cat /proc/cpuinfo | grep "siblings" | uniq
-echo "========================"
-
-echo "=== Slurm GPU Partition Information ==="
-sinfo --format="%P %G %C %m %D"
-
 echo "=== Memory Information ==="
-free -h
-cat /proc/meminfo
+cat /proc/meminfo | awk '/MemTotal|SwapTotal|PageTables|MemFree|Buffers|Cached|HugePages_Total|HugePages_Free/ {printf "%-16s: %10d MB\n", $1, $2 / 1024}'
 echo ""
 
-echo "=== NUMA Node Information ==="
-numactrl --hardware
+echo "=== Slurm Partition Information ==="
+scontrol show partition | awk '/PartitionName=hpc|PartitionName=gpu/,/^$/' | \
+grep -E "PartitionName=|Nodes=|State=|DefMemPerCPU=|TRES="
+echo ""
+
+echo "==== Available Resources (sinfo) ===="
+sinfo -o "%P %D %C %m %G %T"
 echo ""
 
 echo "=== Disk Information ==="
@@ -71,29 +69,6 @@ echo "=== Storage Information ==="
 lsblk -d -o NAME,ROTA,RO,SIZE,MODEL
 echo ""
 
-# Network Information
-echo "=== Network Information ==="
-ip addr show
-echo ""
-
-# SLURM General Configuration
-echo ">> SLURM General Configuration"
-scontrol show config
 echo "SLURM Version:"
 sinfo --version
-echo ""
-
-# QOS Information
-echo ">> SLURM Quality of Service (QOS) Information"
-sacctmgr show qos -P
-echo ""
-
-# 5. TRES (Trackable Resources) Usage
-echo ">> TRES Information"
-scontrol show tres
-echo ""
-
-# Available Resources
-echo "Available Resources (sinfo):"
-sinfo -o "%P %D %C %m %G %T"
 echo ""
