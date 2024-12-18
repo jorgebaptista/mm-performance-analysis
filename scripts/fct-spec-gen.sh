@@ -37,34 +37,15 @@ free -h
 echo ""
 
 echo "=== Disk Information ==="
-df -hT || echo "df command not found."
-echo ""
-
-echo "=== Partition Details ==="
-lsblk || echo "lsblk command not found."
-echo ""
-
-# NETWORK AND CONNECTIVITY
-
-echo "=== Active Network Connections ==="
-netstat -tunlp 2>/dev/null || ss -tunlp || echo "Neither netstat nor ss found."
-echo ""
-
-echo "=== FIREWALL RULES ==="
-if command -v iptables &>/dev/null; then
-    # Check firewall rules (ports like 22 for SSH)
-    iptables -L -n
-else
-    echo "iptables command not found. Skipping firewall check."
-fi
+df -h || echo "df command not found."
 echo ""
 
 # Check Connectivity to Remote Server
-
 REMOTE_SERVER="fct-deei-aval"
 REMOTE_USER="a90113"
 
-echo "=== Latency to remote-server ==="
+echo "=== Latency to Remote Server ==="
+echo "Testing latency to ${REMOTE_SERVER}..."
 if ping -c 4 ${REMOTE_SERVER} &>/dev/null; then
     ping -c 4 ${REMOTE_SERVER}
 else
@@ -73,17 +54,15 @@ fi
 echo ""
 
 echo "=== SSH CONNECTIVITY TEST ==="
-echo "Testing SSH connectivity with verbose output (no password prompt expected)"
-ssh -o BatchMode=yes -o ConnectTimeout=5 -v ${REMOTE_USER}@${REMOTE_SERVER} 'exit' ||
+echo "Testing SSH connectivity to ${REMOTE_USER}@${REMOTE_SERVER}..."
+if ssh -o ConnectTimeout=30 ${REMOTE_USER}@${REMOTE_SERVER} 'exit' &>/dev/null; then
+    echo "SSH test to ${REMOTE_USER}@${REMOTE_SERVER} successful."
+else
     echo "SSH test to ${REMOTE_USER}@${REMOTE_SERVER} failed. Check credentials or network."
+fi
 echo ""
 
-# Other
-
-echo "=== PCI Devices ==="
-lspci || echo "lspci command not found."
-echo ""
-
+# Other System Information
 echo "=== GPU Information ==="
 if command -v nvidia-smi &>/dev/null; then
     nvidia-smi
@@ -92,14 +71,12 @@ else
 fi
 echo ""
 
-echo "=== File System Information ==="
-mount | grep '^/dev' || echo "No mount points found."
-echo ""
-
 echo "=== System Uptime and Load ==="
 uptime || echo "uptime command not found."
 echo ""
 
 # COMPLETION
+echo "========================================="
+echo "System information collection completed."
 exec >/dev/tty 2>&1
 echo "System information have been collected in $OUTPUT_FILE." >&2
