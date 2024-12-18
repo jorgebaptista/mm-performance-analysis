@@ -1,0 +1,91 @@
+=== SYSTEM INFORMATION REPORT ===
+Report generated on: Wed 18 Dec 2024 10:49:55 AM WET
+
+=== System Information ===
+Hostname: fct-deei-aval
+Operating System: Linux
+Kernel Version: 5.10.0-28-amd64
+Architecture: x86_64
+Distribution: Debian GNU/Linux 11 (bullseye)
+
+=== CPU INFORMATION ===
+Architecture:                       x86_64
+CPU op-mode(s):                     32-bit, 64-bit
+Byte Order:                         Little Endian
+Address sizes:                      44 bits physical, 48 bits virtual
+CPU(s):                             2
+On-line CPU(s) list:                0,1
+Thread(s) per core:                 1
+Core(s) per socket:                 2
+Socket(s):                          1
+NUMA node(s):                       1
+Vendor ID:                          GenuineIntel
+CPU family:                         6
+Model:                              85
+Model name:                         Intel(R) Xeon(R) Gold 6138 CPU @ 2.00GHz
+Stepping:                           4
+CPU MHz:                            1995.315
+BogoMIPS:                           3990.63
+Hypervisor vendor:                  Microsoft
+Virtualization type:                full
+L1d cache:                          64 KiB
+L1i cache:                          64 KiB
+L2 cache:                           2 MiB
+L3 cache:                           55 MiB
+NUMA node0 CPU(s):                  0,1
+Vulnerability Gather data sampling: Unknown: Dependent on hypervisor status
+Vulnerability Itlb multihit:        KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:                 Mitigation; PTE Inversion
+Vulnerability Mds:                  Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Meltdown:             Mitigation; PTI
+Vulnerability Mmio stale data:      Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Retbleed:             Vulnerable
+Vulnerability Spec rstack overflow: Not affected
+Vulnerability Spec store bypass:    Vulnerable
+Vulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:           Mitigation; Retpolines, STIBP disabled, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:                Not affected
+Vulnerability Tsx async abort:      Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Flags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx lm constant_tsc rep_good nopl cpuid pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch pti fsgsbase bmi1 hle avx2 smep bmi2 erms rtm rdseed adx smap xsaveopt
+
+=== MEMORY INFORMATION ===
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       588Mi       807Mi       0.0Ki       2.4Gi       2.9Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+=== Disk Information ===
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           386M  364K  385M   1% /run
+/dev/sda2       7.0G  5.1G  1.6G  77% /
+tmpfs           1.9G     0  1.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda1       511M  5.9M  506M   2% /boot/efi
+/dev/sda5       519M   80K  481M   1% /tmp
+/dev/sda6        25G   15G  8.8G  63% /home
+/dev/sda3       2.6G  759M  1.7G  31% /var
+
+=== Latency to Remote Server ===
+Testing latency to fct-deei-linux...
+PING fct-deei-linux.ualg.pt (10.4.0.110) 56(84) bytes of data.
+64 bytes from fct-deei-linux.ualg.pt (10.4.0.110): icmp_seq=1 ttl=64 time=1.67 ms
+64 bytes from fct-deei-linux.ualg.pt (10.4.0.110): icmp_seq=2 ttl=64 time=0.387 ms
+64 bytes from fct-deei-linux.ualg.pt (10.4.0.110): icmp_seq=3 ttl=64 time=0.608 ms
+64 bytes from fct-deei-linux.ualg.pt (10.4.0.110): icmp_seq=4 ttl=64 time=0.503 ms
+
+--- fct-deei-linux.ualg.pt ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3034ms
+rtt min/avg/max/mdev = 0.387/0.791/1.666/0.511 ms
+
+=== SSH CONNECTIVITY TEST ===
+Testing SSH connectivity to a90113@fct-deei-linux...
+SSH test to a90113@fct-deei-linux successful.
+
+=== GPU Information ===
+No NVIDIA GPU detected or 'nvidia-smi' not installed.
+
+=== System Uptime and Load ===
+ 10:50:01 up 29 days, 16:28,  0 users,  load average: 0.00, 0.00, 0.00
+
+=========================================
+System information collection completed.
