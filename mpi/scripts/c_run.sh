@@ -83,10 +83,10 @@ run_matrix_multiplication() {
         LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
         echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
-        
+
         if ((size < SLURM_NTASKS)); then
-          continue
-          echo "Skipping due to size being smaller than total workers." | tee -a "$LOG_TIMES"
+            echo "Skipping due to size being smaller than total workers." | tee -a "$LOG_TIMES"
+            continue
         fi
 
         echo "Compiling multiply_matrix.c"
