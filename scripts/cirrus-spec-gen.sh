@@ -36,7 +36,7 @@ fi
 echo ""
 
 echo "==== Gathering GPU specs for all GPUs on the node ===="
-nvidia-smi --query-gpu=name,memory.total --format=csv
+nvidia-smi --query-gpu=name,memory.total,clocks.max.graphics,clocks.max.sm,compute_mode --format=csv
 echo ""
 
 echo "==== CUDA Detailed GPU Info ===="

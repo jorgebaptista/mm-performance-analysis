@@ -41,10 +41,10 @@ Architecture: x86_64
 Distribution: AlmaLinux 8.10 (Cerulean Leopard)
 
 ==== Gathering GPU specs for all GPUs on the node ====
-name, memory.total [MiB]
-NVIDIA A100 80GB PCIe, 81920 MiB
-Tesla V100-SXM2-32GB, 32768 MiB
-Tesla T4, 15360 MiB
+name, memory.total [MiB], clocks.max.graphics [MHz], clocks.max.sm [MHz]
+NVIDIA A100 80GB PCIe, 81920 MiB, 1410 MHz, 1410 MHz
+Tesla V100-SXM2-32GB, 32768 MiB, 1530 MHz, 1530 MHz, Default
+Tesla T4, 15360 MiB, 1590 MHz, 1590 MHz, Default
 
 ==== CUDA Detailed GPU Info ====
 Device: NVIDIA A100 80GB PCIe
