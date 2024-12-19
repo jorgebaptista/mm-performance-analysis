@@ -1,0 +1,73 @@
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+../src/multiply_matrix.cu(52): warning #186-D: pointless comparison of unsigned integer with zero
+      for (size_t m = 0; m < N / 128; m++)
+                           ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas error   : Entry function '_Z12MatMulKernelPiS_S_' uses too much shared data (0x20000 bytes, 0x18000 max)

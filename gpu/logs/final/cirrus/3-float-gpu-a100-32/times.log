@@ -1,0 +1,426 @@
+Session started at: 2024-12-19 18:42:59
+Running GPU Parallelization with float values on hpc064.a.incd.pt
+Using GPUs: 0
+===============================================
+Using random_float_matrix_15.bin input file:
+------------2x2-------------
+Read time: 0.01155200 seconds
+Write time: 0.00021400 seconds
+Multiplication time (avg): 0.00000229 seconds
+	Command being timed: "./../bin/multiply_matrix_2x2_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/2x2_results.log"
+	User time (seconds): 0.02
+	System time (seconds): 0.26
+	Percent of CPU this job got: 89%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 122988
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5
+	Minor (reclaiming a frame) page faults: 7608
+	Voluntary context switches: 80
+	Involuntary context switches: 26
+	Swaps: 0
+	File system inputs: 528
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4x4-------------
+Read time: 0.00002400 seconds
+Write time: 0.00025900 seconds
+Multiplication time (avg): 0.00000253 seconds
+	Command being timed: "./../bin/multiply_matrix_4x4_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/4x4_results.log"
+	User time (seconds): 0.01
+	System time (seconds): 0.24
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 122984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7609
+	Voluntary context switches: 67
+	Involuntary context switches: 28
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8x8-------------
+Read time: 0.00002600 seconds
+Write time: 0.00024600 seconds
+Multiplication time (avg): 0.00000239 seconds
+	Command being timed: "./../bin/multiply_matrix_8x8_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/8x8_results.log"
+	User time (seconds): 0.01
+	System time (seconds): 0.24
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 123020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7618
+	Voluntary context switches: 66
+	Involuntary context switches: 27
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16x16-------------
+Read time: 0.00002100 seconds
+Write time: 0.00025200 seconds
+Multiplication time (avg): 0.00000236 seconds
+	Command being timed: "./../bin/multiply_matrix_16x16_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/16x16_results.log"
+	User time (seconds): 0.01
+	System time (seconds): 0.24
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 122992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7613
+	Voluntary context switches: 65
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32x32-------------
+Read time: 0.00002500 seconds
+Write time: 0.00069800 seconds
+Multiplication time (avg): 0.00000891 seconds
+	Command being timed: "./../bin/multiply_matrix_32x32_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/32x32_results.log"
+	User time (seconds): 0.01
+	System time (seconds): 0.24
+	Percent of CPU this job got: 90%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 124016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7823
+	Voluntary context switches: 64
+	Involuntary context switches: 27
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------64x64-------------
+Read time: 0.00376900 seconds
+Write time: 0.00156100 seconds
+Multiplication time (avg): 0.00001062 seconds
+	Command being timed: "./../bin/multiply_matrix_64x64_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/64x64_results.log"
+	User time (seconds): 0.02
+	System time (seconds): 0.24
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 124468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7936
+	Voluntary context switches: 66
+	Involuntary context switches: 26
+	Swaps: 0
+	File system inputs: 2032
+	File system outputs: 128
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------128x128-------------
+Read time: 0.01061200 seconds
+Write time: 0.00492600 seconds
+Multiplication time (avg): 0.00001201 seconds
+	Command being timed: "./../bin/multiply_matrix_128x128_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/128x128_results.log"
+	User time (seconds): 0.02
+	System time (seconds): 0.25
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 124340
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7872
+	Voluntary context switches: 67
+	Involuntary context switches: 28
+	Swaps: 0
+	File system inputs: 129024
+	File system outputs: 408
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------256x256-------------
+Read time: 0.00356500 seconds
+Write time: 0.01807600 seconds
+Multiplication time (avg): 0.00002185 seconds
+	Command being timed: "./../bin/multiply_matrix_256x256_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/256x256_results.log"
+	User time (seconds): 0.04
+	System time (seconds): 0.24
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 124820
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8023
+	Voluntary context switches: 64
+	Involuntary context switches: 29
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1560
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Read time: 0.00449400 seconds
+Write time: 0.06550300 seconds
+Multiplication time (avg): 0.00007489 seconds
+	Command being timed: "./../bin/multiply_matrix_512x512_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/512x512_results.log"
+	User time (seconds): 0.09
+	System time (seconds): 0.25
+	Percent of CPU this job got: 94%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 127232
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8601
+	Voluntary context switches: 64
+	Involuntary context switches: 28
+	Swaps: 0
+	File system inputs: 2048
+	File system outputs: 6352
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Read time: 0.00814700 seconds
+Write time: 0.27857700 seconds
+Multiplication time (avg): 0.00042525 seconds
+	Command being timed: "./../bin/multiply_matrix_1024x1024_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/1024x1024_results.log"
+	User time (seconds): 0.35
+	System time (seconds): 0.27
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 138704
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9375
+	Voluntary context switches: 68
+	Involuntary context switches: 32
+	Swaps: 0
+	File system inputs: 12288
+	File system outputs: 26312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------2048x2048-------------
+Read time: 0.01905300 seconds
+Write time: 1.14046400 seconds
+Multiplication time (avg): 0.00315081 seconds
+	Command being timed: "./../bin/multiply_matrix_2048x2048_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/2048x2048_results.log"
+	User time (seconds): 1.42
+	System time (seconds): 0.36
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.81
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 173552
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9396
+	Voluntary context switches: 78
+	Involuntary context switches: 45
+	Swaps: 0
+	File system inputs: 49152
+	File system outputs: 106248
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4096x4096-------------
+Read time: 0.07725400 seconds
+Write time: 4.62140400 seconds
+Multiplication time (avg): 0.02553959 seconds
+	Command being timed: "./../bin/multiply_matrix_4096x4096_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/4096x4096_results.log"
+	User time (seconds): 6.32
+	System time (seconds): 0.62
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 321012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9469
+	Voluntary context switches: 137
+	Involuntary context switches: 105
+	Swaps: 0
+	File system inputs: 196608
+	File system outputs: 432752
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8192x8192-------------
+Read time: 0.68962000 seconds
+Write time: 19.19089100 seconds
+Multiplication time (avg): 0.21389017 seconds
+	Command being timed: "./../bin/multiply_matrix_8192x8192_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/8192x8192_results.log"
+	User time (seconds): 29.64
+	System time (seconds): 1.50
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 910836
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9757
+	Voluntary context switches: 498
+	Involuntary context switches: 376
+	Swaps: 0
+	File system inputs: 657408
+	File system outputs: 1834856
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16384x16384-------------
+Read time: 1.56484000 seconds
+Write time: 77.36070800 seconds
+Multiplication time (avg): 1.72676729 seconds
+	Command being timed: "./../bin/multiply_matrix_16384x16384_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/16384x16384_results.log"
+	User time (seconds): 145.98
+	System time (seconds): 5.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:32.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3270136
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 10910
+	Voluntary context switches: 1931
+	Involuntary context switches: 1767
+	Swaps: 0
+	File system inputs: 1776872
+	File system outputs: 7339264
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32768x32768-------------
+Read time: 2.75905500 seconds
+Write time: 247.06074100 seconds
+Multiplication time (avg): 13.96546663 seconds
+	Command being timed: "./../bin/multiply_matrix_32768x32768_19191382 ../../data/random_float_matrix_15.bin ../logs/cirrus/19191382/times.log ../logs/cirrus/19191382/results/32768x32768_results.log"
+	User time (seconds): 735.01
+	System time (seconds): 15.09
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:32.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8515080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 144
+	Minor (reclaiming a frame) page faults: 15512
+	Voluntary context switches: 8077
+	Involuntary context switches: 9492
+	Swaps: 0
+	File system inputs: 1816248
+	File system outputs: 21100624
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 15m 56s
+Session Finished at: 2024-12-19 18:58:55
+###############################################
+Details for Job ID 19191382
+Running GPU Parallelization with float values on hpc064.a.incd.pt
+=============== Active Modules =================
+ - Currently Loaded Modules:
+ -   1) cuda/12.6
+================ Memory Usage ==================
+JobID            MaxRSS  MaxVMSize  MaxDiskRead MaxDiskWrite 
+------------ ---------- ---------- ------------ ------------ 
+19191382.ba+   8411116K  18074500K   7428863835  20145340621 
+=============== Nodes Assigned =================
+hpc064
+

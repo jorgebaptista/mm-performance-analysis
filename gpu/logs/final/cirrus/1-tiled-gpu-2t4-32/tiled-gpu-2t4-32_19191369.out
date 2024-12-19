@@ -1,0 +1,155 @@
+* ----------------------------------------------------------------
+* Running PROLOG for tiled-gpu-2t4-32 on Thu Dec 19 18:20:44 WET 2024
+*    JOB_NAME                : tiled-gpu-2t4-32
+*    JOB_ID                  : 19191369
+*    JOB_PARTITION           : gpu
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : gpuvlabualg
+*    JOB_GPUS                : 1,2
+*    NODE_LIST               : hpc061
+*    SLURM_NNODES            : 1
+*    SLURM_NPROCS            : 1
+*    SLURM_NTASKS            : 1
+*    SLURM_CPUS_ON_NODE      : 1
+*    SLURM_TASKS_PER_NODE    : 1
+*    SLURM_JOB_CPUS_PER_NODE : 1
+*    SLURM_GPUS_ON_NODE      : 2
+*    SLURM_MEM_PER_NODE      : 131072
+*    SUBMIT_HOST             : cirrus08.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/mm-performance-analysis/gpu/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/mm-performance-analysis/gpu/scripts/c_test3.sh
+*
+*    GPU 0                   : Name                 Tesla T4
+*                            : SN                   1561020006422
+*                            : Driver               560.35.03
+*                            : Memory               14916 MBytes
+*                            : Multiprocessors      40
+*                            : Cores/Multiprocessor 64
+*                            : Cores                2560
+*
+*    GPU 1                   : Name                 Tesla T4
+*                            : SN                   1563919008482
+*                            : Driver               560.35.03
+*                            : Memory               14916 MBytes
+*                            : Multiprocessors      40
+*                            : Cores/Multiprocessor 64
+*                            : Cores                2560
+* ----------------------------------------------------------------
+
+=== Environment ===
+Using existing input data...
+Session started at: 2024-12-19 18:20:45
+Running GPU Parallelization with int values on hpc061.a.incd.pt
+Using GPUs: 0,1
+===============================================
+Using random_int_matrix_15.bin input file:
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/1024x1024_results.log
+------------2048x2048-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2048x2048_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/2048x2048_results.log
+------------4096x4096-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4096x4096_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/4096x4096_results.log
+------------8192x8192-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8192x8192_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/8192x8192_results.log
+------------16384x16384-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16384x16384_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/16384x16384_results.log
+------------32768x32768-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32768x32768_19191369
+Execution succeeded.
+Times saved to ../logs/cirrus/19191369/times.log
+Results saved to ../logs/cirrus/19191369/results/32768x32768_results.log
+
+=== Finalizing ===
+Session Time: 54m 26s
+Session Finished at: 2024-12-19 19:15:11

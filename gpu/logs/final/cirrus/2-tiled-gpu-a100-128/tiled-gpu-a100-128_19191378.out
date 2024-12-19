@@ -1,0 +1,87 @@
+* ----------------------------------------------------------------
+* Running PROLOG for tiled-gpu-a100-128 on Thu Dec 19 18:35:45 WET 2024
+*    JOB_NAME                : tiled-gpu-a100-128
+*    JOB_ID                  : 19191378
+*    JOB_PARTITION           : gpu
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : gpuvlabualg
+*    JOB_GPUS                : 0
+*    NODE_LIST               : hpc064
+*    SLURM_NNODES            : 1
+*    SLURM_NPROCS            : 1
+*    SLURM_NTASKS            : 1
+*    SLURM_CPUS_ON_NODE      : 1
+*    SLURM_TASKS_PER_NODE    : 1
+*    SLURM_JOB_CPUS_PER_NODE : 1
+*    SLURM_GPUS_ON_NODE      : 1
+*    SLURM_MEM_PER_NODE      : 131072
+*    SUBMIT_HOST             : cirrus08.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/mm-performance-analysis/gpu/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/mm-performance-analysis/gpu/scripts/c_test5.sh
+*
+*    GPU 0                   : Name                 NVIDIA A100 80GB PCIe
+*                            : SN                   1322222099772
+*                            : Driver               560.35.03
+*                            : Memory               81156 MBytes
+*                            : Multiprocessors      108
+*                            : Cores/Multiprocessor 64
+*                            : Cores                6912
+* ----------------------------------------------------------------
+
+=== Environment ===
+Using existing input data...
+Session started at: 2024-12-19 18:35:45
+Running GPU Parallelization with int values on hpc064.a.incd.pt
+Using GPUs: 0
+===============================================
+Using random_int_matrix_15.bin input file:
+------------2x2-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2x2_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/2x2_results.log
+------------4x4-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4x4_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/4x4_results.log
+------------8x8-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8x8_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/8x8_results.log
+------------16x16-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_16x16_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/16x16_results.log
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_19191378
+Execution succeeded.
+Times saved to ../logs/cirrus/19191378/times.log
+Results saved to ../logs/cirrus/19191378/results/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation failed.
+
+=== Finalizing ===
+Session Time: 0m 5s
+Session Finished at: 2024-12-19 18:35:50
