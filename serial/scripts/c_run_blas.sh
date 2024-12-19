@@ -5,7 +5,6 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --nodes=1
 #SBATCH --time=02:30:00
-#SBATCH --qos=cpuvlabualg
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
 #SBATCH --job-name=blas-serial-analysis
