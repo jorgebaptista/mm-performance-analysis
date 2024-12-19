@@ -5,18 +5,13 @@
 #SBATCH --partition=gpu
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu
-#SBATCH --mem=64G
+#SBATCH --mem=128G
 #SBATCH --qos=gpuvlabualg
 #SBATCH --time=03:00:00
 #SBATCH --output=../logs/cirrus/%j/%x_%j.out
 #SBATCH --error=../logs/cirrus/%j/%x_%j.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-
-# todo so if this is using gpu partition which partition takes care of the cpu part of the job? like reading and writing
-# todo and does queue also depend on the vailable cpu nodes?
-# todo need to check what gpu is
-# todo also need to set the same gpu cuz times will differ and comparison must be with same
 
 # ---------------------------------------------------------------------	#
 echo
@@ -94,7 +89,7 @@ run_matrix_multiplication() {
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        nvcc -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DTHREADS=$THREADS -DTILE_WIDTH=$TILE_WIDTH
+        nvcc -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DTILE_WIDTH=$TILE_WIDTH
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
