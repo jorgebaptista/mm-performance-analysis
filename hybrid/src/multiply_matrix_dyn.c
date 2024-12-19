@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
       exit(1);
    }
 
-   omp_set_num_threads(THREADS);
+   // omp_set_num_threads(THREADS);
 
    /**************************** Master Task ************************************/
    if (taskid == MASTER)

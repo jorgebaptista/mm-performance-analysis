@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 
    if (taskid < active_tasks)
    {
-      omp_set_num_threads(THREADS);
+      // omp_set_num_threads(THREADS);
       if (taskid < extra)
       {
          rows = averow + 1;
