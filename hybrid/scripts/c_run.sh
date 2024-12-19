@@ -2,13 +2,13 @@
 
 # ---------------------------------------------------------------------	#
 #SBATCH -p hpc
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=24
-#SBATCH --qos=cpuvlabualg 
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=96
+#SBATCH --cpus-per-task=1
+#SBATCH --time=04:30:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-hyb-analysis
+#SBATCH --job-name=hyb-dyn-int-24x4x2-15
 #SBATCH --output=../logs/cirrus/%j/%x_%j.out
 #SBATCH --error=../logs/cirrus/%j/%x_%j.err
 
@@ -24,8 +24,10 @@ SESSION_DESCRIPTION="Hybrid (MPI + OpenMP) Parallelization"
 TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU))
 
 MATRIX_TYPE=${1:-int}
-MIN_P=${2:-1}
-MAX_P=${3:-10}
+MIN_P=${2:-5}
+MAX_P=${3:-15}
+NRUNS=${4:-30}
+THREADS=$((SLURM_CPUS_PER_TASK * SLURM_NTASKS_PER_NODE * SLURM_JOB_NUM_NODES))
 
 # ********Directories********* #
 BIN_DIR="../bin"
@@ -82,10 +84,14 @@ run_matrix_multiplication() {
         LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
         echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
+        if ((size < SLURM_NTASKS)); then
+            echo "Skipping due to size being smaller than total workers." | tee -a "$LOG_TIMES"
+            continue
+        fi
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -O3 -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE
+        mpicc -O3 -fopenmp -Wall -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DWORKERS=$SLURM_NTASKS -DTHREADS=$THREADS
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
@@ -93,6 +99,7 @@ run_matrix_multiplication() {
         echo "Compilation succeeded."
 
         echo "Running $MULTIPLY_MATRIX_EXE"
+        echo "Runs: $NRUNS" | tee -a "$LOG_TIMES"
         echo "Nodes: $SLURM_JOB_NUM_NODES" | tee -a "$LOG_TIMES"
         echo "Workers (per node): $SLURM_NTASKS_PER_NODE" | tee -a "$LOG_TIMES"
         echo "CPUs (per task): $SLURM_CPUS_PER_TASK" | tee -a "$LOG_TIMES"

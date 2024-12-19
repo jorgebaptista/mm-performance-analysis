@@ -34,7 +34,7 @@ AVAL_DATA_DIR="$(dirname "$AVAL_WD")/../data"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$ID"
-MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn.c"
+MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn_io.c"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
