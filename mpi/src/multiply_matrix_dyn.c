@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 {
    int numtasks, taskid, offset, rows;
    MPI_Status status;
-   MPI_Datatype mpi_type;   
+   MPI_Datatype mpi_type;
 
    MPI_Init(&argc, &argv);
    MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
@@ -154,12 +154,12 @@ int main(int argc, char *argv[])
          offset += rows;
       }
 
-      for (int i = 0; i <= NRUNS; i++)
+      for (int run = 0; run <= NRUNS; run++)
       {
          double start_time = MPI_Wtime();
 
          for (int dest = 1; dest < numtasks; dest++)
-            MPI_Send(&i, 1, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD); // Send current nrun
+            MPI_Send(&run, 1, MPI_INT, dest, START_MULTIPLY, MPI_COMM_WORLD); // Send current nrun
 
          double master_time = MPI_Wtime();
          for (int i = master_offset; i < master_offset + master_rows; i++)
@@ -175,8 +175,8 @@ int main(int argc, char *argv[])
             }
          }
 
-         if (i > 0)
-            worker_times[i - 1][MASTER] += MPI_Wtime() - master_time;
+         if (run > 0)
+            worker_times[run - 1][MASTER] += MPI_Wtime() - master_time;
 
          // receive results from workers. source = worker
          for (int source = 1; source < numtasks; source++)
@@ -184,10 +184,10 @@ int main(int argc, char *argv[])
             MPI_Recv(&offset, 1, MPI_INT, source, FROM_WORKER, MPI_COMM_WORLD, &status);
             MPI_Recv(&rows, 1, MPI_INT, source, FROM_WORKER, MPI_COMM_WORLD, &status);
             MPI_Recv(&C[offset * SIZE], rows * SIZE, mpi_type, source, FROM_WORKER, MPI_COMM_WORLD, &status);
-            MPI_Recv(&worker_times[i - 1][source], 1, MPI_DOUBLE, source, FROM_WORKER, MPI_COMM_WORLD, &status);
+            MPI_Recv(&worker_times[run - 1][source], 1, MPI_DOUBLE, source, FROM_WORKER, MPI_COMM_WORLD, &status);
          }
 
-         if (i > 0)
+         if (run > 0)
             avg_multi_times += MPI_Wtime() - start_time;
       }
 
