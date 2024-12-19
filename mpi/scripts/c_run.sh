@@ -2,14 +2,13 @@
 
 # ---------------------------------------------------------------------	#
 #SBATCH -p hpc
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=24
-#SBATCH --time=02:30:00
-#SBATCH --qos=cpuvlabualg
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=96
+#SBATCH --cpus-per-task=1
+#SBATCH --time=04:30:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-mpi-analysis
+#SBATCH --job-name=mpi-dynio-int-96x2-15
 #SBATCH --output=../logs/cirrus/%j/%x_%j.out
 #SBATCH --error=../logs/cirrus/%j/%x_%j.err
 
@@ -26,7 +25,7 @@ TOTAL_MEM_ALLOC=$((SLURM_JOB_NUM_NODES * SLURM_CPUS_ON_NODE * SLURM_MEM_PER_CPU)
 
 MATRIX_TYPE=${1:-int}
 MIN_P=${2:-1}
-MAX_P=${3:-10}
+MAX_P=${3:-15}
 NRUNS=${4:-30}
 
 # ********Directories********* #
@@ -37,7 +36,7 @@ RESULTS_DIR="$LOGS_DIR/results"
 
 GENERATE_MATRIX_SOURCE="../../src/generate_matrix.c"
 GENERATE_MATRIX_EXE="$BIN_DIR/generate_matrix_$SLURM_JOB_ID"
-MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix.c"
+MULTIPLY_MATRIX_SOURCE="../src/multiply_matrix_dyn_io.c"
 LOG_TIMES="$LOGS_DIR/times.log"
 RAND_DATA="random_${MATRIX_TYPE}_matrix_${MAX_P}.bin"
 
@@ -84,10 +83,15 @@ run_matrix_multiplication() {
         LOG_RESULTS="$RESULTS_DIR/${size}x${size}_results.log"
         echo "Matrix product from $description:" >>"$LOG_RESULTS"
         echo "------------${size}x${size}-------------" | tee -a "$LOG_TIMES"
+        
+        if ((size < SLURM_NTASKS)); then
+          continue
+          echo "Skipping due to size being smaller than total workers." | tee -a "$LOG_TIMES"
+        fi
 
         echo "Compiling multiply_matrix.c"
         rm -f "$MULTIPLY_MATRIX_EXE"
-        mpicc -Wall -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DWORKERS=$WORKERS
+        mpicc -Wall -O3 -o "$MULTIPLY_MATRIX_EXE" "$MULTIPLY_MATRIX_SOURCE" -DSIZE=$size -DMAX_SIZE=$((2 ** $MAX_P)) -DMATRIX_TYPE=$MATRIX_TYPE -DNRUNS=$NRUNS -DWORKERS=$SLURM_NTASKS
         if [ $? -ne 0 ]; then
             echo "Compilation failed."
             break
