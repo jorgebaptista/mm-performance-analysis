@@ -39,6 +39,11 @@ int main(int argc, char *argv[])
 {
    int numtasks, taskid, offset, rows;
    MPI_Datatype mpi_type;
+
+   MPI_Init(&argc, &argv);
+   MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
+   MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
+
    if (sizeof(MATRIX_TYPE) == sizeof(int))
    {
       mpi_type = MPI_INT;
@@ -57,10 +62,6 @@ int main(int argc, char *argv[])
          fprintf(stderr, "Unsupported MATRIX_TYPE\n");
       MPI_Abort(MPI_COMM_WORLD, 1);
    }
-
-   MPI_Init(&argc, &argv);
-   MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
-   MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
 
    if (numtasks != WORKERS)
    {
@@ -186,7 +187,7 @@ int main(int argc, char *argv[])
    }
 
    double total_avg_time = 0.0, avg_read_time = 0.0, avg_write_time = 0.0,
-    max_read_time = 0.0, max_write_time = 0.0;
+          max_read_time = 0.0, max_write_time = 0.0;
    double avg_multi_times[active_tasks];
    MPI_Reduce(&avg_multi_time, &total_avg_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
    MPI_Gather(&avg_multi_time, 1, MPI_DOUBLE, avg_multi_times, 1, MPI_DOUBLE, MASTER, MPI_COMM_WORLD);

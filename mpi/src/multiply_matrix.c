@@ -69,6 +69,11 @@ int main(int argc, char *argv[])
    int numtasks, taskid, offset, rows;
    MPI_Status status;
    MPI_Datatype mpi_type;
+
+   MPI_Init(&argc, &argv);
+   MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
+   MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
+   
    if (sizeof(MATRIX_TYPE) == sizeof(int))
    {
       mpi_type = MPI_INT;
@@ -86,10 +91,6 @@ int main(int argc, char *argv[])
       fprintf(stderr, "Unsupported MATRIX_TYPE\n");
       MPI_Abort(MPI_COMM_WORLD, 1);
    }
-
-   MPI_Init(&argc, &argv);
-   MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
-   MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
 
    if (numtasks != WORKERS)
    {
