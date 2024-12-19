@@ -6,10 +6,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=96
 #SBATCH --time=02:30:00
-#SBATCH --qos=cpuvlabualg
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=a90113@ualg.pt
-#SBATCH --job-name=mm-omp-analysis
+#SBATCH --job-name=blas-omp-float
 #SBATCH --output=../logs/cirrus/%j/%x_%j.out
 #SBATCH --error=../logs/cirrus/%j/%x_%j.err
 
