@@ -75,4 +75,4 @@ shared_data/
 
 # Ignore test folders and files
 */test/*
-*_test*.sh
+*_test*
