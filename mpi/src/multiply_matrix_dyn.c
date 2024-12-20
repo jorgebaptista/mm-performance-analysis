@@ -35,15 +35,15 @@ MATRIX_TYPE *A;
 MATRIX_TYPE *B;
 MATRIX_TYPE *C;
 
-void read_matrix(FILE *file, MATRIX_TYPE *arr, int n, size_t start_element, double *time)
+void read_matrix(FILE *file, MATRIX_TYPE *arr, int n, size_t start_element)
 {
-   double start_time = MPI_Wtime();
+   // double start_time = MPI_Wtime();
 
    size_t offset = start_element * sizeof(MATRIX_TYPE);
    fseek(file, offset, SEEK_SET);
    fread(arr, sizeof(MATRIX_TYPE), n * n, file);
 
-   *time = MPI_Wtime() - start_time;
+   // *time = MPI_Wtime() - start_time;
 }
 
 void print_matrix(FILE *file, MATRIX_TYPE *C, int n, double *time)
@@ -121,8 +121,9 @@ int main(int argc, char *argv[])
       const char *result_log_name = argv[3];
 
       FILE *matrix_file = fopen(matrix_file_name, "rb");
-      read_matrix(matrix_file, A, SIZE, 0, &read_time);
-      read_matrix(matrix_file, B, SIZE, MAX_SIZE * MAX_SIZE, &read_time);
+      read_time = MPI_Wtime();
+      read_matrix(matrix_file, A, SIZE, 0);
+      read_matrix(matrix_file, B, SIZE, MAX_SIZE * MAX_SIZE);
       fclose(matrix_file);
 
       // send matrix data to workers
@@ -153,6 +154,8 @@ int main(int argc, char *argv[])
          }
          offset += rows;
       }
+
+      read_time = MPI_Wtime() - read_time;
 
       for (int run = 0; run <= NRUNS; run++)
       {
