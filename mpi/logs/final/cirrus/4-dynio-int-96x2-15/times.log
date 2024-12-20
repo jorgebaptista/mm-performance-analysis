@@ -1,0 +1,1385 @@
+Session started at: 2024-12-19 19:11:24
+Running MPI Parallelization with int values on hpc077.a.incd.pt
+===============================================
+Using random_int_matrix_13.bin input file:
+------------2x2-------------
+Skipping due to size being smaller than total workers.
+------------4x4-------------
+Skipping due to size being smaller than total workers.
+------------8x8-------------
+Skipping due to size being smaller than total workers.
+------------16x16-------------
+Skipping due to size being smaller than total workers.
+------------32x32-------------
+Skipping due to size being smaller than total workers.
+------------64x64-------------
+Skipping due to size being smaller than total workers.
+------------128x128-------------
+Skipping due to size being smaller than total workers.
+------------256x256-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 0.04905413 seconds
+Read time (max): 0.05032116 seconds
+Write time (avg): 0.05730555 seconds
+Write time (max): 0.08161754 seconds
+Multiplication time (avg): 0.00012441 seconds
+Worker 0 time (avg): 0.00018922 seconds
+Worker 1 time (avg): 0.00018775 seconds
+Worker 2 time (avg): 0.00018807 seconds
+Worker 3 time (avg): 0.00018795 seconds
+Worker 4 time (avg): 0.00018798 seconds
+Worker 5 time (avg): 0.00018635 seconds
+Worker 6 time (avg): 0.00018829 seconds
+Worker 7 time (avg): 0.00018784 seconds
+Worker 8 time (avg): 0.00018315 seconds
+Worker 9 time (avg): 0.00018451 seconds
+Worker 10 time (avg): 0.00018420 seconds
+Worker 11 time (avg): 0.00018480 seconds
+Worker 12 time (avg): 0.00018488 seconds
+Worker 13 time (avg): 0.00018434 seconds
+Worker 14 time (avg): 0.00018453 seconds
+Worker 15 time (avg): 0.00018441 seconds
+Worker 16 time (avg): 0.00018092 seconds
+Worker 17 time (avg): 0.00018767 seconds
+Worker 18 time (avg): 0.00018686 seconds
+Worker 19 time (avg): 0.00018654 seconds
+Worker 20 time (avg): 0.00018764 seconds
+Worker 21 time (avg): 0.00018720 seconds
+Worker 22 time (avg): 0.00018783 seconds
+Worker 23 time (avg): 0.00018738 seconds
+Worker 24 time (avg): 0.00019150 seconds
+Worker 25 time (avg): 0.00018490 seconds
+Worker 26 time (avg): 0.00018305 seconds
+Worker 27 time (avg): 0.00018474 seconds
+Worker 28 time (avg): 0.00018525 seconds
+Worker 29 time (avg): 0.00018532 seconds
+Worker 30 time (avg): 0.00018351 seconds
+Worker 31 time (avg): 0.00018441 seconds
+Worker 32 time (avg): 0.00018490 seconds
+Worker 33 time (avg): 0.00018809 seconds
+Worker 34 time (avg): 0.00018773 seconds
+Worker 35 time (avg): 0.00018720 seconds
+Worker 36 time (avg): 0.00018799 seconds
+Worker 37 time (avg): 0.00018764 seconds
+Worker 38 time (avg): 0.00018719 seconds
+Worker 39 time (avg): 0.00018802 seconds
+Worker 40 time (avg): 0.00019889 seconds
+Worker 41 time (avg): 0.00018489 seconds
+Worker 42 time (avg): 0.00018453 seconds
+Worker 43 time (avg): 0.00018421 seconds
+Worker 44 time (avg): 0.00018408 seconds
+Worker 45 time (avg): 0.00018467 seconds
+Worker 46 time (avg): 0.00018482 seconds
+Worker 47 time (avg): 0.00018361 seconds
+Worker 48 time (avg): 0.00020350 seconds
+Worker 49 time (avg): 0.00018720 seconds
+Worker 50 time (avg): 0.00018740 seconds
+Worker 51 time (avg): 0.00018797 seconds
+Worker 52 time (avg): 0.00018640 seconds
+Worker 53 time (avg): 0.00018777 seconds
+Worker 54 time (avg): 0.00018796 seconds
+Worker 55 time (avg): 0.00018763 seconds
+Worker 56 time (avg): 0.00021603 seconds (max)
+Worker 57 time (avg): 0.00018479 seconds
+Worker 58 time (avg): 0.00018487 seconds
+Worker 59 time (avg): 0.00018591 seconds
+Worker 60 time (avg): 0.00018495 seconds
+Worker 61 time (avg): 0.00018365 seconds
+Worker 62 time (avg): 0.00018689 seconds
+Worker 63 time (avg): 0.00018488 seconds
+Worker 64 time (avg): 0.00009516 seconds
+Worker 65 time (avg): 0.00009447 seconds
+Worker 66 time (avg): 0.00009498 seconds
+Worker 67 time (avg): 0.00009564 seconds
+Worker 68 time (avg): 0.00009498 seconds
+Worker 69 time (avg): 0.00009520 seconds
+Worker 70 time (avg): 0.00009476 seconds
+Worker 71 time (avg): 0.00009624 seconds
+Worker 72 time (avg): 0.00009931 seconds
+Worker 73 time (avg): 0.00009343 seconds
+Worker 74 time (avg): 0.00009355 seconds
+Worker 75 time (avg): 0.00009355 seconds
+Worker 76 time (avg): 0.00009348 seconds
+Worker 77 time (avg): 0.00009415 seconds
+Worker 78 time (avg): 0.00009415 seconds
+Worker 79 time (avg): 0.00009359 seconds
+Worker 80 time (avg): 0.00009501 seconds
+Worker 81 time (avg): 0.00009450 seconds
+Worker 82 time (avg): 0.00009642 seconds
+Worker 83 time (avg): 0.00009495 seconds
+Worker 84 time (avg): 0.00009446 seconds
+Worker 85 time (avg): 0.00009514 seconds
+Worker 86 time (avg): 0.00009600 seconds
+Worker 87 time (avg): 0.00009506 seconds
+Worker 88 time (avg): 0.00011815 seconds
+Worker 89 time (avg): 0.00009413 seconds
+Worker 90 time (avg): 0.00009338 seconds
+Worker 91 time (avg): 0.00009344 seconds
+Worker 92 time (avg): 0.00009351 seconds
+Worker 93 time (avg): 0.00009394 seconds
+Worker 94 time (avg): 0.00009294 seconds
+Worker 95 time (avg): 0.00009337 seconds
+Worker 96 time (avg): 0.00008924 seconds
+Worker 97 time (avg): 0.00008919 seconds
+Worker 98 time (avg): 0.00008909 seconds
+Worker 99 time (avg): 0.00008900 seconds
+Worker 100 time (avg): 0.00009473 seconds
+Worker 101 time (avg): 0.00009438 seconds
+Worker 102 time (avg): 0.00009474 seconds
+Worker 103 time (avg): 0.00009497 seconds
+Worker 104 time (avg): 0.00008792 seconds
+Worker 105 time (avg): 0.00009375 seconds
+Worker 106 time (avg): 0.00009419 seconds
+Worker 107 time (avg): 0.00009369 seconds
+Worker 108 time (avg): 0.00009437 seconds
+Worker 109 time (avg): 0.00009280 seconds
+Worker 110 time (avg): 0.00009366 seconds
+Worker 111 time (avg): 0.00008759 seconds
+Worker 112 time (avg): 0.00008972 seconds
+Worker 113 time (avg): 0.00008906 seconds
+Worker 114 time (avg): 0.00008945 seconds
+Worker 115 time (avg): 0.00008894 seconds
+Worker 116 time (avg): 0.00009481 seconds
+Worker 117 time (avg): 0.00009490 seconds
+Worker 118 time (avg): 0.00009586 seconds
+Worker 119 time (avg): 0.00009441 seconds
+Worker 120 time (avg): 0.00009001 seconds
+Worker 121 time (avg): 0.00009367 seconds
+Worker 122 time (avg): 0.00009375 seconds
+Worker 123 time (avg): 0.00009358 seconds
+Worker 124 time (avg): 0.00009364 seconds
+Worker 125 time (avg): 0.00009344 seconds
+Worker 126 time (avg): 0.00009349 seconds
+Worker 127 time (avg): 0.00008751 seconds
+Worker 128 time (avg): 0.00009129 seconds
+Worker 129 time (avg): 0.00008873 seconds
+Worker 130 time (avg): 0.00008925 seconds
+Worker 131 time (avg): 0.00008897 seconds
+Worker 132 time (avg): 0.00009420 seconds
+Worker 133 time (avg): 0.00009524 seconds
+Worker 134 time (avg): 0.00009482 seconds
+Worker 135 time (avg): 0.00009469 seconds
+Worker 136 time (avg): 0.00008942 seconds
+Worker 137 time (avg): 0.00009373 seconds
+Worker 138 time (avg): 0.00009408 seconds
+Worker 139 time (avg): 0.00009420 seconds
+Worker 140 time (avg): 0.00009401 seconds
+Worker 141 time (avg): 0.00009327 seconds
+Worker 142 time (avg): 0.00009350 seconds
+Worker 143 time (avg): 0.00008759 seconds
+Worker 144 time (avg): 0.00009415 seconds
+Worker 145 time (avg): 0.00008915 seconds
+Worker 146 time (avg): 0.00008922 seconds
+Worker 147 time (avg): 0.00008929 seconds
+Worker 148 time (avg): 0.00009507 seconds
+Worker 149 time (avg): 0.00009529 seconds
+Worker 150 time (avg): 0.00009545 seconds
+Worker 151 time (avg): 0.00009541 seconds
+Worker 152 time (avg): 0.00008819 seconds
+Worker 153 time (avg): 0.00009410 seconds
+Worker 154 time (avg): 0.00009402 seconds
+Worker 155 time (avg): 0.00009429 seconds
+Worker 156 time (avg): 0.00009408 seconds
+Worker 157 time (avg): 0.00009399 seconds
+Worker 158 time (avg): 0.00009413 seconds
+Worker 159 time (avg): 0.00008782 seconds
+Worker 160 time (avg): 0.00009015 seconds
+Worker 161 time (avg): 0.00008902 seconds
+Worker 162 time (avg): 0.00008902 seconds
+Worker 163 time (avg): 0.00008921 seconds
+Worker 164 time (avg): 0.00009440 seconds
+Worker 165 time (avg): 0.00009503 seconds
+Worker 166 time (avg): 0.00009521 seconds
+Worker 167 time (avg): 0.00009544 seconds
+Worker 168 time (avg): 0.00008991 seconds
+Worker 169 time (avg): 0.00009400 seconds
+Worker 170 time (avg): 0.00009448 seconds
+Worker 171 time (avg): 0.00009417 seconds
+Worker 172 time (avg): 0.00009396 seconds
+Worker 173 time (avg): 0.00009419 seconds
+Worker 174 time (avg): 0.00009350 seconds
+Worker 175 time (avg): 0.00008763 seconds
+Worker 176 time (avg): 0.00008943 seconds
+Worker 177 time (avg): 0.00008905 seconds
+Worker 178 time (avg): 0.00008903 seconds
+Worker 179 time (avg): 0.00008897 seconds
+Worker 180 time (avg): 0.00009508 seconds
+Worker 181 time (avg): 0.00009483 seconds
+Worker 182 time (avg): 0.00009527 seconds
+Worker 183 time (avg): 0.00009520 seconds
+Worker 184 time (avg): 0.00008949 seconds
+Worker 185 time (avg): 0.00009360 seconds
+Worker 186 time (avg): 0.00009414 seconds
+Worker 187 time (avg): 0.00009382 seconds
+Worker 188 time (avg): 0.00009411 seconds
+Worker 189 time (avg): 0.00009343 seconds
+Worker 190 time (avg): 0.00009379 seconds
+Worker 191 time (avg): 0.00008756 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_256x256_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/256x256_results.log"
+	User time (seconds): 40.58
+	System time (seconds): 22.92
+	Percent of CPU this job got: 1548%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 119648
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 188
+	Minor (reclaiming a frame) page faults: 918863
+	Voluntary context switches: 309887
+	Involuntary context switches: 14456
+	Swaps: 0
+	File system inputs: 880
+	File system outputs: 17632
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 0.03026325 seconds
+Read time (max): 0.04011951 seconds
+Write time (avg): 0.01591943 seconds
+Write time (max): 0.01798512 seconds
+Multiplication time (avg): 0.00129689 seconds
+Worker 0 time (avg): 0.00132463 seconds
+Worker 1 time (avg): 0.00134963 seconds
+Worker 2 time (avg): 0.00134804 seconds
+Worker 3 time (avg): 0.00162370 seconds
+Worker 4 time (avg): 0.00138844 seconds
+Worker 5 time (avg): 0.00136195 seconds
+Worker 6 time (avg): 0.00130259 seconds
+Worker 7 time (avg): 0.00163976 seconds
+Worker 8 time (avg): 0.00137855 seconds
+Worker 9 time (avg): 0.00154501 seconds
+Worker 10 time (avg): 0.00128137 seconds
+Worker 11 time (avg): 0.00128019 seconds
+Worker 12 time (avg): 0.00146711 seconds
+Worker 13 time (avg): 0.00146037 seconds
+Worker 14 time (avg): 0.00155771 seconds
+Worker 15 time (avg): 0.00158849 seconds
+Worker 16 time (avg): 0.00133162 seconds
+Worker 17 time (avg): 0.00133757 seconds
+Worker 18 time (avg): 0.00144106 seconds
+Worker 19 time (avg): 0.00181877 seconds (max)
+Worker 20 time (avg): 0.00134150 seconds
+Worker 21 time (avg): 0.00136090 seconds
+Worker 22 time (avg): 0.00134473 seconds
+Worker 23 time (avg): 0.00148504 seconds
+Worker 24 time (avg): 0.00133631 seconds
+Worker 25 time (avg): 0.00145562 seconds
+Worker 26 time (avg): 0.00127762 seconds
+Worker 27 time (avg): 0.00135300 seconds
+Worker 28 time (avg): 0.00147261 seconds
+Worker 29 time (avg): 0.00146709 seconds
+Worker 30 time (avg): 0.00157589 seconds
+Worker 31 time (avg): 0.00137119 seconds
+Worker 32 time (avg): 0.00133165 seconds
+Worker 33 time (avg): 0.00134584 seconds
+Worker 34 time (avg): 0.00135330 seconds
+Worker 35 time (avg): 0.00156368 seconds
+Worker 36 time (avg): 0.00131521 seconds
+Worker 37 time (avg): 0.00163231 seconds
+Worker 38 time (avg): 0.00147809 seconds
+Worker 39 time (avg): 0.00152392 seconds
+Worker 40 time (avg): 0.00133236 seconds
+Worker 41 time (avg): 0.00147147 seconds
+Worker 42 time (avg): 0.00136705 seconds
+Worker 43 time (avg): 0.00140231 seconds
+Worker 44 time (avg): 0.00152041 seconds
+Worker 45 time (avg): 0.00149860 seconds
+Worker 46 time (avg): 0.00160215 seconds
+Worker 47 time (avg): 0.00135810 seconds
+Worker 48 time (avg): 0.00138411 seconds
+Worker 49 time (avg): 0.00134034 seconds
+Worker 50 time (avg): 0.00137864 seconds
+Worker 51 time (avg): 0.00152855 seconds
+Worker 52 time (avg): 0.00130847 seconds
+Worker 53 time (avg): 0.00169325 seconds
+Worker 54 time (avg): 0.00128696 seconds
+Worker 55 time (avg): 0.00147751 seconds
+Worker 56 time (avg): 0.00142641 seconds
+Worker 57 time (avg): 0.00145108 seconds
+Worker 58 time (avg): 0.00144320 seconds
+Worker 59 time (avg): 0.00137367 seconds
+Worker 60 time (avg): 0.00157932 seconds
+Worker 61 time (avg): 0.00147694 seconds
+Worker 62 time (avg): 0.00148632 seconds
+Worker 63 time (avg): 0.00151035 seconds
+Worker 64 time (avg): 0.00134142 seconds
+Worker 65 time (avg): 0.00134368 seconds
+Worker 66 time (avg): 0.00144102 seconds
+Worker 67 time (avg): 0.00169652 seconds
+Worker 68 time (avg): 0.00125791 seconds
+Worker 69 time (avg): 0.00162253 seconds
+Worker 70 time (avg): 0.00138426 seconds
+Worker 71 time (avg): 0.00159654 seconds
+Worker 72 time (avg): 0.00133261 seconds
+Worker 73 time (avg): 0.00145391 seconds
+Worker 74 time (avg): 0.00128991 seconds
+Worker 75 time (avg): 0.00145621 seconds
+Worker 76 time (avg): 0.00147125 seconds
+Worker 77 time (avg): 0.00146947 seconds
+Worker 78 time (avg): 0.00165906 seconds
+Worker 79 time (avg): 0.00133219 seconds
+Worker 80 time (avg): 0.00131786 seconds
+Worker 81 time (avg): 0.00147294 seconds
+Worker 82 time (avg): 0.00144729 seconds
+Worker 83 time (avg): 0.00156055 seconds
+Worker 84 time (avg): 0.00129473 seconds
+Worker 85 time (avg): 0.00158145 seconds
+Worker 86 time (avg): 0.00130709 seconds
+Worker 87 time (avg): 0.00148973 seconds
+Worker 88 time (avg): 0.00137801 seconds
+Worker 89 time (avg): 0.00154876 seconds
+Worker 90 time (avg): 0.00126858 seconds
+Worker 91 time (avg): 0.00135055 seconds
+Worker 92 time (avg): 0.00146361 seconds
+Worker 93 time (avg): 0.00151861 seconds
+Worker 94 time (avg): 0.00166637 seconds
+Worker 95 time (avg): 0.00145803 seconds
+Worker 96 time (avg): 0.00132657 seconds
+Worker 97 time (avg): 0.00147982 seconds
+Worker 98 time (avg): 0.00165084 seconds
+Worker 99 time (avg): 0.00162058 seconds
+Worker 100 time (avg): 0.00149816 seconds
+Worker 101 time (avg): 0.00150790 seconds
+Worker 102 time (avg): 0.00164460 seconds
+Worker 103 time (avg): 0.00131913 seconds
+Worker 104 time (avg): 0.00132883 seconds
+Worker 105 time (avg): 0.00145038 seconds
+Worker 106 time (avg): 0.00137446 seconds
+Worker 107 time (avg): 0.00149386 seconds
+Worker 108 time (avg): 0.00149816 seconds
+Worker 109 time (avg): 0.00155711 seconds
+Worker 110 time (avg): 0.00151747 seconds
+Worker 111 time (avg): 0.00154757 seconds
+Worker 112 time (avg): 0.00139311 seconds
+Worker 113 time (avg): 0.00142826 seconds
+Worker 114 time (avg): 0.00140452 seconds
+Worker 115 time (avg): 0.00170292 seconds
+Worker 116 time (avg): 0.00155280 seconds
+Worker 117 time (avg): 0.00147438 seconds
+Worker 118 time (avg): 0.00148623 seconds
+Worker 119 time (avg): 0.00134728 seconds
+Worker 120 time (avg): 0.00137466 seconds
+Worker 121 time (avg): 0.00158006 seconds
+Worker 122 time (avg): 0.00132547 seconds
+Worker 123 time (avg): 0.00150638 seconds
+Worker 124 time (avg): 0.00156427 seconds
+Worker 125 time (avg): 0.00149101 seconds
+Worker 126 time (avg): 0.00145623 seconds
+Worker 127 time (avg): 0.00147993 seconds
+Worker 128 time (avg): 0.00098904 seconds
+Worker 129 time (avg): 0.00097553 seconds
+Worker 130 time (avg): 0.00100026 seconds
+Worker 131 time (avg): 0.00102589 seconds
+Worker 132 time (avg): 0.00098408 seconds
+Worker 133 time (avg): 0.00109799 seconds
+Worker 134 time (avg): 0.00098309 seconds
+Worker 135 time (avg): 0.00089516 seconds
+Worker 136 time (avg): 0.00086918 seconds
+Worker 137 time (avg): 0.00107465 seconds
+Worker 138 time (avg): 0.00095828 seconds
+Worker 139 time (avg): 0.00097067 seconds
+Worker 140 time (avg): 0.00096353 seconds
+Worker 141 time (avg): 0.00097249 seconds
+Worker 142 time (avg): 0.00096598 seconds
+Worker 143 time (avg): 0.00097512 seconds
+Worker 144 time (avg): 0.00100333 seconds
+Worker 145 time (avg): 0.00098292 seconds
+Worker 146 time (avg): 0.00102702 seconds
+Worker 147 time (avg): 0.00102528 seconds
+Worker 148 time (avg): 0.00098099 seconds
+Worker 149 time (avg): 0.00098227 seconds
+Worker 150 time (avg): 0.00111457 seconds
+Worker 151 time (avg): 0.00089214 seconds
+Worker 152 time (avg): 0.00087969 seconds
+Worker 153 time (avg): 0.00101543 seconds
+Worker 154 time (avg): 0.00090801 seconds
+Worker 155 time (avg): 0.00096734 seconds
+Worker 156 time (avg): 0.00096449 seconds
+Worker 157 time (avg): 0.00096742 seconds
+Worker 158 time (avg): 0.00097111 seconds
+Worker 159 time (avg): 0.00097287 seconds
+Worker 160 time (avg): 0.00094579 seconds
+Worker 161 time (avg): 0.00103254 seconds
+Worker 162 time (avg): 0.00109944 seconds
+Worker 163 time (avg): 0.00107398 seconds
+Worker 164 time (avg): 0.00100060 seconds
+Worker 165 time (avg): 0.00099476 seconds
+Worker 166 time (avg): 0.00100356 seconds
+Worker 167 time (avg): 0.00087895 seconds
+Worker 168 time (avg): 0.00092218 seconds
+Worker 169 time (avg): 0.00097525 seconds
+Worker 170 time (avg): 0.00083796 seconds
+Worker 171 time (avg): 0.00097109 seconds
+Worker 172 time (avg): 0.00097735 seconds
+Worker 173 time (avg): 0.00109273 seconds
+Worker 174 time (avg): 0.00102089 seconds
+Worker 175 time (avg): 0.00109608 seconds
+Worker 176 time (avg): 0.00099688 seconds
+Worker 177 time (avg): 0.00097454 seconds
+Worker 178 time (avg): 0.00118115 seconds
+Worker 179 time (avg): 0.00109213 seconds
+Worker 180 time (avg): 0.00098968 seconds
+Worker 181 time (avg): 0.00099264 seconds
+Worker 182 time (avg): 0.00103563 seconds
+Worker 183 time (avg): 0.00088428 seconds
+Worker 184 time (avg): 0.00095269 seconds
+Worker 185 time (avg): 0.00096162 seconds
+Worker 186 time (avg): 0.00092523 seconds
+Worker 187 time (avg): 0.00104820 seconds
+Worker 188 time (avg): 0.00097539 seconds
+Worker 189 time (avg): 0.00103962 seconds
+Worker 190 time (avg): 0.00101421 seconds
+Worker 191 time (avg): 0.00109471 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_512x512_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/512x512_results.log"
+	User time (seconds): 31.10
+	System time (seconds): 23.84
+	Percent of CPU this job got: 1153%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 125236
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 202
+	Minor (reclaiming a frame) page faults: 958345
+	Voluntary context switches: 548719
+	Involuntary context switches: 14247
+	Swaps: 0
+	File system inputs: 2416
+	File system outputs: 19168
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 0.07737450 seconds
+Read time (max): 0.10329844 seconds
+Write time (avg): 0.01686032 seconds
+Write time (max): 0.02086393 seconds
+Multiplication time (avg): 0.02831933 seconds
+Worker 0 time (avg): 0.03189529 seconds
+Worker 1 time (avg): 0.03034417 seconds
+Worker 2 time (avg): 0.03062247 seconds
+Worker 3 time (avg): 0.03255452 seconds
+Worker 4 time (avg): 0.03353751 seconds
+Worker 5 time (avg): 0.03288662 seconds
+Worker 6 time (avg): 0.03211617 seconds
+Worker 7 time (avg): 0.03095887 seconds
+Worker 8 time (avg): 0.03095821 seconds
+Worker 9 time (avg): 0.02992719 seconds
+Worker 10 time (avg): 0.03103682 seconds
+Worker 11 time (avg): 0.03568351 seconds
+Worker 12 time (avg): 0.03063144 seconds
+Worker 13 time (avg): 0.03312231 seconds
+Worker 14 time (avg): 0.03670115 seconds
+Worker 15 time (avg): 0.03102153 seconds
+Worker 16 time (avg): 0.03191035 seconds
+Worker 17 time (avg): 0.03113922 seconds
+Worker 18 time (avg): 0.03279278 seconds
+Worker 19 time (avg): 0.03086536 seconds
+Worker 20 time (avg): 0.03095458 seconds
+Worker 21 time (avg): 0.03209405 seconds
+Worker 22 time (avg): 0.03114886 seconds
+Worker 23 time (avg): 0.03159288 seconds
+Worker 24 time (avg): 0.03125767 seconds
+Worker 25 time (avg): 0.03193143 seconds
+Worker 26 time (avg): 0.03179155 seconds
+Worker 27 time (avg): 0.03507018 seconds
+Worker 28 time (avg): 0.03191367 seconds
+Worker 29 time (avg): 0.03264674 seconds
+Worker 30 time (avg): 0.03514965 seconds
+Worker 31 time (avg): 0.03144681 seconds
+Worker 32 time (avg): 0.03097268 seconds
+Worker 33 time (avg): 0.03097859 seconds
+Worker 34 time (avg): 0.03380623 seconds
+Worker 35 time (avg): 0.03191688 seconds
+Worker 36 time (avg): 0.03227390 seconds
+Worker 37 time (avg): 0.03103368 seconds
+Worker 38 time (avg): 0.03227047 seconds
+Worker 39 time (avg): 0.03112497 seconds
+Worker 40 time (avg): 0.03062332 seconds
+Worker 41 time (avg): 0.03146203 seconds
+Worker 42 time (avg): 0.03185949 seconds
+Worker 43 time (avg): 0.03396187 seconds
+Worker 44 time (avg): 0.03105394 seconds
+Worker 45 time (avg): 0.03265079 seconds
+Worker 46 time (avg): 0.03564481 seconds
+Worker 47 time (avg): 0.03189661 seconds
+Worker 48 time (avg): 0.03185473 seconds
+Worker 49 time (avg): 0.03192095 seconds
+Worker 50 time (avg): 0.03229626 seconds
+Worker 51 time (avg): 0.03275629 seconds
+Worker 52 time (avg): 0.03174170 seconds
+Worker 53 time (avg): 0.03195746 seconds
+Worker 54 time (avg): 0.03285720 seconds
+Worker 55 time (avg): 0.03235268 seconds
+Worker 56 time (avg): 0.03059686 seconds
+Worker 57 time (avg): 0.03182496 seconds
+Worker 58 time (avg): 0.03086157 seconds
+Worker 59 time (avg): 0.03860674 seconds (max)
+Worker 60 time (avg): 0.03302764 seconds
+Worker 61 time (avg): 0.03139886 seconds
+Worker 62 time (avg): 0.03431616 seconds
+Worker 63 time (avg): 0.03302616 seconds
+Worker 64 time (avg): 0.02611320 seconds
+Worker 65 time (avg): 0.02705289 seconds
+Worker 66 time (avg): 0.02509190 seconds
+Worker 67 time (avg): 0.02776565 seconds
+Worker 68 time (avg): 0.02618984 seconds
+Worker 69 time (avg): 0.02680787 seconds
+Worker 70 time (avg): 0.02532266 seconds
+Worker 71 time (avg): 0.02736169 seconds
+Worker 72 time (avg): 0.02570255 seconds
+Worker 73 time (avg): 0.02549402 seconds
+Worker 74 time (avg): 0.02601480 seconds
+Worker 75 time (avg): 0.02935626 seconds
+Worker 76 time (avg): 0.02564973 seconds
+Worker 77 time (avg): 0.02552857 seconds
+Worker 78 time (avg): 0.02873309 seconds
+Worker 79 time (avg): 0.02595472 seconds
+Worker 80 time (avg): 0.02579614 seconds
+Worker 81 time (avg): 0.02645559 seconds
+Worker 82 time (avg): 0.02618190 seconds
+Worker 83 time (avg): 0.02647438 seconds
+Worker 84 time (avg): 0.02796496 seconds
+Worker 85 time (avg): 0.02655667 seconds
+Worker 86 time (avg): 0.02591348 seconds
+Worker 87 time (avg): 0.02729847 seconds
+Worker 88 time (avg): 0.02626481 seconds
+Worker 89 time (avg): 0.02559720 seconds
+Worker 90 time (avg): 0.02624426 seconds
+Worker 91 time (avg): 0.03143548 seconds
+Worker 92 time (avg): 0.02701732 seconds
+Worker 93 time (avg): 0.02804491 seconds
+Worker 94 time (avg): 0.03255030 seconds
+Worker 95 time (avg): 0.02629701 seconds
+Worker 96 time (avg): 0.02620498 seconds
+Worker 97 time (avg): 0.02576775 seconds
+Worker 98 time (avg): 0.02590647 seconds
+Worker 99 time (avg): 0.02528460 seconds
+Worker 100 time (avg): 0.02548553 seconds
+Worker 101 time (avg): 0.02620903 seconds
+Worker 102 time (avg): 0.02688000 seconds
+Worker 103 time (avg): 0.02594908 seconds
+Worker 104 time (avg): 0.02559109 seconds
+Worker 105 time (avg): 0.02573024 seconds
+Worker 106 time (avg): 0.02604557 seconds
+Worker 107 time (avg): 0.02565146 seconds
+Worker 108 time (avg): 0.02520553 seconds
+Worker 109 time (avg): 0.02647762 seconds
+Worker 110 time (avg): 0.02624968 seconds
+Worker 111 time (avg): 0.02641401 seconds
+Worker 112 time (avg): 0.02605538 seconds
+Worker 113 time (avg): 0.02562293 seconds
+Worker 114 time (avg): 0.02694345 seconds
+Worker 115 time (avg): 0.02603738 seconds
+Worker 116 time (avg): 0.02543807 seconds
+Worker 117 time (avg): 0.02607775 seconds
+Worker 118 time (avg): 0.02550955 seconds
+Worker 119 time (avg): 0.02571464 seconds
+Worker 120 time (avg): 0.02569482 seconds
+Worker 121 time (avg): 0.02674411 seconds
+Worker 122 time (avg): 0.02642299 seconds
+Worker 123 time (avg): 0.02669134 seconds
+Worker 124 time (avg): 0.02515544 seconds
+Worker 125 time (avg): 0.02623391 seconds
+Worker 126 time (avg): 0.02613135 seconds
+Worker 127 time (avg): 0.02560891 seconds
+Worker 128 time (avg): 0.02600110 seconds
+Worker 129 time (avg): 0.02511882 seconds
+Worker 130 time (avg): 0.02706225 seconds
+Worker 131 time (avg): 0.02651112 seconds
+Worker 132 time (avg): 0.02550572 seconds
+Worker 133 time (avg): 0.02700324 seconds
+Worker 134 time (avg): 0.02763694 seconds
+Worker 135 time (avg): 0.02640830 seconds
+Worker 136 time (avg): 0.02547151 seconds
+Worker 137 time (avg): 0.02619746 seconds
+Worker 138 time (avg): 0.02617888 seconds
+Worker 139 time (avg): 0.02600035 seconds
+Worker 140 time (avg): 0.02583135 seconds
+Worker 141 time (avg): 0.02600720 seconds
+Worker 142 time (avg): 0.02685863 seconds
+Worker 143 time (avg): 0.02599805 seconds
+Worker 144 time (avg): 0.02606527 seconds
+Worker 145 time (avg): 0.02629980 seconds
+Worker 146 time (avg): 0.02684792 seconds
+Worker 147 time (avg): 0.02607209 seconds
+Worker 148 time (avg): 0.02619066 seconds
+Worker 149 time (avg): 0.02593894 seconds
+Worker 150 time (avg): 0.02646301 seconds
+Worker 151 time (avg): 0.02565970 seconds
+Worker 152 time (avg): 0.02620750 seconds
+Worker 153 time (avg): 0.02634057 seconds
+Worker 154 time (avg): 0.02580298 seconds
+Worker 155 time (avg): 0.02625231 seconds
+Worker 156 time (avg): 0.02469653 seconds
+Worker 157 time (avg): 0.02660825 seconds
+Worker 158 time (avg): 0.03168850 seconds
+Worker 159 time (avg): 0.02612431 seconds
+Worker 160 time (avg): 0.02644282 seconds
+Worker 161 time (avg): 0.02647613 seconds
+Worker 162 time (avg): 0.02500142 seconds
+Worker 163 time (avg): 0.02518250 seconds
+Worker 164 time (avg): 0.02538263 seconds
+Worker 165 time (avg): 0.02678409 seconds
+Worker 166 time (avg): 0.02496697 seconds
+Worker 167 time (avg): 0.02578068 seconds
+Worker 168 time (avg): 0.02627839 seconds
+Worker 169 time (avg): 0.02590415 seconds
+Worker 170 time (avg): 0.02580148 seconds
+Worker 171 time (avg): 0.02556760 seconds
+Worker 172 time (avg): 0.03137108 seconds
+Worker 173 time (avg): 0.03163366 seconds
+Worker 174 time (avg): 0.02675738 seconds
+Worker 175 time (avg): 0.02616185 seconds
+Worker 176 time (avg): 0.02597144 seconds
+Worker 177 time (avg): 0.02513629 seconds
+Worker 178 time (avg): 0.02626786 seconds
+Worker 179 time (avg): 0.02584893 seconds
+Worker 180 time (avg): 0.02621081 seconds
+Worker 181 time (avg): 0.02619513 seconds
+Worker 182 time (avg): 0.02517569 seconds
+Worker 183 time (avg): 0.02612378 seconds
+Worker 184 time (avg): 0.02506242 seconds
+Worker 185 time (avg): 0.02557406 seconds
+Worker 186 time (avg): 0.02611736 seconds
+Worker 187 time (avg): 0.02556837 seconds
+Worker 188 time (avg): 0.02619514 seconds
+Worker 189 time (avg): 0.02610806 seconds
+Worker 190 time (avg): 0.02632773 seconds
+Worker 191 time (avg): 0.02688878 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_1024x1024_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/1024x1024_results.log"
+	User time (seconds): 144.93
+	System time (seconds): 23.78
+	Percent of CPU this job got: 3166%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 160328
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 169
+	Minor (reclaiming a frame) page faults: 1020638
+	Voluntary context switches: 702705
+	Involuntary context switches: 11395
+	Swaps: 0
+	File system inputs: 9392
+	File system outputs: 25312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------2048x2048-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 0.18897247 seconds
+Read time (max): 0.20773077 seconds
+Write time (avg): 0.01741188 seconds
+Write time (max): 0.02957630 seconds
+Multiplication time (avg): 0.27562013 seconds
+Worker 0 time (avg): 0.28147896 seconds
+Worker 1 time (avg): 0.28598263 seconds
+Worker 2 time (avg): 0.28371892 seconds
+Worker 3 time (avg): 0.28549372 seconds
+Worker 4 time (avg): 0.28254713 seconds
+Worker 5 time (avg): 0.28668647 seconds
+Worker 6 time (avg): 0.28493563 seconds
+Worker 7 time (avg): 0.28241296 seconds
+Worker 8 time (avg): 0.28442287 seconds
+Worker 9 time (avg): 0.28403825 seconds
+Worker 10 time (avg): 0.28655653 seconds
+Worker 11 time (avg): 0.28556470 seconds
+Worker 12 time (avg): 0.28353098 seconds
+Worker 13 time (avg): 0.28460558 seconds
+Worker 14 time (avg): 0.28290186 seconds
+Worker 15 time (avg): 0.28304972 seconds
+Worker 16 time (avg): 0.28511729 seconds
+Worker 17 time (avg): 0.28788267 seconds
+Worker 18 time (avg): 0.28425512 seconds
+Worker 19 time (avg): 0.28433833 seconds
+Worker 20 time (avg): 0.28418197 seconds
+Worker 21 time (avg): 0.28448727 seconds
+Worker 22 time (avg): 0.28331021 seconds
+Worker 23 time (avg): 0.28492367 seconds
+Worker 24 time (avg): 0.28346981 seconds
+Worker 25 time (avg): 0.28194580 seconds
+Worker 26 time (avg): 0.28322591 seconds
+Worker 27 time (avg): 0.28720807 seconds
+Worker 28 time (avg): 0.28232688 seconds
+Worker 29 time (avg): 0.28211497 seconds
+Worker 30 time (avg): 0.28425776 seconds
+Worker 31 time (avg): 0.28497775 seconds
+Worker 32 time (avg): 0.28527020 seconds
+Worker 33 time (avg): 0.28667629 seconds
+Worker 34 time (avg): 0.28570584 seconds
+Worker 35 time (avg): 0.28732173 seconds
+Worker 36 time (avg): 0.28158360 seconds
+Worker 37 time (avg): 0.28313014 seconds
+Worker 38 time (avg): 0.28128048 seconds
+Worker 39 time (avg): 0.28350348 seconds
+Worker 40 time (avg): 0.28300636 seconds
+Worker 41 time (avg): 0.28391299 seconds
+Worker 42 time (avg): 0.28767845 seconds
+Worker 43 time (avg): 0.29235783 seconds (max)
+Worker 44 time (avg): 0.28181160 seconds
+Worker 45 time (avg): 0.28564961 seconds
+Worker 46 time (avg): 0.28583542 seconds
+Worker 47 time (avg): 0.28619636 seconds
+Worker 48 time (avg): 0.28300178 seconds
+Worker 49 time (avg): 0.28093865 seconds
+Worker 50 time (avg): 0.28339134 seconds
+Worker 51 time (avg): 0.28147241 seconds
+Worker 52 time (avg): 0.28292564 seconds
+Worker 53 time (avg): 0.28758820 seconds
+Worker 54 time (avg): 0.28454205 seconds
+Worker 55 time (avg): 0.28670948 seconds
+Worker 56 time (avg): 0.28313871 seconds
+Worker 57 time (avg): 0.28097503 seconds
+Worker 58 time (avg): 0.28343734 seconds
+Worker 59 time (avg): 0.28534942 seconds
+Worker 60 time (avg): 0.28680406 seconds
+Worker 61 time (avg): 0.28410188 seconds
+Worker 62 time (avg): 0.28230271 seconds
+Worker 63 time (avg): 0.28730297 seconds
+Worker 64 time (avg): 0.28995265 seconds
+Worker 65 time (avg): 0.28373330 seconds
+Worker 66 time (avg): 0.28268714 seconds
+Worker 67 time (avg): 0.28315289 seconds
+Worker 68 time (avg): 0.28066678 seconds
+Worker 69 time (avg): 0.28612633 seconds
+Worker 70 time (avg): 0.28370674 seconds
+Worker 71 time (avg): 0.28242477 seconds
+Worker 72 time (avg): 0.28271621 seconds
+Worker 73 time (avg): 0.28398367 seconds
+Worker 74 time (avg): 0.28955506 seconds
+Worker 75 time (avg): 0.28780715 seconds
+Worker 76 time (avg): 0.28368416 seconds
+Worker 77 time (avg): 0.28228959 seconds
+Worker 78 time (avg): 0.28621480 seconds
+Worker 79 time (avg): 0.28710387 seconds
+Worker 80 time (avg): 0.28331943 seconds
+Worker 81 time (avg): 0.28846989 seconds
+Worker 82 time (avg): 0.28440015 seconds
+Worker 83 time (avg): 0.28805964 seconds
+Worker 84 time (avg): 0.28372295 seconds
+Worker 85 time (avg): 0.28761441 seconds
+Worker 86 time (avg): 0.28238477 seconds
+Worker 87 time (avg): 0.29026566 seconds
+Worker 88 time (avg): 0.28482101 seconds
+Worker 89 time (avg): 0.28186769 seconds
+Worker 90 time (avg): 0.28470593 seconds
+Worker 91 time (avg): 0.29143985 seconds
+Worker 92 time (avg): 0.28874502 seconds
+Worker 93 time (avg): 0.28094761 seconds
+Worker 94 time (avg): 0.28592802 seconds
+Worker 95 time (avg): 0.29007850 seconds
+Worker 96 time (avg): 0.28457523 seconds
+Worker 97 time (avg): 0.28307530 seconds
+Worker 98 time (avg): 0.28346662 seconds
+Worker 99 time (avg): 0.28120379 seconds
+Worker 100 time (avg): 0.28035922 seconds
+Worker 101 time (avg): 0.28604868 seconds
+Worker 102 time (avg): 0.28114886 seconds
+Worker 103 time (avg): 0.28439975 seconds
+Worker 104 time (avg): 0.28332399 seconds
+Worker 105 time (avg): 0.28217044 seconds
+Worker 106 time (avg): 0.28260844 seconds
+Worker 107 time (avg): 0.28515459 seconds
+Worker 108 time (avg): 0.28420451 seconds
+Worker 109 time (avg): 0.28197424 seconds
+Worker 110 time (avg): 0.28384045 seconds
+Worker 111 time (avg): 0.28463115 seconds
+Worker 112 time (avg): 0.28617950 seconds
+Worker 113 time (avg): 0.28451013 seconds
+Worker 114 time (avg): 0.28406964 seconds
+Worker 115 time (avg): 0.28117029 seconds
+Worker 116 time (avg): 0.28012994 seconds
+Worker 117 time (avg): 0.28437726 seconds
+Worker 118 time (avg): 0.28719258 seconds
+Worker 119 time (avg): 0.28585190 seconds
+Worker 120 time (avg): 0.28120218 seconds
+Worker 121 time (avg): 0.28235246 seconds
+Worker 122 time (avg): 0.28092133 seconds
+Worker 123 time (avg): 0.28483546 seconds
+Worker 124 time (avg): 0.28213822 seconds
+Worker 125 time (avg): 0.28297423 seconds
+Worker 126 time (avg): 0.28637902 seconds
+Worker 127 time (avg): 0.28080314 seconds
+Worker 128 time (avg): 0.25975351 seconds
+Worker 129 time (avg): 0.25800739 seconds
+Worker 130 time (avg): 0.25908699 seconds
+Worker 131 time (avg): 0.25723757 seconds
+Worker 132 time (avg): 0.25717127 seconds
+Worker 133 time (avg): 0.25501434 seconds
+Worker 134 time (avg): 0.25826933 seconds
+Worker 135 time (avg): 0.25858804 seconds
+Worker 136 time (avg): 0.25822383 seconds
+Worker 137 time (avg): 0.25885631 seconds
+Worker 138 time (avg): 0.25779873 seconds
+Worker 139 time (avg): 0.25804351 seconds
+Worker 140 time (avg): 0.25626337 seconds
+Worker 141 time (avg): 0.26038744 seconds
+Worker 142 time (avg): 0.25966295 seconds
+Worker 143 time (avg): 0.26052039 seconds
+Worker 144 time (avg): 0.25745596 seconds
+Worker 145 time (avg): 0.25768526 seconds
+Worker 146 time (avg): 0.25708782 seconds
+Worker 147 time (avg): 0.25857710 seconds
+Worker 148 time (avg): 0.25990058 seconds
+Worker 149 time (avg): 0.25889068 seconds
+Worker 150 time (avg): 0.25746765 seconds
+Worker 151 time (avg): 0.25649681 seconds
+Worker 152 time (avg): 0.25704782 seconds
+Worker 153 time (avg): 0.25935901 seconds
+Worker 154 time (avg): 0.25550340 seconds
+Worker 155 time (avg): 0.25627888 seconds
+Worker 156 time (avg): 0.25906692 seconds
+Worker 157 time (avg): 0.25894345 seconds
+Worker 158 time (avg): 0.25953093 seconds
+Worker 159 time (avg): 0.25674886 seconds
+Worker 160 time (avg): 0.25929368 seconds
+Worker 161 time (avg): 0.25834598 seconds
+Worker 162 time (avg): 0.25886779 seconds
+Worker 163 time (avg): 0.25676537 seconds
+Worker 164 time (avg): 0.25989616 seconds
+Worker 165 time (avg): 0.25898368 seconds
+Worker 166 time (avg): 0.26219561 seconds
+Worker 167 time (avg): 0.25608458 seconds
+Worker 168 time (avg): 0.25582138 seconds
+Worker 169 time (avg): 0.25765275 seconds
+Worker 170 time (avg): 0.25723972 seconds
+Worker 171 time (avg): 0.25593560 seconds
+Worker 172 time (avg): 0.25843443 seconds
+Worker 173 time (avg): 0.25770909 seconds
+Worker 174 time (avg): 0.26176520 seconds
+Worker 175 time (avg): 0.25671259 seconds
+Worker 176 time (avg): 0.25740423 seconds
+Worker 177 time (avg): 0.25555425 seconds
+Worker 178 time (avg): 0.25599140 seconds
+Worker 179 time (avg): 0.25749748 seconds
+Worker 180 time (avg): 0.25896964 seconds
+Worker 181 time (avg): 0.25940737 seconds
+Worker 182 time (avg): 0.26135567 seconds
+Worker 183 time (avg): 0.25912330 seconds
+Worker 184 time (avg): 0.25778098 seconds
+Worker 185 time (avg): 0.25645384 seconds
+Worker 186 time (avg): 0.25892143 seconds
+Worker 187 time (avg): 0.25887833 seconds
+Worker 188 time (avg): 0.25609502 seconds
+Worker 189 time (avg): 0.25410770 seconds
+Worker 190 time (avg): 0.26426062 seconds
+Worker 191 time (avg): 0.25593264 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_2048x2048_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/2048x2048_results.log"
+	User time (seconds): 910.71
+	System time (seconds): 26.79
+	Percent of CPU this job got: 7134%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 172796
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 189
+	Minor (reclaiming a frame) page faults: 1020678
+	Voluntary context switches: 500263
+	Involuntary context switches: 18137
+	Swaps: 0
+	File system inputs: 37168
+	File system outputs: 49888
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4096x4096-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 0.66614926 seconds
+Read time (max): 0.68992741 seconds
+Write time (avg): 0.04709650 seconds
+Write time (max): 0.08728591 seconds
+Multiplication time (avg): 3.97134117 seconds
+Worker 0 time (avg): 4.05989328 seconds
+Worker 1 time (avg): 4.17444093 seconds
+Worker 2 time (avg): 4.09990414 seconds
+Worker 3 time (avg): 4.13878477 seconds
+Worker 4 time (avg): 4.08616712 seconds
+Worker 5 time (avg): 4.13740783 seconds
+Worker 6 time (avg): 4.09726622 seconds
+Worker 7 time (avg): 4.13224148 seconds
+Worker 8 time (avg): 4.18864150 seconds
+Worker 9 time (avg): 4.10250097 seconds
+Worker 10 time (avg): 4.15493060 seconds
+Worker 11 time (avg): 4.13051184 seconds
+Worker 12 time (avg): 4.12429328 seconds
+Worker 13 time (avg): 4.07511515 seconds
+Worker 14 time (avg): 4.04789533 seconds
+Worker 15 time (avg): 4.06774623 seconds
+Worker 16 time (avg): 4.13534019 seconds
+Worker 17 time (avg): 4.09127775 seconds
+Worker 18 time (avg): 4.10210570 seconds
+Worker 19 time (avg): 4.09397961 seconds
+Worker 20 time (avg): 4.09634377 seconds
+Worker 21 time (avg): 4.08227671 seconds
+Worker 22 time (avg): 4.09495670 seconds
+Worker 23 time (avg): 4.21213294 seconds (max)
+Worker 24 time (avg): 4.12427425 seconds
+Worker 25 time (avg): 4.11399415 seconds
+Worker 26 time (avg): 4.10054492 seconds
+Worker 27 time (avg): 4.13018993 seconds
+Worker 28 time (avg): 4.11279904 seconds
+Worker 29 time (avg): 4.04013648 seconds
+Worker 30 time (avg): 4.06405823 seconds
+Worker 31 time (avg): 4.05878192 seconds
+Worker 32 time (avg): 4.08443784 seconds
+Worker 33 time (avg): 4.06278850 seconds
+Worker 34 time (avg): 4.11836392 seconds
+Worker 35 time (avg): 4.09437380 seconds
+Worker 36 time (avg): 4.09270663 seconds
+Worker 37 time (avg): 4.06059022 seconds
+Worker 38 time (avg): 4.09423994 seconds
+Worker 39 time (avg): 4.08609907 seconds
+Worker 40 time (avg): 4.12806544 seconds
+Worker 41 time (avg): 4.07495046 seconds
+Worker 42 time (avg): 4.06525544 seconds
+Worker 43 time (avg): 4.10905188 seconds
+Worker 44 time (avg): 4.10022880 seconds
+Worker 45 time (avg): 4.09243922 seconds
+Worker 46 time (avg): 4.11670335 seconds
+Worker 47 time (avg): 4.20327371 seconds
+Worker 48 time (avg): 4.09320078 seconds
+Worker 49 time (avg): 4.05246378 seconds
+Worker 50 time (avg): 4.11565954 seconds
+Worker 51 time (avg): 4.11935966 seconds
+Worker 52 time (avg): 4.19760693 seconds
+Worker 53 time (avg): 4.10382475 seconds
+Worker 54 time (avg): 4.10978608 seconds
+Worker 55 time (avg): 4.17029897 seconds
+Worker 56 time (avg): 4.09918431 seconds
+Worker 57 time (avg): 4.04701489 seconds
+Worker 58 time (avg): 4.09018454 seconds
+Worker 59 time (avg): 4.05099638 seconds
+Worker 60 time (avg): 4.06931554 seconds
+Worker 61 time (avg): 4.07451633 seconds
+Worker 62 time (avg): 4.10090044 seconds
+Worker 63 time (avg): 4.08039571 seconds
+Worker 64 time (avg): 3.83049209 seconds
+Worker 65 time (avg): 3.89403706 seconds
+Worker 66 time (avg): 3.91129746 seconds
+Worker 67 time (avg): 3.88686241 seconds
+Worker 68 time (avg): 3.90276784 seconds
+Worker 69 time (avg): 3.91028606 seconds
+Worker 70 time (avg): 3.88668243 seconds
+Worker 71 time (avg): 3.95218199 seconds
+Worker 72 time (avg): 3.88981980 seconds
+Worker 73 time (avg): 3.85246718 seconds
+Worker 74 time (avg): 3.95967968 seconds
+Worker 75 time (avg): 3.86295364 seconds
+Worker 76 time (avg): 3.90879865 seconds
+Worker 77 time (avg): 3.94224950 seconds
+Worker 78 time (avg): 3.84582244 seconds
+Worker 79 time (avg): 3.89244801 seconds
+Worker 80 time (avg): 3.91082144 seconds
+Worker 81 time (avg): 3.87882428 seconds
+Worker 82 time (avg): 3.93531165 seconds
+Worker 83 time (avg): 3.93840400 seconds
+Worker 84 time (avg): 3.93616265 seconds
+Worker 85 time (avg): 3.88417446 seconds
+Worker 86 time (avg): 3.89008923 seconds
+Worker 87 time (avg): 3.96174677 seconds
+Worker 88 time (avg): 3.83281377 seconds
+Worker 89 time (avg): 3.88137210 seconds
+Worker 90 time (avg): 3.91152678 seconds
+Worker 91 time (avg): 3.89686557 seconds
+Worker 92 time (avg): 3.86086145 seconds
+Worker 93 time (avg): 3.89646164 seconds
+Worker 94 time (avg): 3.88234725 seconds
+Worker 95 time (avg): 3.99351352 seconds
+Worker 96 time (avg): 3.95458614 seconds
+Worker 97 time (avg): 3.88822401 seconds
+Worker 98 time (avg): 3.96388495 seconds
+Worker 99 time (avg): 3.84478733 seconds
+Worker 100 time (avg): 3.85612995 seconds
+Worker 101 time (avg): 3.89572814 seconds
+Worker 102 time (avg): 3.89564575 seconds
+Worker 103 time (avg): 3.93917773 seconds
+Worker 104 time (avg): 3.90389617 seconds
+Worker 105 time (avg): 3.87830048 seconds
+Worker 106 time (avg): 3.86244505 seconds
+Worker 107 time (avg): 3.90836511 seconds
+Worker 108 time (avg): 3.93632279 seconds
+Worker 109 time (avg): 3.91686623 seconds
+Worker 110 time (avg): 3.94607146 seconds
+Worker 111 time (avg): 3.87548247 seconds
+Worker 112 time (avg): 4.00762008 seconds
+Worker 113 time (avg): 3.97391235 seconds
+Worker 114 time (avg): 3.88605411 seconds
+Worker 115 time (avg): 3.90069398 seconds
+Worker 116 time (avg): 3.91057976 seconds
+Worker 117 time (avg): 3.91562219 seconds
+Worker 118 time (avg): 3.94340967 seconds
+Worker 119 time (avg): 3.88271479 seconds
+Worker 120 time (avg): 3.87800883 seconds
+Worker 121 time (avg): 3.93419735 seconds
+Worker 122 time (avg): 3.85408866 seconds
+Worker 123 time (avg): 3.85394443 seconds
+Worker 124 time (avg): 3.91631001 seconds
+Worker 125 time (avg): 3.86822377 seconds
+Worker 126 time (avg): 3.92578184 seconds
+Worker 127 time (avg): 3.88455827 seconds
+Worker 128 time (avg): 3.88777044 seconds
+Worker 129 time (avg): 3.93893623 seconds
+Worker 130 time (avg): 3.86702598 seconds
+Worker 131 time (avg): 3.87740883 seconds
+Worker 132 time (avg): 3.93683749 seconds
+Worker 133 time (avg): 3.93374364 seconds
+Worker 134 time (avg): 3.96107277 seconds
+Worker 135 time (avg): 3.84080635 seconds
+Worker 136 time (avg): 3.92068136 seconds
+Worker 137 time (avg): 3.91349178 seconds
+Worker 138 time (avg): 3.88645030 seconds
+Worker 139 time (avg): 3.94055250 seconds
+Worker 140 time (avg): 3.90602122 seconds
+Worker 141 time (avg): 3.88638962 seconds
+Worker 142 time (avg): 3.88723388 seconds
+Worker 143 time (avg): 3.94079643 seconds
+Worker 144 time (avg): 3.95309457 seconds
+Worker 145 time (avg): 3.93893273 seconds
+Worker 146 time (avg): 3.90824075 seconds
+Worker 147 time (avg): 3.92885762 seconds
+Worker 148 time (avg): 3.92340228 seconds
+Worker 149 time (avg): 3.88742556 seconds
+Worker 150 time (avg): 3.90234827 seconds
+Worker 151 time (avg): 3.88884675 seconds
+Worker 152 time (avg): 3.86942506 seconds
+Worker 153 time (avg): 3.88382045 seconds
+Worker 154 time (avg): 3.95308702 seconds
+Worker 155 time (avg): 3.90235243 seconds
+Worker 156 time (avg): 3.84792865 seconds
+Worker 157 time (avg): 3.93032781 seconds
+Worker 158 time (avg): 3.86621752 seconds
+Worker 159 time (avg): 3.87672164 seconds
+Worker 160 time (avg): 3.91786402 seconds
+Worker 161 time (avg): 4.02159165 seconds
+Worker 162 time (avg): 3.94933246 seconds
+Worker 163 time (avg): 3.85155153 seconds
+Worker 164 time (avg): 3.89551786 seconds
+Worker 165 time (avg): 3.92166029 seconds
+Worker 166 time (avg): 3.96987510 seconds
+Worker 167 time (avg): 3.90041192 seconds
+Worker 168 time (avg): 3.90252466 seconds
+Worker 169 time (avg): 3.94577875 seconds
+Worker 170 time (avg): 3.96822958 seconds
+Worker 171 time (avg): 3.85182556 seconds
+Worker 172 time (avg): 3.88852367 seconds
+Worker 173 time (avg): 3.92548960 seconds
+Worker 174 time (avg): 3.90242394 seconds
+Worker 175 time (avg): 3.92312341 seconds
+Worker 176 time (avg): 3.95132323 seconds
+Worker 177 time (avg): 3.85629507 seconds
+Worker 178 time (avg): 3.87609137 seconds
+Worker 179 time (avg): 3.92577052 seconds
+Worker 180 time (avg): 3.93324605 seconds
+Worker 181 time (avg): 3.85112671 seconds
+Worker 182 time (avg): 3.93051735 seconds
+Worker 183 time (avg): 3.89115920 seconds
+Worker 184 time (avg): 3.93281295 seconds
+Worker 185 time (avg): 3.90658634 seconds
+Worker 186 time (avg): 3.93437850 seconds
+Worker 187 time (avg): 3.87142770 seconds
+Worker 188 time (avg): 3.86336424 seconds
+Worker 189 time (avg): 3.87686313 seconds
+Worker 190 time (avg): 3.85257673 seconds
+Worker 191 time (avg): 3.87100704 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_4096x4096_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/4096x4096_results.log"
+	User time (seconds): 12579.73
+	System time (seconds): 30.43
+	Percent of CPU this job got: 9329%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:15.16
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 225752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 188
+	Minor (reclaiming a frame) page faults: 1047026
+	Voluntary context switches: 174907
+	Involuntary context switches: 58764
+	Swaps: 0
+	File system inputs: 148016
+	File system outputs: 148240
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8192x8192-------------
+Nodes: 2
+Workers (per node): 96
+Total Workers: 192
+Read time (avg): 2.61434636 seconds
+Read time (max): 2.63805331 seconds
+Write time (avg): 0.13626378 seconds
+Write time (max): 0.24392476 seconds
+Multiplication time (avg): 147.41265584 seconds
+Worker 0 time (avg): 148.53953014 seconds
+Worker 1 time (avg): 146.47945739 seconds
+Worker 2 time (avg): 148.78106326 seconds
+Worker 3 time (avg): 147.54369187 seconds
+Worker 4 time (avg): 146.91407864 seconds
+Worker 5 time (avg): 146.73825493 seconds
+Worker 6 time (avg): 147.62442882 seconds
+Worker 7 time (avg): 145.41079945 seconds
+Worker 8 time (avg): 149.49819531 seconds
+Worker 9 time (avg): 148.43522057 seconds
+Worker 10 time (avg): 150.00184478 seconds
+Worker 11 time (avg): 149.47568506 seconds
+Worker 12 time (avg): 146.19721835 seconds
+Worker 13 time (avg): 147.03710825 seconds
+Worker 14 time (avg): 146.93692290 seconds
+Worker 15 time (avg): 147.89250837 seconds
+Worker 16 time (avg): 149.47036573 seconds
+Worker 17 time (avg): 148.31442646 seconds
+Worker 18 time (avg): 149.01968227 seconds
+Worker 19 time (avg): 147.09652374 seconds
+Worker 20 time (avg): 148.04280498 seconds
+Worker 21 time (avg): 149.47555046 seconds
+Worker 22 time (avg): 147.32354479 seconds
+Worker 23 time (avg): 146.61010741 seconds
+Worker 24 time (avg): 146.25622399 seconds
+Worker 25 time (avg): 148.91768414 seconds
+Worker 26 time (avg): 146.99438549 seconds
+Worker 27 time (avg): 147.41297528 seconds
+Worker 28 time (avg): 147.53916402 seconds
+Worker 29 time (avg): 146.30322785 seconds
+Worker 30 time (avg): 147.85330981 seconds
+Worker 31 time (avg): 148.87935618 seconds
+Worker 32 time (avg): 149.20899980 seconds
+Worker 33 time (avg): 147.51735079 seconds
+Worker 34 time (avg): 150.79580404 seconds
+Worker 35 time (avg): 146.43749290 seconds
+Worker 36 time (avg): 147.26301313 seconds
+Worker 37 time (avg): 148.13994318 seconds
+Worker 38 time (avg): 148.48448746 seconds
+Worker 39 time (avg): 145.65688075 seconds
+Worker 40 time (avg): 148.57412887 seconds
+Worker 41 time (avg): 149.77401408 seconds
+Worker 42 time (avg): 147.26019206 seconds
+Worker 43 time (avg): 149.46662331 seconds
+Worker 44 time (avg): 150.62471690 seconds
+Worker 45 time (avg): 147.00750014 seconds
+Worker 46 time (avg): 147.96829744 seconds
+Worker 47 time (avg): 147.39842092 seconds
+Worker 48 time (avg): 149.96362061 seconds
+Worker 49 time (avg): 147.66579122 seconds
+Worker 50 time (avg): 149.13089773 seconds
+Worker 51 time (avg): 147.29671792 seconds
+Worker 52 time (avg): 145.99421259 seconds
+Worker 53 time (avg): 148.01806686 seconds
+Worker 54 time (avg): 148.05119635 seconds
+Worker 55 time (avg): 148.74650245 seconds
+Worker 56 time (avg): 149.98479052 seconds
+Worker 57 time (avg): 150.55640389 seconds
+Worker 58 time (avg): 147.54939704 seconds
+Worker 59 time (avg): 149.75269671 seconds
+Worker 60 time (avg): 147.04397208 seconds
+Worker 61 time (avg): 146.34932068 seconds
+Worker 62 time (avg): 147.53776392 seconds
+Worker 63 time (avg): 147.67469746 seconds
+Worker 64 time (avg): 148.34247665 seconds
+Worker 65 time (avg): 146.68237084 seconds
+Worker 66 time (avg): 148.09348514 seconds
+Worker 67 time (avg): 146.51103657 seconds
+Worker 68 time (avg): 149.70929473 seconds
+Worker 69 time (avg): 148.10251201 seconds
+Worker 70 time (avg): 145.56898667 seconds
+Worker 71 time (avg): 146.89062764 seconds
+Worker 72 time (avg): 148.39586164 seconds
+Worker 73 time (avg): 147.41914541 seconds
+Worker 74 time (avg): 149.08288990 seconds
+Worker 75 time (avg): 149.80766194 seconds
+Worker 76 time (avg): 145.59560942 seconds
+Worker 77 time (avg): 145.26155480 seconds
+Worker 78 time (avg): 148.54737568 seconds
+Worker 79 time (avg): 147.21213399 seconds
+Worker 80 time (avg): 148.25624031 seconds
+Worker 81 time (avg): 149.83288848 seconds
+Worker 82 time (avg): 148.84919621 seconds
+Worker 83 time (avg): 147.05826854 seconds
+Worker 84 time (avg): 145.88581099 seconds
+Worker 85 time (avg): 150.30026810 seconds
+Worker 86 time (avg): 147.19508456 seconds
+Worker 87 time (avg): 146.69468528 seconds
+Worker 88 time (avg): 145.30754754 seconds
+Worker 89 time (avg): 148.11110891 seconds
+Worker 90 time (avg): 149.99224320 seconds
+Worker 91 time (avg): 148.41847482 seconds
+Worker 92 time (avg): 146.07065250 seconds
+Worker 93 time (avg): 146.90262963 seconds
+Worker 94 time (avg): 148.49483581 seconds
+Worker 95 time (avg): 150.39100224 seconds
+Worker 96 time (avg): 150.83110107 seconds
+Worker 97 time (avg): 149.33342805 seconds
+Worker 98 time (avg): 149.35738131 seconds
+Worker 99 time (avg): 150.57819089 seconds
+Worker 100 time (avg): 150.53405309 seconds
+Worker 101 time (avg): 148.50963797 seconds
+Worker 102 time (avg): 149.11429505 seconds
+Worker 103 time (avg): 149.99941758 seconds
+Worker 104 time (avg): 148.60034122 seconds
+Worker 105 time (avg): 148.04113389 seconds
+Worker 106 time (avg): 149.43673956 seconds
+Worker 107 time (avg): 150.67345594 seconds
+Worker 108 time (avg): 147.80215750 seconds
+Worker 109 time (avg): 147.17546200 seconds
+Worker 110 time (avg): 146.47105181 seconds
+Worker 111 time (avg): 148.54545938 seconds
+Worker 112 time (avg): 150.73539399 seconds
+Worker 113 time (avg): 150.26981625 seconds
+Worker 114 time (avg): 151.56337170 seconds (max)
+Worker 115 time (avg): 150.17215212 seconds
+Worker 116 time (avg): 146.55835095 seconds
+Worker 117 time (avg): 148.21346807 seconds
+Worker 118 time (avg): 150.05885509 seconds
+Worker 119 time (avg): 149.40598479 seconds
+Worker 120 time (avg): 148.85106804 seconds
+Worker 121 time (avg): 147.63061286 seconds
+Worker 122 time (avg): 148.74247105 seconds
+Worker 123 time (avg): 150.57039240 seconds
+Worker 124 time (avg): 147.85809343 seconds
+Worker 125 time (avg): 146.64345893 seconds
+Worker 126 time (avg): 148.20348027 seconds
+Worker 127 time (avg): 151.08703285 seconds
+Worker 128 time (avg): 147.66851432 seconds
+Worker 129 time (avg): 146.20215140 seconds
+Worker 130 time (avg): 146.87723470 seconds
+Worker 131 time (avg): 147.76316812 seconds
+Worker 132 time (avg): 147.53120164 seconds
+Worker 133 time (avg): 144.65314831 seconds
+Worker 134 time (avg): 144.72134224 seconds
+Worker 135 time (avg): 143.73560076 seconds
+Worker 136 time (avg): 147.44071640 seconds
+Worker 137 time (avg): 143.89031203 seconds
+Worker 138 time (avg): 147.25775591 seconds
+Worker 139 time (avg): 146.87281582 seconds
+Worker 140 time (avg): 146.01625416 seconds
+Worker 141 time (avg): 144.98619122 seconds
+Worker 142 time (avg): 147.31612166 seconds
+Worker 143 time (avg): 146.46655619 seconds
+Worker 144 time (avg): 147.11406359 seconds
+Worker 145 time (avg): 144.20100183 seconds
+Worker 146 time (avg): 144.74545763 seconds
+Worker 147 time (avg): 147.30201837 seconds
+Worker 148 time (avg): 143.84933376 seconds
+Worker 149 time (avg): 146.31836108 seconds
+Worker 150 time (avg): 144.73549218 seconds
+Worker 151 time (avg): 146.24833878 seconds
+Worker 152 time (avg): 146.26785788 seconds
+Worker 153 time (avg): 143.97118499 seconds
+Worker 154 time (avg): 145.70283341 seconds
+Worker 155 time (avg): 147.16231993 seconds
+Worker 156 time (avg): 146.75535062 seconds
+Worker 157 time (avg): 144.64629045 seconds
+Worker 158 time (avg): 145.02914066 seconds
+Worker 159 time (avg): 146.06142025 seconds
+Worker 160 time (avg): 148.21546452 seconds
+Worker 161 time (avg): 145.22856266 seconds
+Worker 162 time (avg): 147.15944990 seconds
+Worker 163 time (avg): 144.59992901 seconds
+Worker 164 time (avg): 147.27956961 seconds
+Worker 165 time (avg): 145.61126731 seconds
+Worker 166 time (avg): 143.92403718 seconds
+Worker 167 time (avg): 146.59976421 seconds
+Worker 168 time (avg): 146.89361841 seconds
+Worker 169 time (avg): 145.00857113 seconds
+Worker 170 time (avg): 146.38653057 seconds
+Worker 171 time (avg): 147.16477485 seconds
+Worker 172 time (avg): 146.68235553 seconds
+Worker 173 time (avg): 143.65708981 seconds
+Worker 174 time (avg): 145.09678268 seconds
+Worker 175 time (avg): 142.48201359 seconds
+Worker 176 time (avg): 147.59074342 seconds
+Worker 177 time (avg): 147.06649652 seconds
+Worker 178 time (avg): 147.13078567 seconds
+Worker 179 time (avg): 142.79512412 seconds
+Worker 180 time (avg): 146.04229774 seconds
+Worker 181 time (avg): 145.39647806 seconds
+Worker 182 time (avg): 145.30579154 seconds
+Worker 183 time (avg): 145.03588088 seconds
+Worker 184 time (avg): 145.03817243 seconds
+Worker 185 time (avg): 147.61457893 seconds
+Worker 186 time (avg): 144.62317080 seconds
+Worker 187 time (avg): 146.56488601 seconds
+Worker 188 time (avg): 145.74125952 seconds
+Worker 189 time (avg): 144.28041246 seconds
+Worker 190 time (avg): 143.45983655 seconds
+Worker 191 time (avg): 145.58415171 seconds
+	Command being timed: "mpiexec -np 192 ./../bin/multiply_matrix_8192x8192_19185062 ../../data/random_int_matrix_13.bin ../logs/cirrus/19185062/times.log ../logs/cirrus/19185062/results/8192x8192_results.log"
+	User time (seconds): 449702.97
+	System time (seconds): 46.02
+	Percent of CPU this job got: 9558%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:18:25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 424296
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 288
+	Minor (reclaiming a frame) page faults: 1109722
+	Voluntary context switches: 686438
+	Involuntary context switches: 1450721
+	Swaps: 0
+	File system inputs: 590952
+	File system outputs: 541456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 81m 9s
+Session Completed Successfully at: 2024-12-19 20:32:33
+###############################################
+Details for Job ID 19185062
+Running MPI Parallelization with int values on hpc077.a.incd.pt
+Allocated Nodes: 2
+Allocated Workers (per node): 96
+Allocated CPUs (per task): 1
+Allocated Memory (total): 960000 MB
+Allocated Memory (per node): 480000MB
+Allocated Memory (per CPU): 5000 MB
+=============== Active Modules =================
+ - Currently Loaded Modules:
+ -   1) gcc-13.2   2) gcc13/openmpi/4.1.6
+================ Memory Usage ==================
+JobID            MaxRSS  MaxVMSize  MaxDiskRead MaxDiskWrite 
+------------ ---------- ---------- ------------ ------------ 
+19185062.ba+  33634068K  34815212K  36101789439   2854606833 
+=============== Nodes Assigned =================
+hpc077
+hpc079
+

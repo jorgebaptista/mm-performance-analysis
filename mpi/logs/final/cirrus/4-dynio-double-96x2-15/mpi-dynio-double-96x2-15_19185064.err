@@ -1,0 +1,2 @@
+slurmstepd: error: *** JOB 19185064 ON hpc077 CANCELLED AT 2024-12-19T22:56:25 DUE TO TIME LIMIT ***
+mpiexec: Forwarding signal 18 to job

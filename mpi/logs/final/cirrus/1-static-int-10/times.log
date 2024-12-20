@@ -1,0 +1,406 @@
+Session started at: 2024-11-27 22:56:58
+Running MPI Parallelization with int values on hpc078.a.incd.pt
+===============================================
+Using random_int_matrix_10.bin input file:
+------------2x2-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.01700975 seconds
+Write time: 0.00027292 seconds
+Multiplication time (avg): 0.00000913 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00000004 seconds
+Worker 2 time (avg): 0.00000004 seconds
+Worker 3 time (avg): 0.00000004 seconds
+Worker 4 time (avg): 0.00000004 seconds
+Worker 5 time (avg): 0.00000004 seconds
+Worker 6 time (avg): 0.00000004 seconds
+Worker 7 time (avg): 0.00000004 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_2x2_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/2x2_results.log"
+	User time (seconds): 0.73
+	System time (seconds): 0.93
+	Percent of CPU this job got: 84%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82668
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 190
+	Minor (reclaiming a frame) page faults: 46799
+	Voluntary context switches: 11420
+	Involuntary context switches: 1146
+	Swaps: 0
+	File system inputs: 16152
+	File system outputs: 16624
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------4x4-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00000404 seconds
+Write time: 0.00019536 seconds
+Multiplication time (avg): 0.00000857 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00000004 seconds
+Worker 2 time (avg): 0.00000004 seconds
+Worker 3 time (avg): 0.00000004 seconds
+Worker 4 time (avg): 0.00000004 seconds
+Worker 5 time (avg): 0.00000003 seconds
+Worker 6 time (avg): 0.00000003 seconds
+Worker 7 time (avg): 0.00000003 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_4x4_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/4x4_results.log"
+	User time (seconds): 0.35
+	System time (seconds): 0.85
+	Percent of CPU this job got: 131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82736
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 88
+	Minor (reclaiming a frame) page faults: 46779
+	Voluntary context switches: 11590
+	Involuntary context switches: 979
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------8x8-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00000285 seconds
+Write time: 0.00038745 seconds
+Multiplication time (avg): 0.00000858 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00000004 seconds
+Worker 2 time (avg): 0.00000004 seconds
+Worker 3 time (avg): 0.00000005 seconds
+Worker 4 time (avg): 0.00000004 seconds
+Worker 5 time (avg): 0.00000004 seconds
+Worker 6 time (avg): 0.00000004 seconds
+Worker 7 time (avg): 0.00000005 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_8x8_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/8x8_results.log"
+	User time (seconds): 0.32
+	System time (seconds): 0.90
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82736
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 89
+	Minor (reclaiming a frame) page faults: 46837
+	Voluntary context switches: 8393
+	Involuntary context switches: 809
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------16x16-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00000279 seconds
+Write time: 0.00025850 seconds
+Multiplication time (avg): 0.00001057 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00000022 seconds
+Worker 2 time (avg): 0.00000023 seconds
+Worker 3 time (avg): 0.00000024 seconds
+Worker 4 time (avg): 0.00000023 seconds
+Worker 5 time (avg): 0.00000023 seconds
+Worker 6 time (avg): 0.00000024 seconds
+Worker 7 time (avg): 0.00000024 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_16x16_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/16x16_results.log"
+	User time (seconds): 0.34
+	System time (seconds): 0.84
+	Percent of CPU this job got: 177%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 76
+	Minor (reclaiming a frame) page faults: 47060
+	Voluntary context switches: 8672
+	Involuntary context switches: 1041
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------32x32-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00000267 seconds
+Write time: 0.00082222 seconds
+Multiplication time (avg): 0.00001902 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00000669 seconds
+Worker 2 time (avg): 0.00000658 seconds
+Worker 3 time (avg): 0.00000665 seconds
+Worker 4 time (avg): 0.00000664 seconds
+Worker 5 time (avg): 0.00000668 seconds
+Worker 6 time (avg): 0.00000676 seconds
+Worker 7 time (avg): 0.00000790 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_32x32_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/32x32_results.log"
+	User time (seconds): 0.37
+	System time (seconds): 0.85
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82856
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 75
+	Minor (reclaiming a frame) page faults: 47072
+	Voluntary context switches: 8455
+	Involuntary context switches: 937
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16624
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------64x64-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00029679 seconds
+Write time: 0.00072474 seconds
+Multiplication time (avg): 0.01762817 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00001821 seconds
+Worker 2 time (avg): 0.00001799 seconds
+Worker 3 time (avg): 0.00003220 seconds
+Worker 4 time (avg): 0.00001798 seconds
+Worker 5 time (avg): 0.00001793 seconds
+Worker 6 time (avg): 0.00001871 seconds
+Worker 7 time (avg): 0.00001794 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_64x64_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/64x64_results.log"
+	User time (seconds): 4.35
+	System time (seconds): 0.89
+	Percent of CPU this job got: 387%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 83104
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 83
+	Minor (reclaiming a frame) page faults: 47259
+	Voluntary context switches: 9269
+	Involuntary context switches: 918
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 16696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------128x128-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00031587 seconds
+Write time: 0.00176563 seconds
+Multiplication time (avg): 0.01302784 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00036666 seconds
+Worker 2 time (avg): 0.00036381 seconds
+Worker 3 time (avg): 0.00036575 seconds
+Worker 4 time (avg): 0.00036392 seconds
+Worker 5 time (avg): 0.00036440 seconds
+Worker 6 time (avg): 0.00036664 seconds
+Worker 7 time (avg): 0.00036230 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_128x128_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/128x128_results.log"
+	User time (seconds): 3.11
+	System time (seconds): 0.86
+	Percent of CPU this job got: 365%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 84024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 109
+	Minor (reclaiming a frame) page faults: 47869
+	Voluntary context switches: 8616
+	Involuntary context switches: 924
+	Swaps: 0
+	File system inputs: 96
+	File system outputs: 16896
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------256x256-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00044220 seconds
+Write time: 0.00478718 seconds
+Multiplication time (avg): 0.01294915 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.00282962 seconds
+Worker 2 time (avg): 0.00289013 seconds
+Worker 3 time (avg): 0.00284362 seconds
+Worker 4 time (avg): 0.00284587 seconds
+Worker 5 time (avg): 0.00290947 seconds
+Worker 6 time (avg): 0.00289910 seconds
+Worker 7 time (avg): 0.00285349 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_256x256_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/256x256_results.log"
+	User time (seconds): 3.29
+	System time (seconds): 0.84
+	Percent of CPU this job got: 367%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 84852
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 74
+	Minor (reclaiming a frame) page faults: 49818
+	Voluntary context switches: 8877
+	Involuntary context switches: 718
+	Swaps: 0
+	File system inputs: 384
+	File system outputs: 17768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------512x512-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00070453 seconds
+Write time: 0.01991586 seconds
+Multiplication time (avg): 0.02955217 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.02742941 seconds
+Worker 2 time (avg): 0.02743079 seconds
+Worker 3 time (avg): 0.02710268 seconds
+Worker 4 time (avg): 0.02687747 seconds
+Worker 5 time (avg): 0.02947901 seconds
+Worker 6 time (avg): 0.02705387 seconds
+Worker 7 time (avg): 0.02698133 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_512x512_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/512x512_results.log"
+	User time (seconds): 7.73
+	System time (seconds): 0.89
+	Percent of CPU this job got: 532%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 87812
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 91
+	Minor (reclaiming a frame) page faults: 54704
+	Voluntary context switches: 9926
+	Involuntary context switches: 723
+	Swaps: 0
+	File system inputs: 1536
+	File system outputs: 21728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+------------1024x1024-------------
+Nodes: 1
+Workers (per node): 8
+Total Workers: 8
+Read time: 0.00194576 seconds
+Write time: 0.06055537 seconds
+Multiplication time (avg): 0.69626688 seconds
+Master time (avg): 144402116899827759555538342114706326449237095242093168742999963972951720805312457533247955663627193519408557682248871416104365548601821714854271722365647582986972629025934956310006075142569882407969619606153196735696958514241384346599232659911741092399105161478543507456.00000000 seconds
+Worker 1 time (avg): 0.68609109 seconds
+Worker 2 time (avg): 0.66286307 seconds
+Worker 3 time (avg): 0.66227944 seconds
+Worker 4 time (avg): 0.69588476 seconds
+Worker 5 time (avg): 0.69540090 seconds
+Worker 6 time (avg): 0.66549705 seconds
+Worker 7 time (avg): 0.65414689 seconds
+	Command being timed: "mpiexec -np 8 ./../bin/multiply_matrix_1024x1024_18980662 ../../data/random_int_matrix_10.bin ../logs/cirrus/18980662/times.log ../logs/cirrus/18980662/results/1024x1024_results.log"
+	User time (seconds): 172.87
+	System time (seconds): 0.88
+	Percent of CPU this job got: 772%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 95072
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 74
+	Minor (reclaiming a frame) page faults: 54150
+	Voluntary context switches: 12006
+	Involuntary context switches: 1173
+	Swaps: 0
+	File system inputs: 6144
+	File system outputs: 37104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+===============================================
+Session Time: 0m 38s
+Session Completed Successfully at: 2024-11-27 22:57:36
+###############################################
+Details for Job ID 18980662
+Running MPI Parallelization with int values on hpc078.a.incd.pt
+Allocated Nodes: 1
+Allocated Workers (per node): 8
+Allocated CPUs (per task): 1
+Allocated Memory (total): 40000 MB
+Allocated Memory (per node): 40000MB
+Allocated Memory (per CPU): 5000 MB
+=============== Active Modules =================
+ - Currently Loaded Modules:
+ -   1) gcc-13.2   2) gcc13/openmpi/4.1.6
+================ Memory Usage ==================
+JobID            MaxRSS  MaxVMSize  MaxDiskRead MaxDiskWrite 
+------------ ---------- ---------- ------------ ------------ 
+18980662.ba+    568488K    681144K    273763401    361191621 
+=============== Nodes Assigned =================
+hpc078
+
