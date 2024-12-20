@@ -1,0 +1,123 @@
+* ----------------------------------------------------------------
+* Running PROLOG for hyb-dynio-int-24x4x2-15 on Fri Dec 20 00:39:39 WET 2024
+*    JOB_NAME                : hyb-dynio-int-24x4x2-15
+*    JOB_ID                  : 19188644
+*    JOB_PARTITION           : hpc
+*    JOB_USER                : jbaptista
+*    JOB_ACCOUNT             : vlabualg
+*    JOB_QOS                 : normal
+*    NODE_LIST               : hpc[068,074]
+*    SLURM_NNODES            : 2
+*    SLURM_NPROCS            : 8
+*    SLURM_NTASKS            : 8
+*    SLURM_CPUS_ON_NODE      : 96
+*    SLURM_TASKS_PER_NODE    : 4(x2)
+*    SLURM_JOB_CPUS_PER_NODE : 96(x2)
+*    SLURM_MEM_PER_CPU       : 5000
+*    SUBMIT_HOST             : cirrus08.a.incd.pt
+*    WORK_DIR                : /users5/vlabualg/jbaptista/mm-performance-analysis/hybrid/scripts
+*    JOB_SCRIPT              : /users5/vlabualg/jbaptista/mm-performance-analysis/hybrid/scripts/c_test2.sh
+* ----------------------------------------------------------------
+
+=== Environment ===
+Using existing input data...
+Session started at: 2024-12-20 00:39:40
+Running Hybrid (MPI + OpenMP) Parallelization with int values on hpc068.a.incd.pt
+===============================================
+Using random_int_matrix_15.bin input file:
+------------32x32-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_32x32_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/32x32_results.log
+------------64x64-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_64x64_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/64x64_results.log
+------------128x128-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_128x128_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/128x128_results.log
+------------256x256-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_256x256_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/256x256_results.log
+------------512x512-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_512x512_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/512x512_results.log
+------------1024x1024-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_1024x1024_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/1024x1024_results.log
+------------2048x2048-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_2048x2048_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/2048x2048_results.log
+------------4096x4096-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_4096x4096_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24
+Execution succeeded.
+Times saved to ../logs/cirrus/19188644/times.log
+Results saved to ../logs/cirrus/19188644/results/4096x4096_results.log
+------------8192x8192-------------
+Compiling multiply_matrix.c
+Compilation succeeded.
+Running ../bin/multiply_matrix_8192x8192_19188644
+Runs: 30
+Nodes: 2
+Workers (per node): 4
+CPUs (per task): 24

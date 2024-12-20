@@ -1,0 +1,27 @@
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[28008,0],0] on node hpc068
+  Remote daemon: [[28008,0],1] on node hpc074
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
+slurmstepd: error: *** JOB 19188644 ON hpc068 CANCELLED AT 2024-12-20T02:10:01 DUE TO TIME LIMIT ***
+mpiexec: abort is already in progress...hit ctrl-c again to forcibly terminate
+
+mpiexec: Forwarding signal 18 to job
+[hpc068:681407:0:681407] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x30)
+==== backtrace (tid: 681407) ====
+ 0 0x0000000000012d20 __funlockfile()  :0
+ 1 0x0000000000049a68 PMIx_Finalize()  ???:0
+ 2 0x00000000000bfe1a ext2x_client_finalize()  ???:0
+ 3 0x0000000000075b61 clean_abort()  ess_hnp_module.c:0
+ 4 0x000000000001f9b5 event_priority_init()  ???:0
+ 5 0x00000000000203b7 event_base_loop()  ???:0
+ 6 0x0000000000401681 orterun()  ???:0
+ 7 0x000000000003a7e5 __libc_start_main()  ???:0
+ 8 0x00000000004013fe _start()  ???:0
+=================================
